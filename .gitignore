@@ -3,6 +3,8 @@
 ################################################################################
 
 /.vs
+bin/
+obj/
 IASData.Utility/IASData.Utility.csproj.user
 # Compiled source #
 ###################
@@ -41,3 +43,5 @@ IASData.Utility/IASData.Utility.csproj.user
 .Trashes
 ehthumbs.db
 Thumbs.db
+IASData.Utility/obj/
+DAL/bin/

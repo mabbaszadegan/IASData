@@ -745,7 +745,7 @@ namespace IASData.Sport.Supervisor.Controllers
                                                     )
                                                 ),
                             NationalityId = item.NationalityId,
-                            PersonProfilePic = "http://82.99.218.100:8080/Services/AttachmentShow.ashx?AttachmentId=" + attachment.AttachmentId + "&Thumbnail=150",
+                            PersonProfilePic = Constants.AttachmentServiceUrl + "?AttachmentId=" + ((attachment != null) ? attachment.AttachmentId.ToString() : "-1") + "&Thumbnail=150",
                         });
                     }
 
@@ -899,7 +899,7 @@ namespace IASData.Sport.Supervisor.Controllers
                                                 "ثبت نشده"
                                             )
                                         ),
-                    PersonProfilePic = "http://82.99.218.100:8080/Services/AttachmentShow.ashx?AttachmentId=" + attachment.AttachmentId + "&Thumbnail=150",
+                    PersonProfilePic = Constants.AttachmentServiceUrl + "?AttachmentId=" + ((attachment != null) ? attachment.AttachmentId.ToString() : "-1") + "&Thumbnail=150",
                 });
             }
 
@@ -1073,7 +1073,7 @@ namespace IASData.Sport.Supervisor.Controllers
                                             )
                                         ),
                                 PersonIdentityDocument = item.PersonIdentityDocument,
-                                PersonProfilePic = "http://82.99.218.100:8080/Services/AttachmentShow.ashx?AttachmentId=" + attachment.AttachmentId + "&Thumbnail=150",
+                                PersonProfilePic = Constants.AttachmentServiceUrl + "?AttachmentId=" + ((attachment != null) ? attachment.AttachmentId.ToString() : "-1") + "&Thumbnail=150",
 
                             });
 
@@ -1142,7 +1142,7 @@ namespace IASData.Sport.Supervisor.Controllers
                                                     "ثبت نشده"
                                                 )
                                             ),
-                PersonProfilePic = "http://82.99.218.100:8080/Services/AttachmentShow.ashx?AttachmentId=" + attachment.AttachmentId + "&Thumbnail=150",
+                PersonProfilePic = Constants.AttachmentServiceUrl + "?AttachmentId=" + ((attachment != null) ? attachment.AttachmentId.ToString() : "-1") + "&Thumbnail=150",
             };
 
 
@@ -1305,7 +1305,7 @@ namespace IASData.Sport.Supervisor.Controllers
                 PersonNationalCode = person.PersonNationalCode,
                 ReligionId = person.ReligionId,
                 FamilyId = person.FamilyMember.FirstOrDefault().FamilyId,
-                PersonProfilePic = "http://82.99.218.100:8080/Services/AttachmentShow.ashx?AttachmentId=" + attachment.AttachmentId + "&Thumbnail=150",
+                PersonProfilePic = Constants.AttachmentServiceUrl + "?AttachmentId=" + ((attachment != null) ? attachment.AttachmentId.ToString() : "-1") + "&Thumbnail=150",
             };
 
             InitForm(personViewModel);
@@ -1363,7 +1363,7 @@ namespace IASData.Sport.Supervisor.Controllers
                 PersonNationalCode = person.PersonNationalCode,
                 ReligionId = person.ReligionId,
                 FamilyId = person.FamilyMember.FirstOrDefault().FamilyId,
-                PersonProfilePic = "http://82.99.218.100:8080/Services/AttachmentShow.ashx?AttachmentId=" + attachment.AttachmentId + "&Thumbnail=150",
+                PersonProfilePic = Constants.AttachmentServiceUrl + "?AttachmentId=" + ((attachment != null) ? attachment.AttachmentId.ToString() : "-1") + "&Thumbnail=150",
             };
 
             InitForm(personViewModel);
@@ -1421,7 +1421,7 @@ namespace IASData.Sport.Supervisor.Controllers
                 PersonNationalCode = person.PersonNationalCode,
                 ReligionId = person.ReligionId,
                 FamilyId = person.FamilyMember.FirstOrDefault().FamilyId,
-                PersonProfilePic = "http://82.99.218.100:8080/Services/AttachmentShow.ashx?AttachmentId=" + attachment.AttachmentId + "&Thumbnail=150",
+                PersonProfilePic = Constants.AttachmentServiceUrl + "?AttachmentId=" + ((attachment != null) ? attachment.AttachmentId.ToString() : "-1") + "&Thumbnail=150",
             };
 
             InitForm(personViewModel);
@@ -2070,7 +2070,7 @@ namespace IASData.Sport.Supervisor.Controllers
                                                     "ثبت نشده"
                                                 )
                                             ),
-                PersonProfilePic = "http://82.99.218.100:8080/Services/AttachmentShow.ashx?AttachmentId=" + attachment.AttachmentId + "&Thumbnail=150",
+                PersonProfilePic = Constants.AttachmentServiceUrl + "?AttachmentId=" + ((attachment != null) ? attachment.AttachmentId.ToString() : "-1") + "&Thumbnail=150",
             };
             return PartialView(personViewModel);
         }
@@ -2103,7 +2103,7 @@ namespace IASData.Sport.Supervisor.Controllers
                                                     "ثبت نشده"
                                                 )
                                             ),
-                PersonProfilePic = "http://82.99.218.100:8080/Services/AttachmentShow.ashx?AttachmentId=" + attachment.AttachmentId + "&Thumbnail=150",
+                PersonProfilePic = Constants.AttachmentServiceUrl + "?AttachmentId=" + ((attachment != null) ? attachment.AttachmentId.ToString() : "-1") + "&Thumbnail=150",
             };
             //LookupModel emtyItem = new LookupModel { Value = "0", Name = "" };
             //List<LookupModel> expireCauses = new List<LookupModel>();

@@ -12,3 +12,17 @@ D:\Project\SosapovertyMVC\Sosapoverty\IASData.Utility\obj\Debug\IASData.Utility.
 D:\Project\SosapovertyMVC\Sosapoverty\IASData.Utility\obj\Debug\IASData.Utility.csproj.CopyComplete
 D:\Project\SosapovertyMVC\Sosapoverty\IASData.Utility\obj\Debug\IASData.Utility.dll
 D:\Project\SosapovertyMVC\Sosapoverty\IASData.Utility\obj\Debug\IASData.Utility.pdb
+D:\Project\IASData\IASData.Utility\bin\Debug\IASData.Utility.dll
+D:\Project\IASData\IASData.Utility\bin\Debug\IASData.Utility.pdb
+D:\Project\IASData\IASData.Utility\bin\Debug\DAL.dll
+D:\Project\IASData\IASData.Utility\bin\Debug\IASData.Enumerable.dll
+D:\Project\IASData\IASData.Utility\bin\Debug\EntityFramework.dll
+D:\Project\IASData\IASData.Utility\bin\Debug\DAL.pdb
+D:\Project\IASData\IASData.Utility\bin\Debug\DAL.dll.config
+D:\Project\IASData\IASData.Utility\bin\Debug\IASData.Enumerable.pdb
+D:\Project\IASData\IASData.Utility\bin\Debug\EntityFramework.xml
+D:\Project\IASData\IASData.Utility\obj\Debug\IASData.Utility.csprojAssemblyReference.cache
+D:\Project\IASData\IASData.Utility\obj\Debug\IASData.Utility.csproj.CoreCompileInputs.cache
+D:\Project\IASData\IASData.Utility\obj\Debug\IASData.Utility.csproj.CopyComplete
+D:\Project\IASData\IASData.Utility\obj\Debug\IASData.Utility.dll
+D:\Project\IASData\IASData.Utility\obj\Debug\IASData.Utility.pdb
