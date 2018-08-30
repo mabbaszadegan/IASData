@@ -1,0 +1,258 @@
+﻿@model IEnumerable<DAL.PersonViewModel>
+@{
+
+    List<DAL.DepartmentViewModel> Departments = ViewBag.Departments;
+    DAL.FamilySearchViewModel searchViewModel = ViewBag.SearchModel;
+    int i = 0;
+    int pageSize = 20;
+}
+
+<div>
+    <input type="hidden" id="uploadFileError" value="@ViewBag.UploadFileError" />
+    <input type="hidden" id="selectedPersonId" value="@ViewBag.SelectedPersonId" />
+    @if (Departments != null)
+    {
+        <ul class="nav nav-tabs bg-light" id="myTab" role="tablist">
+            @foreach (var item in Departments.OrderBy(q => q.DepartmentCode))
+            {
+                string action = "PersonIndex?tabId=" + item.DepartmentId;
+                <li class="nav-item">
+
+                    @Ajax.ActionLink(
+                                                                 item.DepartmentName,
+                                                                 "SearchPerson",
+                                                                 new
+                                                                 {
+                                                                     DepartmentId = searchViewModel.DepartmentId,
+                                                                     NationalityId = searchViewModel.NationalityId,
+                                                                     EthnicId = searchViewModel.EthnicId,
+                                                                     PersonFirstName = searchViewModel.PersonFirstName,
+                                                                     PersonLastName = searchViewModel.PersonLastName,
+                                                                     PersonFatherName = searchViewModel.PersonFatherName,
+                                                                     PersonMotherName = searchViewModel.PersonMotherName,
+                                                                     PersonBirthYearFrom = searchViewModel.PersonBirthYearFrom,
+                                                                     PersonBirthYearTo = searchViewModel.PersonBirthYearTo,
+                                                                     MaritalStatusId = searchViewModel.MaritalStatusId,
+                                                                     PersonStatusId = searchViewModel.PersonStatusId,
+                                                                     GenderId = searchViewModel.GenderId,
+                                                                     RelationTypeId = searchViewModel.RelationTypeId,
+                                                                     PersonNationalCode = searchViewModel.PersonNationalCode,
+                                                                     PersonCoveredDateSolarFrom = searchViewModel.PersonCoveredDateSolarFrom,
+                                                                     tabId = item.DepartmentId,
+                                                                 },
+                                                                 new AjaxOptions
+                                                                 {
+                                                                     UpdateTargetId = "SearchFamilyResult",
+                                                                     InsertionMode = InsertionMode.Replace,
+                                                                     LoadingElementId = "searchProgress",
+                                                                     OnComplete = "",
+
+                                                                 },
+                                                                 new
+                                                                 {
+                                                                     @class = "nav-link " + (item.DepartmentId == ViewBag.TabID ? "active" : ""),
+                                                                     id = "dep" + item.DepartmentId,
+                                                                     aria_controls = "home",
+                                                                     aria_selected = "true"
+                                                                 }
+                                                             )
+
+                </li>
+
+
+                i++;
+            }
+            @{i = 0;}
+        </ul>
+        <div class="tab-content" id="myTabContent">
+
+            @foreach (var item in Departments.OrderBy(q => q.DepartmentCode))
+            {
+                int pageCount = ViewBag.PageCount;
+                int rowIndex = (pageSize * ViewBag.PageID) + 1;
+
+                <div class="tab-pane fade @(item.DepartmentId == ViewBag.TabID ? "show active" : "")" id="dep-@i" role="tabpanel" aria-labelledby="dep-tab-@i">
+                    <table class="table table-bordered">
+                        <colgroup>
+                            <col style="width:3%" />
+                            <col style="width:3%" />
+                            <col style="width:15%" />
+                            <col />
+                            <col style="width:10%" />
+                        </colgroup>
+                        <thead class="bg-primary">
+                            <tr>
+                                <th colspan="10" class="bg-light" style="text-align:center">
+                                    @for (int page = 0; page < pageCount; page++)
+                                    {
+                                        int pageNo = page + 1;
+                                        string action = "PersonIndex?pageId=" + page + "&tabId=" + ViewBag.TabID;
+                                        string cssClass = (page == ViewBag.PageID ? "active" : "");
+
+                                        @Ajax.ActionLink(
+                                                                                                                                                              pageNo.ToString(),
+                                                                                                                                                              "SearchPerson",
+                                                                                                                                                              new
+                                                                                                                                                              {
+                                                                                                                                                                  DepartmentId = searchViewModel.DepartmentId,
+                                                                                                                                                                  NationalityId = searchViewModel.NationalityId,
+                                                                                                                                                                  EthnicId = searchViewModel.EthnicId,
+                                                                                                                                                                  PersonFirstName = searchViewModel.PersonFirstName,
+                                                                                                                                                                  PersonLastName = searchViewModel.PersonLastName,
+                                                                                                                                                                  PersonFatherName = searchViewModel.PersonFatherName,
+                                                                                                                                                                  PersonMotherName = searchViewModel.PersonMotherName,
+                                                                                                                                                                  PersonBirthYearFrom = searchViewModel.PersonBirthYearFrom,
+                                                                                                                                                                  PersonBirthYearTo = searchViewModel.PersonBirthYearTo,
+                                                                                                                                                                  MaritalStatusId = searchViewModel.MaritalStatusId,
+                                                                                                                                                                  PersonStatusId = searchViewModel.PersonStatusId,
+                                                                                                                                                                  GenderId = searchViewModel.GenderId,
+                                                                                                                                                                  RelationTypeId = searchViewModel.RelationTypeId,
+                                                                                                                                                                  PersonNationalCode = searchViewModel.PersonNationalCode,
+                                                                                                                                                                  //PersonCoveredDateSolar = searchViewModel.PersonCoveredDateSolar,
+                                                                                                                                                                  tabId = item.DepartmentId,
+                                                                                                                                                                  pageId = pageNo - 1
+                                                                                                                                                              },
+                                                                                                                                                              new AjaxOptions
+                                                                                                                                                              {
+                                                                                                                                                                  UpdateTargetId = "SearchFamilyResult",
+                                                                                                                                                                  InsertionMode = InsertionMode.Replace,
+                                                                                                                                                                  LoadingElementId = "searchProgress",
+                                                                                                                                                                  OnComplete = "activeTab(" + pageNo + ", " + pageCount + "," + item.DepartmentId + ")",
+                                                                                                                                                              },
+                                                                                                                                                              new
+                                                                                                                                                              {
+                                                                                                                                                                  @class = "btn btn-warning btn-outline-warning btn-sm",
+                                                                                                                                                                  id = "dep-tab-" + pageNo--,
+                                                                                                                                                                  aria_controls = " home",
+                                                                                                                                                                  aria_selected = "true"
+                                                                                                                                                              }
+                                                                                                                                             )
+                                        @*<a class="btn btn-warning btn-outline-warning btn-sm @cssClass" id="dep-tab-@i" href="../ManagePerson/@action" aria-controls=" home" aria-selected="true">@pageNo</a>*@
+                                    }
+                                </th>
+                            </tr>
+                            <tr>
+                                <th scope="col">ردیف</th>
+                                <th scope="col" width="10%">تصویر پرسنلی</th>
+                                <th scope="col"> شماره پرونده</th>
+                                <th scope="col"> نام</th>
+                                <th scope="col"> نام خانوادگی</th>
+                                <th scope="col">نام پدر</th>
+                                <th scope="col">نام مادر</th>
+                                <th scope="col">سال تولد</th>
+                                <th scope="col">وضعیت</th>
+                                <th scope="col">عملیات</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var person in Model.Where(q => q.DepartmentId == item.DepartmentId))
+                            {
+                                <tr class="@(rowIndex%2==0?"bg-light":"")">
+                                    <td>@rowIndex</td>
+                                    <td>
+
+                                        <span style="cursor:pointer;" onclick="showUploadProfilePic(@person.PersonId)">
+                                            <img class="card-img-top" src="@person.PersonProfilePic" alt="Card image" id="img-@person.PersonId">
+                                        </span>
+                                    </td>
+                                    <td>@person.PersonCode</td>
+                                    <td>@person.PersonFirstName</td>
+                                    <td>@person.PersonLastName</td>
+                                    <td>@person.PersonFatherName</td>
+                                    <td>@person.PersonMotherName</td>
+                                    <td>@person.PersonBirthYear</td>
+                                    <td>
+                                        @if (person.SportDataStatus.Any(q => q == IASData.Enumerable.DataStatus.NoneBirthYear))
+                                        {
+                                            <span style="cursor:pointer;" class="badge badge-danger" onclick="editBirthDate(@person.PersonId)">سن تعیین نشده است</span>
+                                        }
+                                        @if (person.SportDataStatus.Any(q => q == IASData.Enumerable.DataStatus.NoneProfiePic))
+                                        {
+                                            <span style="cursor:pointer;" class="badge badge-danger" onclick="showUploadProfilePic(@person.PersonId)">تصویر پروفایل ندارد</span>
+                                        }
+                                        @if (person.SportDataStatus.Any(q => q == IASData.Enumerable.DataStatus.NoneIdentityDocument))
+                                        {
+                                            <span style="cursor:pointer;" class="badge badge-danger" onclick="editIdentityDocuments(@person.PersonId)">مدارک هویتی ناقص است</span>
+                                        }
+                                    </td>
+                                    <td></td>
+
+
+                                </tr>
+                                rowIndex++;
+                            }
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="10" class="bg-light" style="text-align:center">
+                                    @for (int page = 0; page < pageCount; page++)
+                                    {
+                                        int pageNo = page + 1;
+                                        string action = "PersonIndex?pageId=" + page + "&tabId=" + ViewBag.TabID;
+                                        string cssClass = (page == ViewBag.PageID ? "active" : "");
+                                        @Ajax.ActionLink(
+                                                                                                                                   pageNo.ToString(),
+                                                                                                                                   "SearchPerson",
+                                                                                                                                   new
+                                                                                                                                   {
+                                                                                                                                       DepartmentId = searchViewModel.DepartmentId,
+                                                                                                                                       NationalityId = searchViewModel.NationalityId,
+                                                                                                                                       EthnicId = searchViewModel.EthnicId,
+                                                                                                                                       PersonFirstName = searchViewModel.PersonFirstName,
+                                                                                                                                       PersonLastName = searchViewModel.PersonLastName,
+                                                                                                                                       PersonFatherName = searchViewModel.PersonFatherName,
+                                                                                                                                       PersonMotherName = searchViewModel.PersonMotherName,
+                                                                                                                                       PersonBirthYearFrom = searchViewModel.PersonBirthYearFrom,
+                                                                                                                                       PersonBirthYearTo = searchViewModel.PersonBirthYearTo,
+                                                                                                                                       MaritalStatusId = searchViewModel.MaritalStatusId,
+                                                                                                                                       PersonStatusId = searchViewModel.PersonStatusId,
+                                                                                                                                       GenderId = searchViewModel.GenderId,
+                                                                                                                                       RelationTypeId = searchViewModel.RelationTypeId,
+                                                                                                                                       PersonNationalCode = searchViewModel.PersonNationalCode,
+                                                                                                                                       //PersonCoveredDateSolar = searchViewModel.PersonCoveredDateSolar,
+                                                                                                                                       tabId = item.DepartmentId,
+                                                                                                                                       pageId = pageNo - 1
+                                                                                                                                   },
+                                                                                                                                   new AjaxOptions
+                                                                                                                                   {
+                                                                                                                                       UpdateTargetId = "SearchFamilyResult",
+                                                                                                                                       InsertionMode = InsertionMode.Replace,
+                                                                                                                                       LoadingElementId = "searchProgress",
+                                                                                                                                       OnComplete = "activeTab(" + pageNo + ", " + pageCount + "," + item.DepartmentId + ")",
+                                                                                                                                   },
+                                                                                                                                   new
+                                                                                                                                   {
+                                                                                                                                       @class = "btn btn-warning btn-outline-warning btn-sm",
+                                                                                                                                       id = "dep-tab-" + pageNo--,
+                                                                                                                                       aria_controls = " home",
+                                                                                                                                       aria_selected = "true"
+                                                                                                                                   }
+                                                                                                                  )
+                                    }
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+
+                i++;
+            }
+
+        </div>
+    }
+</div>
+<script>
+    function activeTab(tabId, lenght, depId) {
+        debugger;
+        for (i = 0; i <= lenght; i++) {
+            if (i == tabId) {
+                $("#dep-tab-" + i).each().removeAttr("class");
+                $("#dep-tab-" + i).each().attr("class", "btn btn-warning btn-outline-warning btn-sm active");
+            }
+            else {
+                $("#dep-tab-" + i).each().removeAttr("class");
+                $("#dep-tab-" + i).each().attr("class", "btn btn-warning btn-outline-warning btn-sm");
+            }
+        }
+    }
+</script>

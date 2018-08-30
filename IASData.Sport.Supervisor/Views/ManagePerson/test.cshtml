@@ -1,0 +1,336 @@
+﻿
+@{
+    ViewBag.Title = "ویرایش";
+}
+@using (Ajax.BeginForm(
+    "CreatePerson",
+    "ManagePerson",
+    new { },
+    new AjaxOptions
+    {
+        UpdateTargetId = "createSimplePersonResult",
+        InsertionMode = InsertionMode.Replace,
+        LoadingElementId = "modalProgress",
+        OnComplete = "",
+
+    },
+    null// new { enctype = "multipart/form-data" }
+    ))
+{
+    <div id="createSimplePersonSection">
+        <input type="hidden" name="NationalityId" value="@ViewBag.SelectedNationalityId" />
+        <div class="row ">
+            <div class="alert alert-warning fade show" role="alert">
+                <strong>ملیت: </strong> @ViewBag.NationalityName
+
+            </div>
+            @if (!string.IsNullOrEmpty(ViewBag.NationalCode))
+            {
+                <input type="hidden" name="PersonNationalCode" value="@ViewBag.NationalCode" />
+                <div class="alert alert-warning fade show" role="alert" id="nationalCode">
+                    <strong>کد ملی: </strong> @ViewBag.NationalCode
+                </div>
+            }
+
+            @if (!string.IsNullOrEmpty(ViewBag.FirstName))
+            {
+                <input type="hidden" name="PersonFirstName" id="PersonFirstName" value="@ViewBag.FirstName" />
+                <div class="alert alert-warning fade show" role="alert" id="firstName">
+                    <strong>نام: </strong> @ViewBag.FirstName
+
+                </div>}
+
+            @if (!string.IsNullOrEmpty(ViewBag.LastName))
+            {
+                <input type="hidden" name="PersonLastName" value="@ViewBag.LastName" />
+                <div class="alert alert-warning fade show" role="alert" id="lastName">
+                    <strong>نام خانوادگی: </strong> @ViewBag.LastName
+
+                </div>}
+
+            @if (!string.IsNullOrEmpty(ViewBag.FatherName))
+            {
+                <input type="hidden" name="PersonFatherName" value="@ViewBag.FatherName" />
+                <div class="alert alert-warning fade show" role="alert" id="fatherName">
+                    <strong>نام پدر: </strong> @ViewBag.FatherName
+
+                </div>}
+
+            @*@if (!string.IsNullOrEmpty(ViewBag.MotherName))
+            {
+                <input type="hidden" name="PersonMotherName" value="@ViewBag.MotherName" />
+                <div class="alert alert-warning fade show" role="alert" id="motherName">
+                    <strong>نام مادر: </strong> @ViewBag.MotherName
+
+                </div>
+            }*@
+
+
+        </div>
+        <div class="input-group mb-3">
+            <div class="input-group-append">
+                <span class="input-group-text" id="basic-addon2">نمایندگی/ خانه ایرانی/ تیم شناسایی</span>
+            </div>
+            @Html.DropDownList("DepartmentId", null, htmlAttributes: new { @class = "form-control" })
+        </div>
+        <div class="row form-group" id="">
+            <div class="input-group  col-md-3 col-sm-12 mb-3">
+                <div class="input-group-append">
+                    <span class="input-group-text" id="basic-addon2">تاریخ شناسایی</span>
+                </div>
+                @*@Html.EditorFor(model => model.PersonFilingDateSolar, new { htmlAttributes = new { @class = "form-control" } })*@
+
+                <input type="text" class="form-control" name="PersonFilingDateSolar" value="@DateTime.Now.ToDateSolar()" id="PersonFilingDateSolar" placeholder="" data-name="datepicker1" data-mddatetimepicker="true" data-targetselector="#PersonFilingDateSolar"
+                       data-trigger="click" />
+                <div class="input-group-append" data-name="datepicker1" data-mddatetimepicker="true" data-targetselector="#PersonFilingDateSolar"
+                     data-trigger="click" data-enabletimepicker="false" data-isgregorian="false" data-englishnumber="false">
+                    <span class="input-group-text" id="basic-addon2"><span class="fa fa-calendar"></span></span>
+                </div>
+
+            </div>
+            <div class="input-group col-md-3  col-sm-12 mb-3">
+                <div class="input-group-append">
+                    <span class="input-group-text" id="basic-addon2">افراد تیم شناسایی</span>
+                </div>
+                <input type="text" class="form-control" placeholder="" id="PersonFilingName">
+            </div>
+            <div class="input-group col-md-3 col-sm-12 mb-3">
+                <div class="input-group-append">
+                    <span class="input-group-text" id="basic-addon2">وضعیت حمایتی</span>
+                </div>
+                @Html.DropDownList("PersonStatusId", null, new { @class = "form-control" })
+            </div>
+            <div class="input-group  col-md-3 col-sm-12 mb-3">
+                <div class="input-group-append">
+                    <span class="input-group-text" id="basic-addon2">تاریخ شروع حمایت</span>
+                </div>
+                <input type="text" class="form-control" id="PersonCoveredDateSolar" name="PersonCoveredDateSolar" value="@Model.PersonCoveredDateSolar" placeholder="" data-trigger="click" data-name="datepicker1" data-mddatetimepicker="true" data-targetselector="#PersonCoveredDateSolar" />
+                <div class="input-group-append" data-name="datepicker1" data-mddatetimepicker="true" data-targetselector="#PersonCoveredDateSolar"
+                     data-trigger="click" data-enabletimepicker="false" data-isgregorian="false" data-englishnumber="false">
+                    <span class="input-group-text" id="basic-addon2">    <span class="fa fa-calendar"></span></span>
+                </div>
+            </div>
+            <div class="input-group col-12 mb-3">
+                <div class="input-group-append">
+                    <span class="input-group-text" id="basic-addon2">شرح شناسایی</span>
+                </div>
+                <input type="text" class="form-control" placeholder="" name="PersonCoveredDesc">
+            </div>
+        </div>
+        <div class="row" id="secPerson">
+            <div class="input-group col-md-3 col-sm-12 mb-3">
+                <div class="input-group-append">
+                    <span class="input-group-text" id="basic-addon2">موقعیت در خانواده</span>
+                </div>
+                @Html.DropDownList("RelationTypeId", null, htmlAttributes: new { @class = "form-control" })
+            </div>
+            <div class="input-group col-md-3 col-sm-12 mb-3">
+                <div class="input-group-append">
+                    <span class="input-group-text" id="basic-addon2">جنسیت</span>
+                </div>
+                @Html.DropDownList("GenderId", null, htmlAttributes: new { @class = "form-control" })
+            </div>
+
+            @if (string.IsNullOrEmpty(ViewBag.FirstName))
+            {
+                <div class="input-group col-md-3  col-sm-12 mb-3">
+                    <div class="input-group-append">
+                        <span class="input-group-text" id="basic-addon2">نام</span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="نام را وارد کنید" id="firstName" name="PersonFirstName" value="@ViewBag.FirstName">
+                </div>
+            }
+            @if (string.IsNullOrEmpty(ViewBag.LastName))
+            {
+                <div class="input-group col-md-3 col-sm-12 mb-3">
+                    <div class="input-group-append">
+                        <span class="input-group-text" id="basic-addon2">نام خانوادگی</span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="نام خانوادگی را وارد کنید" id="lastName" name="PersonLastName">
+                </div>
+            }
+            @if (string.IsNullOrEmpty(ViewBag.FatherName))
+            {
+                <div class="input-group col-md-3 col-sm-12 mb-3">
+                    <div class="input-group-append">
+                        <span class="input-group-text" id="basic-addon2">نام پدر</span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="نام پدر را وارد کنید" id="fatherName" name="PersonFatherName">
+                </div>
+            }
+            @if (string.IsNullOrEmpty(ViewBag.MotherName))
+            {
+                <div class="input-group col-md-3 col-sm-12 mb-3">
+                    <div class="input-group-append">
+                        <span class="input-group-text" id="basic-addon2">نام مادر</span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="نام مادر را وارد کنید" id="motherName" name="PersonMotherName">
+                </div>
+            }
+            <div class="input-group  col-md-3 col-sm-12 mb-3">
+                <div class="input-group-append">
+                    <span class="input-group-text" id="basic-addon2">تاریخ تولد</span>
+                </div>
+                @Html.TextBox("PersonBirthDay", new { htmlAttributes = new { @class = "form-control", @placeholder = "روز" } });
+                @Html.TextBox("PersonBirthMonth", new { htmlAttributes = new { @class = "form-control", @placeholder = "ماه" } });
+                @Html.TextBox("PersonBirthYear", new { htmlAttributes = new { @class = "form-control ", @placeholder = "سال (4رقم)", } });
+            </div>
+            @if (string.IsNullOrEmpty(ViewBag.NationalCode) && ViewBag.SelectedNationalityId == 1)
+            {
+                <div class="input-group  col-md-3 col-sm-12 mb-3">
+                    <div class="input-group-append">
+                        کدملی
+                    </div>
+                    @Html.TextBox("PersonNationalCode", new { htmlAttributes = new { @class = "form-control" } })
+                </div>
+                <div class="input-group  col-md-3 col-sm-12 mb-3">
+                    <div class="input-group-append">
+                        شماره شناسنامه
+                    </div>
+                    @Html.TextBox("PersonIdentityNo", new { htmlAttributes = new { @class = "form-control" } })
+                </div>
+            }
+            <div class="input-group col-md-3 col-sm-12 mb-3">
+                <div class="input-group-append">
+                    <span class="input-group-text" id="basic-addon2">وضعیت تاهل</span>
+                </div>
+                @Html.DropDownList("MaritalStatusId", null, htmlAttributes: new { @class = "form-control" })
+            </div>
+            <div class="input-group col-md-3 col-sm-12 mb-3">
+                <div class="input-group-append">
+                    <span class="input-group-text" id="basic-addon2">قومیت</span>
+                </div>
+                @Html.DropDownList("EthnicId", null, htmlAttributes: new { @class = "form-control" })
+            </div>
+            <div class="input-group col-md-3 col-sm-12 mb-3">
+                <div class="input-group-append">
+                    <span class="input-group-text" id="basic-addon2">دین</span>
+                </div>
+                @Html.DropDownList("BeliveId", null, htmlAttributes: new { @class = "form-control" })
+            </div>
+            <div class="input-group col-md-3 col-sm-12 mb-3" id="ReligionSection">
+                <div class="input-group-append">
+                    <span class="input-group-text" id="basic-addon2">مذهب</span>
+                </div>
+                @Html.DropDownList("ReligionId", null, htmlAttributes: new { @class = "form-control" })
+            </div>
+            <div class="input-group col-md-3 col-sm-12 mb-3">
+                <div class="input-group-append">
+                    <span class="input-group-text" id="basic-addon2">مدت مهاجرت</span>
+                </div>
+                @Html.TextBox("MigrateDuration", new { htmlAttributes = new { @class = "form-control" } })
+                <div class="input-group-append">
+                    <span class="input-group-text" id="basic-addon2">ماه</span>
+                </div>
+            </div>
+            <div class=" col-xs-12 col-sm-6 col-md-2 col-lg-2">
+                <div class="input-group">
+
+                    <label for="IsParent" class="btn btn-warning">
+                        سرپرست
+                        @*@Html.CheckBoxFor(Model => Model.IsParent, new { @class = "", @id = "IsParent" })*@
+                        <input type="checkbox" data-val="true" id="IsParent" name="IsParent" class="badgebox">
+                        <span class="badge bg-white">&check;</span>
+
+
+                    </label>
+
+
+                </div>
+            </div>
+
+        </div>
+        <div class=" text-left">
+            <div >
+
+                <a class="btn btn-warning" href="#" onclick="backToCheckPerson()">
+                    <span class="fa fa-undo ml-3"></span>بازگشت
+                </a>
+                @if (!string.IsNullOrEmpty(ViewBag.FamilyId))
+                {
+                    <a class="btn btn-info" href="#" onclick="submitFamilyInfo()">
+                        <span class="fa fa-home ml-3"></span>تکمیل اطلاعات خانواده
+                    </a>
+                    <a class="btn btn-primary" href="#" onclick="submitNewMember()">
+                        <span class="fa fa-male ml-3"></span>تعریف سایر اعضای خانواده
+                    </a>
+                }
+                <button type="submit" class="btn btn-success">
+                    <span class="fa fa-plus ml-3"></span>ثبت
+                </button>
+
+            </div>
+        </div>
+    </div>
+    <div class="" id="createSimplePersonResult">
+
+    </div>
+}
+
+<script src="~/Scripts/MdBootstrapPersianDateTimePicker/jalaaliNew.js"></script>
+<script src="~/Scripts/MdBootstrapPersianDateTimePicker/jquery.Bootstrap-PersianDateTimePickerNew.js"></script>
+
+@*<script>
+        //$(document).ready(function () {
+        //    selectNationality();
+
+        //    $("#Departments").change(function () {
+        //        selectDepartments();
+        //    });
+
+        //    $("#Belives").change(function () {
+        //        if ($("#Belives").val() == 1)
+        //            $("#ReligionSection").show(500);
+        //        else
+        //            $("#ReligionSection").hide(500);
+
+        //    });
+        //});
+        function backToCheckPerson() {
+            debugger;
+            $('#checkPersonSection').show(500);
+            $('#CreateSimplePerson').hide(500);
+
+        }
+
+        //function submitSimplePerson() {
+        //    debugger;
+        //    $.ajax({
+        //        url: "../ManagePerson/CreatePerson",
+        //        type: "POST",
+        //        data: {
+        //            "DepartmentId": $("#CreateSimplePerson #Departments").val(),
+        //            "NationalityId": $("#CreateSimplePerson #Nationalities").val(),
+        //            "PersonIdentityNo": $("#CreateSimplePerson #identityNo").val(),
+        //            "PersonNationalCode": $("#CreateSimplePerson #nationalCode").val(),
+        //            "PersonFirstName": $("#CreateSimplePerson #firstName").val(),
+        //            "PersonLastName": $("#CreateSimplePerson #lastName").val(),
+        //            "PersonFatherName": $("#CreateSimplePerson #fatherName").val(),
+        //            "PersonMotherName": $("#CreateSimplePerson #motherName").val(),
+        //            "PersonBirthDay": $("#CreateSimplePerson #birthDay").val(),
+        //            "PersonBirthMonth": $("#CreateSimplePerson #birthMonth").val(),
+        //            "PersonBirthYear": $("#CreateSimplePerson #birthYear").val(),
+        //            "PersonFilingName": $("#CreateSimplePerson #PersonFilingName").val(),
+        //            "PersonStatusId": $("#CreateSimplePerson #PersonStatus").val(),
+        //            "PersonCoveredDateSolar": $("#CreateSimplePerson #PersonCoveredDateSolar").val(),
+        //            "PersonCoveredDesc": $("#CreateSimplePerson #PersonCoveredDesc").val(),
+        //            "RelationTypeId": $("#CreateSimplePerson #RelationTypes").val(),
+        //            "GenderId": $("#CreateSimplePerson #Genders").val(),
+        //            "MaritalStatusId": $("#CreateSimplePerson #MaritalStatus").val(),
+        //            "EthnicId": $("#CreateSimplePerson #Ethnics").val(),
+        //            "BeliveId": $("#CreateSimplePerson #Belives").val(),
+        //            "ReligionId": $("#CreateSimplePerson #Religions").val(),
+        //            "MigrateDuration": $("#CreateSimplePerson #MigrateDuration").val(),
+        //            "PersonFilingDateSolar": $("#CreateSimplePerson #PersonFilingDateSolar").val(),
+        //        },
+        //    }).done(function (result) {
+        //        $('#ModalTitle').text('بررسی اولیه');
+        //        $('#createSimplePersonResult').html(result);
+        //        $('#createSimplePersonResult').show(500);
+
+        //    });
+        //}
+
+        function selectDepartments() {
+        }
+    </script>*@

@@ -1,0 +1,839 @@
+﻿@model DAL.FamilyViewModel
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="row form-group">
+        <h4>Family</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.FamilyId)
+
+        <div class="input-group  col-md-6 col-sm-12 mb-3">
+            @Html.LabelFor(model => model.FamilyCode, htmlAttributes: new { @class = "input-group  col-md-6 col-sm-12 mb-3" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.FamilyCode, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.FamilyCode, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="input-group  col-md-6 col-sm-12 mb-3">
+            @Html.LabelFor(model => model.FamilyHealthAmount, htmlAttributes: new { @class = "input-group  col-md-6 col-sm-12 mb-3" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.FamilyHealthAmount, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.FamilyHealthAmount, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="input-group  col-md-6 col-sm-12 mb-3">
+            @Html.LabelFor(model => model.FamilyRentAmount, htmlAttributes: new { @class = "input-group  col-md-6 col-sm-12 mb-3" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.FamilyRentAmount, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.FamilyRentAmount, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="input-group  col-md-6 col-sm-12 mb-3">
+            @Html.LabelFor(model => model.FamilyMortgageAmount, htmlAttributes: new { @class = "input-group  col-md-6 col-sm-12 mb-3" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.FamilyMortgageAmount, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.FamilyMortgageAmount, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="input-group  col-md-6 col-sm-12 mb-3">
+            @Html.LabelFor(model => model.FamilyOtherCostAmount, htmlAttributes: new { @class = "input-group  col-md-6 col-sm-12 mb-3" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.FamilyOtherCostAmount, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.FamilyOtherCostAmount, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="input-group  col-md-6 col-sm-12 mb-3">
+            @Html.LabelFor(model => model.FamilyMonthlyExpense, htmlAttributes: new { @class = "input-group  col-md-6 col-sm-12 mb-3" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.FamilyMonthlyExpense, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.FamilyMonthlyExpense, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="input-group  col-md-6 col-sm-12 mb-3">
+            @Html.LabelFor(model => model.FamilyMonthlyIncome, htmlAttributes: new { @class = "input-group  col-md-6 col-sm-12 mb-3" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.FamilyMonthlyIncome, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.FamilyMonthlyIncome, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="input-group  col-md-6 col-sm-12 mb-3">
+            @Html.LabelFor(model => model.FamilyPhone1, htmlAttributes: new { @class = "input-group  col-md-6 col-sm-12 mb-3" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.FamilyPhone1, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.FamilyPhone1, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="input-group  col-md-6 col-sm-12 mb-3">
+            @Html.LabelFor(model => model.FamilyPhone1Desc, htmlAttributes: new { @class = "input-group  col-md-6 col-sm-12 mb-3" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.FamilyPhone1Desc, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.FamilyPhone1Desc, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="input-group  col-md-6 col-sm-12 mb-3">
+            @Html.LabelFor(model => model.FamilyPhone2, htmlAttributes: new { @class = "input-group  col-md-6 col-sm-12 mb-3" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.FamilyPhone2, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.FamilyPhone2, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="input-group  col-md-6 col-sm-12 mb-3">
+            @Html.LabelFor(model => model.FamilyPhone2Desc, htmlAttributes: new { @class = "input-group  col-md-6 col-sm-12 mb-3" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.FamilyPhone2Desc, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.FamilyPhone2Desc, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="input-group  col-md-6 col-sm-12 mb-3">
+            @Html.LabelFor(model => model.FamilyCellPhone1, htmlAttributes: new { @class = "input-group  col-md-6 col-sm-12 mb-3" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.FamilyCellPhone1, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.FamilyCellPhone1, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="input-group  col-md-6 col-sm-12 mb-3">
+            @Html.LabelFor(model => model.FamilyCellPhone1Desc, htmlAttributes: new { @class = "input-group  col-md-6 col-sm-12 mb-3" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.FamilyCellPhone1Desc, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.FamilyCellPhone1Desc, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="input-group  col-md-6 col-sm-12 mb-3">
+            @Html.LabelFor(model => model.FamilyCellPhone2, htmlAttributes: new { @class = "input-group  col-md-6 col-sm-12 mb-3" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.FamilyCellPhone2, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.FamilyCellPhone2, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="input-group  col-md-6 col-sm-12 mb-3">
+            @Html.LabelFor(model => model.FamilyCellPhone2Desc, htmlAttributes: new { @class = "input-group  col-md-6 col-sm-12 mb-3" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.FamilyCellPhone2Desc, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.FamilyCellPhone2Desc, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="input-group  col-md-6 col-sm-12 mb-3">
+            @Html.LabelFor(model => model.FamilyAddress, htmlAttributes: new { @class = "input-group  col-md-6 col-sm-12 mb-3" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.FamilyAddress, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.FamilyAddress, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="input-group  col-md-6 col-sm-12 mb-3">
+            @Html.LabelFor(model => model.FamilyLatitude, htmlAttributes: new { @class = "input-group  col-md-6 col-sm-12 mb-3" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.FamilyLatitude, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.FamilyLatitude, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="input-group  col-md-6 col-sm-12 mb-3">
+            @Html.LabelFor(model => model.FamilyLongitude, htmlAttributes: new { @class = "input-group  col-md-6 col-sm-12 mb-3" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.FamilyLongitude, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.FamilyLongitude, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="input-group  col-md-6 col-sm-12 mb-3">
+            @Html.LabelFor(model => model.FamilyZiped, htmlAttributes: new { @class = "input-group  col-md-6 col-sm-12 mb-3" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.FamilyZiped, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.FamilyZiped, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="input-group  col-md-6 col-sm-12 mb-3">
+            @Html.LabelFor(model => model.FamilyAddressZiped, htmlAttributes: new { @class = "input-group  col-md-6 col-sm-12 mb-3" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.FamilyAddressZiped, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.FamilyAddressZiped, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="input-group  col-md-6 col-sm-12 mb-3">
+            @Html.LabelFor(model => model.FamilyMemberCount, htmlAttributes: new { @class = "input-group  col-md-6 col-sm-12 mb-3" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.FamilyMemberCount, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.FamilyMemberCount, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+       
+
+        <div class="input-group  col-md-6 col-sm-12 mb-3">
+            @Html.LabelFor(model => model.ResidenceTypeId, "ResidenceTypeId", htmlAttributes: new { @class = "input-group  col-md-6 col-sm-12 mb-3" })
+            <div class="col-md-10">
+                @Html.DropDownList("ResidenceTypeId", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.ResidenceTypeId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="input-group  col-md-6 col-sm-12 mb-3">
+            @Html.LabelFor(model => model.HouseStatusId, "HouseStatusId", htmlAttributes: new { @class = "input-group  col-md-6 col-sm-12 mb-3" })
+            <div class="col-md-10">
+                @Html.DropDownList("HouseStatusId", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.HouseStatusId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="input-group  col-md-6 col-sm-12 mb-3">
+            @Html.LabelFor(model => model.HouseBuildingMaterialId, "HouseBuildingMaterialId", htmlAttributes: new { @class = "input-group  col-md-6 col-sm-12 mb-3" })
+            <div class="col-md-10">
+                @Html.DropDownList("HouseBuildingMaterialId", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.HouseBuildingMaterialId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="input-group  col-md-6 col-sm-12 mb-3">
+            @Html.LabelFor(model => model.HouseArea, htmlAttributes: new { @class = "input-group  col-md-6 col-sm-12 mb-3" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.HouseArea, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.HouseArea, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="input-group  col-md-6 col-sm-12 mb-3">
+            @Html.LabelFor(model => model.FamilyStatusId, "FamilyStatusId", htmlAttributes: new { @class = "input-group  col-md-6 col-sm-12 mb-3" })
+            <div class="col-md-10">
+                @Html.DropDownList("FamilyStatusId", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.FamilyStatusId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="input-group  col-md-6 col-sm-12 mb-3">
+            @Html.LabelFor(model => model.ReferrerId, "ReferrerId", htmlAttributes: new { @class = "input-group  col-md-6 col-sm-12 mb-3" })
+            <div class="col-md-10">
+                @Html.DropDownList("ReferrerId", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.ReferrerId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="input-group  col-md-6 col-sm-12 mb-3">
+            @Html.LabelFor(model => model.SegmentId, "SegmentId", htmlAttributes: new { @class = "input-group  col-md-6 col-sm-12 mb-3" })
+            <div class="col-md-10">
+                @Html.DropDownList("SegmentId", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.SegmentId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="input-group  col-md-6 col-sm-12 mb-3">
+            @Html.LabelFor(model => model.StreetId, "StreetId", htmlAttributes: new { @class = "input-group  col-md-6 col-sm-12 mb-3" })
+            <div class="col-md-10">
+                @Html.DropDownList("StreetId", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.StreetId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="input-group  col-md-6 col-sm-12 mb-3">
+            @Html.LabelFor(model => model.AlleyId, "AlleyId", htmlAttributes: new { @class = "input-group  col-md-6 col-sm-12 mb-3" })
+            <div class="col-md-10">
+                @Html.DropDownList("AlleyId", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.AlleyId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="input-group  col-md-6 col-sm-12 mb-3">
+            @Html.LabelFor(model => model.Plaque, htmlAttributes: new { @class = "input-group  col-md-6 col-sm-12 mb-3" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Plaque, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Plaque, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="input-group  col-md-6 col-sm-12 mb-3">
+            @Html.LabelFor(model => model.HouseId, "HouseId", htmlAttributes: new { @class = "input-group  col-md-6 col-sm-12 mb-3" })
+            <div class="col-md-10">
+                @Html.DropDownList("HouseId", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.HouseId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="input-group  col-md-6 col-sm-12 mb-3">
+            @Html.LabelFor(model => model.GuardianName, htmlAttributes: new { @class = "input-group  col-md-6 col-sm-12 mb-3" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.GuardianName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.GuardianName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="input-group  col-md-6 col-sm-12 mb-3">
+            @Html.LabelFor(model => model.GuardianRelationTypeId, "GuardianRelationTypeId", htmlAttributes: new { @class = "input-group  col-md-6 col-sm-12 mb-3" })
+            <div class="col-md-10">
+                @Html.DropDownList("GuardianRelationTypeId", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.GuardianRelationTypeId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="input-group  col-md-6 col-sm-12 mb-3">
+            @Html.LabelFor(model => model.GuardianRelationTypeDesc, htmlAttributes: new { @class = "input-group  col-md-6 col-sm-12 mb-3" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.GuardianRelationTypeDesc, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.GuardianRelationTypeDesc, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="input-group  col-md-6 col-sm-12 mb-3">
+            @Html.LabelFor(model => model.GuardianPhone, htmlAttributes: new { @class = "input-group  col-md-6 col-sm-12 mb-3" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.GuardianPhone, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.GuardianPhone, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="input-group  col-md-6 col-sm-12 mb-3">
+            @Html.LabelFor(model => model.GuardianCellPhone, htmlAttributes: new { @class = "input-group  col-md-6 col-sm-12 mb-3" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.GuardianCellPhone, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.GuardianCellPhone, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="input-group  col-md-6 col-sm-12 mb-3">
+            @Html.LabelFor(model => model.GuardianAddress, htmlAttributes: new { @class = "input-group  col-md-6 col-sm-12 mb-3" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.GuardianAddress, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.GuardianAddress, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="input-group  col-md-6 col-sm-12 mb-3">
+            @Html.LabelFor(model => model.GuardianAddressZiped, htmlAttributes: new { @class = "input-group  col-md-6 col-sm-12 mb-3" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.GuardianAddressZiped, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.GuardianAddressZiped, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="input-group  col-md-6 col-sm-12 mb-3">
+            @Html.LabelFor(model => model.ParentsHaveDifferentNationality, htmlAttributes: new { @class = "input-group  col-md-6 col-sm-12 mb-3" })
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.ParentsHaveDifferentNationality)
+                    @Html.ValidationMessageFor(model => model.ParentsHaveDifferentNationality, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="input-group  col-md-6 col-sm-12 mb-3">
+            @Html.LabelFor(model => model.ParentsHaveDifferentEthnic, htmlAttributes: new { @class = "input-group  col-md-6 col-sm-12 mb-3" })
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.ParentsHaveDifferentEthnic)
+                    @Html.ValidationMessageFor(model => model.ParentsHaveDifferentEthnic, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="input-group  col-md-6 col-sm-12 mb-3">
+            @Html.LabelFor(model => model.ParentsMaritalStatusId, "ParentsMaritalStatusId", htmlAttributes: new { @class = "input-group  col-md-6 col-sm-12 mb-3" })
+            <div class="col-md-10">
+                @Html.DropDownList("ParentsMaritalStatusId", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.ParentsMaritalStatusId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="input-group  col-md-6 col-sm-12 mb-3">
+            @Html.LabelFor(model => model.FatherIsDied, htmlAttributes: new { @class = "input-group  col-md-6 col-sm-12 mb-3" })
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.FatherIsDied)
+                    @Html.ValidationMessageFor(model => model.FatherIsDied, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="input-group  col-md-6 col-sm-12 mb-3">
+            @Html.LabelFor(model => model.FatherDiedDateSolar, htmlAttributes: new { @class = "input-group  col-md-6 col-sm-12 mb-3" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.FatherDiedDateSolar, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.FatherDiedDateSolar, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="input-group  col-md-6 col-sm-12 mb-3">
+            @Html.LabelFor(model => model.FatherDiedDate, htmlAttributes: new { @class = "input-group  col-md-6 col-sm-12 mb-3" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.FatherDiedDate, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.FatherDiedDate, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="input-group  col-md-6 col-sm-12 mb-3">
+            @Html.LabelFor(model => model.FatherDiedCauseId, "FatherDiedCauseId", htmlAttributes: new { @class = "input-group  col-md-6 col-sm-12 mb-3" })
+            <div class="col-md-10">
+                @Html.DropDownList("FatherDiedCauseId", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.FatherDiedCauseId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="input-group  col-md-6 col-sm-12 mb-3">
+            @Html.LabelFor(model => model.FatherDiedCauseDesc, htmlAttributes: new { @class = "input-group  col-md-6 col-sm-12 mb-3" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.FatherDiedCauseDesc, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.FatherDiedCauseDesc, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="input-group  col-md-6 col-sm-12 mb-3">
+            @Html.LabelFor(model => model.FatherDiedAge, htmlAttributes: new { @class = "input-group  col-md-6 col-sm-12 mb-3" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.FatherDiedAge, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.FatherDiedAge, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="input-group  col-md-6 col-sm-12 mb-3">
+            @Html.LabelFor(model => model.FatherIsLeavedFamily, htmlAttributes: new { @class = "input-group  col-md-6 col-sm-12 mb-3" })
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.FatherIsLeavedFamily)
+                    @Html.ValidationMessageFor(model => model.FatherIsLeavedFamily, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="input-group  col-md-6 col-sm-12 mb-3">
+            @Html.LabelFor(model => model.FatherLeavedFamilyDateSolar, htmlAttributes: new { @class = "input-group  col-md-6 col-sm-12 mb-3" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.FatherLeavedFamilyDateSolar, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.FatherLeavedFamilyDateSolar, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="input-group  col-md-6 col-sm-12 mb-3">
+            @Html.LabelFor(model => model.FatherLeavedFamilyDate, htmlAttributes: new { @class = "input-group  col-md-6 col-sm-12 mb-3" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.FatherLeavedFamilyDate, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.FatherLeavedFamilyDate, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="input-group  col-md-6 col-sm-12 mb-3">
+            @Html.LabelFor(model => model.FatherLeavingHouseCauseId, "FatherLeavingHouseCauseId", htmlAttributes: new { @class = "input-group  col-md-6 col-sm-12 mb-3" })
+            <div class="col-md-10">
+                @Html.DropDownList("FatherLeavingHouseCauseId", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.FatherLeavingHouseCauseId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="input-group  col-md-6 col-sm-12 mb-3">
+            @Html.LabelFor(model => model.FatherLeavingHouseCauseDesc, htmlAttributes: new { @class = "input-group  col-md-6 col-sm-12 mb-3" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.FatherLeavingHouseCauseDesc, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.FatherLeavingHouseCauseDesc, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="input-group  col-md-6 col-sm-12 mb-3">
+            @Html.LabelFor(model => model.FatherAddress, htmlAttributes: new { @class = "input-group  col-md-6 col-sm-12 mb-3" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.FatherAddress, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.FatherAddress, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="input-group  col-md-6 col-sm-12 mb-3">
+            @Html.LabelFor(model => model.FatherAddressZiped, htmlAttributes: new { @class = "input-group  col-md-6 col-sm-12 mb-3" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.FatherAddressZiped, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.FatherAddressZiped, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="input-group  col-md-6 col-sm-12 mb-3">
+            @Html.LabelFor(model => model.MotherIsDied, htmlAttributes: new { @class = "input-group  col-md-6 col-sm-12 mb-3" })
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.MotherIsDied)
+                    @Html.ValidationMessageFor(model => model.MotherIsDied, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="input-group  col-md-6 col-sm-12 mb-3">
+            @Html.LabelFor(model => model.MotherDiedDateSolar, htmlAttributes: new { @class = "input-group  col-md-6 col-sm-12 mb-3" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.MotherDiedDateSolar, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.MotherDiedDateSolar, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="input-group  col-md-6 col-sm-12 mb-3">
+            @Html.LabelFor(model => model.MotherDiedDate, htmlAttributes: new { @class = "input-group  col-md-6 col-sm-12 mb-3" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.MotherDiedDate, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.MotherDiedDate, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="input-group  col-md-6 col-sm-12 mb-3">
+            @Html.LabelFor(model => model.MotherDiedCauseId, "MotherDiedCauseId", htmlAttributes: new { @class = "input-group  col-md-6 col-sm-12 mb-3" })
+            <div class="col-md-10">
+                @Html.DropDownList("MotherDiedCauseId", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.MotherDiedCauseId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="input-group  col-md-6 col-sm-12 mb-3">
+            @Html.LabelFor(model => model.MotherDiedCauseDesc, htmlAttributes: new { @class = "input-group  col-md-6 col-sm-12 mb-3" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.MotherDiedCauseDesc, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.MotherDiedCauseDesc, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="input-group  col-md-6 col-sm-12 mb-3">
+            @Html.LabelFor(model => model.MotherDiedAge, htmlAttributes: new { @class = "input-group  col-md-6 col-sm-12 mb-3" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.MotherDiedAge, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.MotherDiedAge, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="input-group  col-md-6 col-sm-12 mb-3">
+            @Html.LabelFor(model => model.MotherIsLeavedFamily, htmlAttributes: new { @class = "input-group  col-md-6 col-sm-12 mb-3" })
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.MotherIsLeavedFamily)
+                    @Html.ValidationMessageFor(model => model.MotherIsLeavedFamily, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="input-group  col-md-6 col-sm-12 mb-3">
+            @Html.LabelFor(model => model.MotherLeavedFamilyDateSolar, htmlAttributes: new { @class = "input-group  col-md-6 col-sm-12 mb-3" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.MotherLeavedFamilyDateSolar, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.MotherLeavedFamilyDateSolar, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="input-group  col-md-6 col-sm-12 mb-3">
+            @Html.LabelFor(model => model.MotherLeavedFamilyDate, htmlAttributes: new { @class = "input-group  col-md-6 col-sm-12 mb-3" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.MotherLeavedFamilyDate, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.MotherLeavedFamilyDate, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="input-group  col-md-6 col-sm-12 mb-3">
+            @Html.LabelFor(model => model.MotherLeavingHouseCauseId, "MotherLeavingHouseCauseId", htmlAttributes: new { @class = "input-group  col-md-6 col-sm-12 mb-3" })
+            <div class="col-md-10">
+                @Html.DropDownList("MotherLeavingHouseCauseId", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.MotherLeavingHouseCauseId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="input-group  col-md-6 col-sm-12 mb-3">
+            @Html.LabelFor(model => model.MotherLeavingHouseCauseDesc, htmlAttributes: new { @class = "input-group  col-md-6 col-sm-12 mb-3" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.MotherLeavingHouseCauseDesc, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.MotherLeavingHouseCauseDesc, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="input-group  col-md-6 col-sm-12 mb-3">
+            @Html.LabelFor(model => model.MotherAddress, htmlAttributes: new { @class = "input-group  col-md-6 col-sm-12 mb-3" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.MotherAddress, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.MotherAddress, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="input-group  col-md-6 col-sm-12 mb-3">
+            @Html.LabelFor(model => model.MotherAddressZiped, htmlAttributes: new { @class = "input-group  col-md-6 col-sm-12 mb-3" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.MotherAddressZiped, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.MotherAddressZiped, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="input-group  col-md-6 col-sm-12 mb-3">
+            @Html.LabelFor(model => model.MotherIsPregnant, htmlAttributes: new { @class = "input-group  col-md-6 col-sm-12 mb-3" })
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.MotherIsPregnant)
+                    @Html.ValidationMessageFor(model => model.MotherIsPregnant, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="input-group  col-md-6 col-sm-12 mb-3">
+            @Html.LabelFor(model => model.FamilyIsMigrated, htmlAttributes: new { @class = "input-group  col-md-6 col-sm-12 mb-3" })
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.FamilyIsMigrated)
+                    @Html.ValidationMessageFor(model => model.FamilyIsMigrated, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="input-group  col-md-6 col-sm-12 mb-3">
+            @Html.LabelFor(model => model.MigrationCauseId, "MigrationCauseId", htmlAttributes: new { @class = "input-group  col-md-6 col-sm-12 mb-3" })
+            <div class="col-md-10">
+                @Html.DropDownList("MigrationCauseId", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.MigrationCauseId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="input-group  col-md-6 col-sm-12 mb-3">
+            @Html.LabelFor(model => model.MigrationYear, htmlAttributes: new { @class = "input-group  col-md-6 col-sm-12 mb-3" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.MigrationYear, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.MigrationYear, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="input-group  col-md-6 col-sm-12 mb-3">
+            @Html.LabelFor(model => model.MigrationDesc, htmlAttributes: new { @class = "input-group  col-md-6 col-sm-12 mb-3" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.MigrationDesc, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.MigrationDesc, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="input-group  col-md-6 col-sm-12 mb-3">
+            @Html.LabelFor(model => model.FamilyHasDomesticViolence, htmlAttributes: new { @class = "input-group  col-md-6 col-sm-12 mb-3" })
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.FamilyHasDomesticViolence)
+                    @Html.ValidationMessageFor(model => model.FamilyHasDomesticViolence, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="input-group  col-md-6 col-sm-12 mb-3">
+            @Html.LabelFor(model => model.FamilyHasDomesticViolenceDesc, htmlAttributes: new { @class = "input-group  col-md-6 col-sm-12 mb-3" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.FamilyHasDomesticViolenceDesc, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.FamilyHasDomesticViolenceDesc, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="input-group  col-md-6 col-sm-12 mb-3">
+            @Html.LabelFor(model => model.HasGas, htmlAttributes: new { @class = "input-group  col-md-6 col-sm-12 mb-3" })
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.HasGas)
+                    @Html.ValidationMessageFor(model => model.HasGas, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="input-group  col-md-6 col-sm-12 mb-3">
+            @Html.LabelFor(model => model.HasPower, htmlAttributes: new { @class = "input-group  col-md-6 col-sm-12 mb-3" })
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.HasPower)
+                    @Html.ValidationMessageFor(model => model.HasPower, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="input-group  col-md-6 col-sm-12 mb-3">
+            @Html.LabelFor(model => model.PowerSupplyId, htmlAttributes: new { @class = "input-group  col-md-6 col-sm-12 mb-3" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.PowerSupplyId, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.PowerSupplyId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="input-group  col-md-6 col-sm-12 mb-3">
+            @Html.LabelFor(model => model.PowerSupplyDesc, htmlAttributes: new { @class = "input-group  col-md-6 col-sm-12 mb-3" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.PowerSupplyDesc, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.PowerSupplyDesc, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="input-group  col-md-6 col-sm-12 mb-3">
+            @Html.LabelFor(model => model.HasMobileSignal, htmlAttributes: new { @class = "input-group  col-md-6 col-sm-12 mb-3" })
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.HasMobileSignal)
+                    @Html.ValidationMessageFor(model => model.HasMobileSignal, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="input-group  col-md-6 col-sm-12 mb-3">
+            @Html.LabelFor(model => model.HasInternetAccess, htmlAttributes: new { @class = "input-group  col-md-6 col-sm-12 mb-3" })
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.HasInternetAccess)
+                    @Html.ValidationMessageFor(model => model.HasInternetAccess, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="input-group  col-md-6 col-sm-12 mb-3">
+            @Html.LabelFor(model => model.SegmentDesc, htmlAttributes: new { @class = "input-group  col-md-6 col-sm-12 mb-3" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.SegmentDesc, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.SegmentDesc, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="input-group  col-md-6 col-sm-12 mb-3">
+            @Html.LabelFor(model => model.DrinkingWaterNearlyDistance, htmlAttributes: new { @class = "input-group  col-md-6 col-sm-12 mb-3" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.DrinkingWaterNearlyDistance, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.DrinkingWaterNearlyDistance, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="input-group  col-md-6 col-sm-12 mb-3">
+            @Html.LabelFor(model => model.HasDrinkingWater, htmlAttributes: new { @class = "input-group  col-md-6 col-sm-12 mb-3" })
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.HasDrinkingWater)
+                    @Html.ValidationMessageFor(model => model.HasDrinkingWater, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="input-group  col-md-6 col-sm-12 mb-3">
+            @Html.LabelFor(model => model.DrinkingWaterDesc, htmlAttributes: new { @class = "input-group  col-md-6 col-sm-12 mb-3" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.DrinkingWaterDesc, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.DrinkingWaterDesc, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="input-group  col-md-6 col-sm-12 mb-3">
+            @Html.LabelFor(model => model.SewageSystem, htmlAttributes: new { @class = "input-group  col-md-6 col-sm-12 mb-3" })
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.SewageSystem)
+                    @Html.ValidationMessageFor(model => model.SewageSystem, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="input-group  col-md-6 col-sm-12 mb-3">
+            @Html.LabelFor(model => model.SewageSystemDesc, htmlAttributes: new { @class = "input-group  col-md-6 col-sm-12 mb-3" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.SewageSystemDesc, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.SewageSystemDesc, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="input-group  col-md-6 col-sm-12 mb-3">
+            @Html.LabelFor(model => model.WasteCollectionSystem, htmlAttributes: new { @class = "input-group  col-md-6 col-sm-12 mb-3" })
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.WasteCollectionSystem)
+                    @Html.ValidationMessageFor(model => model.WasteCollectionSystem, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="input-group  col-md-6 col-sm-12 mb-3">
+            @Html.LabelFor(model => model.WasteCollectionSystemDesc, htmlAttributes: new { @class = "input-group  col-md-6 col-sm-12 mb-3" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.WasteCollectionSystemDesc, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.WasteCollectionSystemDesc, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="input-group  col-md-6 col-sm-12 mb-3">
+            @Html.LabelFor(model => model.InsertUserId, htmlAttributes: new { @class = "input-group  col-md-6 col-sm-12 mb-3" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.InsertUserId, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.InsertUserId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="input-group  col-md-6 col-sm-12 mb-3">
+            @Html.LabelFor(model => model.InsertTime, htmlAttributes: new { @class = "input-group  col-md-6 col-sm-12 mb-3" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.InsertTime, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.InsertTime, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="input-group  col-md-6 col-sm-12 mb-3">
+            @Html.LabelFor(model => model.UpdateUserId, htmlAttributes: new { @class = "input-group  col-md-6 col-sm-12 mb-3" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.UpdateUserId, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.UpdateUserId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="input-group  col-md-6 col-sm-12 mb-3">
+            @Html.LabelFor(model => model.UpdateTime, htmlAttributes: new { @class = "input-group  col-md-6 col-sm-12 mb-3" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.UpdateTime, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.UpdateTime, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="input-group  col-md-6 col-sm-12 mb-3">
+            @Html.LabelFor(model => model.FuelTypeId, htmlAttributes: new { @class = "input-group  col-md-6 col-sm-12 mb-3" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.FuelTypeId, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.FuelTypeId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="input-group  col-md-6 col-sm-12 mb-3">
+            @Html.LabelFor(model => model.ResidentialContextId, htmlAttributes: new { @class = "input-group  col-md-6 col-sm-12 mb-3" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ResidentialContextId, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ResidentialContextId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="input-group  col-md-6 col-sm-12 mb-3">
+            @Html.LabelFor(model => model.WaterSourceId, htmlAttributes: new { @class = "input-group  col-md-6 col-sm-12 mb-3" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.WaterSourceId, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.WaterSourceId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="input-group  col-md-6 col-sm-12 mb-3">
+            @Html.LabelFor(model => model.FamilyDesc, htmlAttributes: new { @class = "input-group  col-md-6 col-sm-12 mb-3" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.FamilyDesc, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.FamilyDesc, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="input-group  col-md-6 col-sm-12 mb-3">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

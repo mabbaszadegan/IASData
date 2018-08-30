@@ -1,0 +1,181 @@
+﻿@model List<DAL.PersonIdentityDocument>
+
+
+
+
+@*@using (Ajax.BeginForm(
+    new AjaxOptions
+    {
+        HttpMethod = "POST",
+        Url = "http://82.99.218.100:4000/api/Upload/",
+        UpdateTargetId = "ModalBody",
+        InsertionMode = InsertionMode.Replace,
+        LoadingElementId = "searchProgress",
+        OnComplete = "",
+
+    }
+     //new { enctype = "multipart/form-data" }
+     )
+    )*@
+<form id="frmUploader" enctype="multipart/form-data" action="http://82.99.218.100:4000/api/Upload/" method="post"
+      data-ajax-loading="#searchProgress" data-ajax-mode="replace" data-ajax-update="#SearchFamilyResult">
+    @Html.AntiForgeryToken()
+
+
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <input type="hidden" name="PersonId" id="PersonId" value="@ViewBag.PersonId" />
+
+    <fieldset class="border border-primary pr-3">
+        <legend class="col-form-label col-sm-2 ml-1" style="width:100px;">ایجاد</legend>
+        <div class="row">
+            <div class="input-group  col-md-3 col-sm-12 mb-3">
+                <div class="input-group-append">
+                    <span class="input-group-text">نوع مدرک</span>
+                </div>
+                @Html.DropDownList("IdentityDocumentId", null, new { @class = "form-control" })
+            </div>
+            <div class="input-group  col-md-2 col-sm-12 mb-3">
+                <div class="input-group-append">
+                    <span class="input-group-text">کد</span>
+                </div>
+                @Html.TextBox("IdentityDocumentCode", null, new { @class = "form-control" })
+            </div>
+            <div class="input-group  col-md-3 col-sm-12 mb-3">
+                <div class="input-group-append">
+                    <span class="input-group-text">شماره سریال</span>
+                </div>
+                @Html.TextBox("IdentityDocumentSerialNo", null, new { @class = "form-control" })
+            </div>
+            <div class="input-group  col-md-3 col-sm-12 mb-3">
+                <div class="input-group-append">
+                    <span class="input-group-text" id="basic-addon2">تاریخ انقضا</span>
+                </div>
+
+                <input type="text" class="form-control" name="ExpireTimeSolar" id="ExpireTimeSolar" placeholder="" data-name="datepicker1" data-mddatetimepicker="true" data-targetselector="#ExpireTimeSolar"
+                       data-trigger="click" />
+                <div class="input-group-append" data-name="datepicker1" data-mddatetimepicker="true" data-targetselector="#ExpireTimeSolar"
+                     data-trigger="click" data-enabletimepicker="false" data-isgregorian="false" data-englishnumber="false">
+                    <span class="input-group-text" id="basic-addon2"><span class="fa fa-calendar"></span></span>
+                </div>
+
+            </div>
+
+
+            <div class="input-group  col-md-9 col-sm-12 mb-3">
+                <div class="input-group-append">
+                    <span class="input-group-text">توضیحات</span>
+                </div>
+                @Html.TextArea("PersonIdentityDocumentDesc", null, new { @class = "form-control" })
+            </div>
+            <div class="input-group  col-md-3 col-sm-12 mb-3">
+                <img id="imgPreviewPerson" style="margin: 8px auto;width:150px;height:150PX;" class="thumbnail" src="~/Images/Person/Personal/Thumb/nopic.jpg" />
+                <div class="form-group">
+
+                    <div class="col-md-10">
+                        <input type="file" id="IdentityDocumentPic" name="IdentityDocumentPic" />
+
+                    </div>
+                </div>
+            </div>
+            <div>
+
+                <button class="btn btn-success btn-sm" type="button" id="btnSubmit">
+                    <span class="fa fa-edit ml-3"></span>ثبت
+                </button>
+
+            </div>
+        </div>
+    </fieldset>
+
+</form>
+
+<script>
+    $(document).ready(function () {
+        $('#btnSubmit').on('click', function () {
+            debugger;
+
+            //var form = $('#IdentityDocumentPic')[0];
+            //var dataString = new FormData(form);
+            //$.ajax({
+            //    url: 'http://82.99.218.100:4000/api/Upload/',  //Server script to process data
+            //    type: 'POST',
+            //    xhr: function () {  // Custom XMLHttpRequest
+            //        var myXhr = $.ajaxSettings.xhr();
+            //        if (myXhr.upload) { // Check if upload property exists
+            //            //myXhr.upload.onprogress = progressHandlingFunction
+            //            myXhr.upload.addEventListener('progress', progressHandlingFunction,
+            //                false); // For handling the progress of the upload
+            //        }
+            //        return myXhr;
+            //    },
+            //    //Ajax events
+            //    //success: successHandler,
+            //    //error: errorHandler,
+            //    //complete: completeHandler,
+            //    // Form data
+            //    data: dataString,
+            //    //Options to tell jQuery not to process data or worry about content-type.
+            //    cache: false,
+            //    contentType: false,
+            //    processData: false
+            //});
+
+            //var formdata = new FormData(); //FormData object
+            //var fileInput = document.getElementById('IdentityDocumentPic');
+            ////Iterating through each files selected in fileInput
+            //for (i = 0; i < fileInput.files.length; i++) {
+            //    //Appending each file to FormData object
+            //    formdata.append(fileInput.files[i].name, fileInput.files[i]);
+            //}
+            ////Creating an XMLHttpRequest and sending
+            //var xhr = new XMLHttpRequest();
+            //xhr.open('POST', 'http://82.99.218.100:4000/api/Upload/');
+            //xhr.send(formdata);
+            //xhr.onreadystatechange = function () {
+            //    if (xhr.readyState === 4 && xhr.status === 200) {
+            //        alert(xhr.responseText);
+            //    }
+            //};
+
+
+
+
+            var data = new FormData();
+
+            var files = $("#IdentityDocumentPic").get(0).files;
+
+            // Add the uploaded image content to the form data collection
+            if (files.length > 0) {
+                data.append("IdentityDocumentPic", files[0]);
+            }
+
+            // Make Ajax request with the contentType = false, and procesDate = false
+            var ajaxRequest = $.ajax({
+                type: "POST",
+                url: "http://82.99.218.100:4000/api/Upload/",
+                contentType: false,
+                processData: false,
+                data: data
+
+            }).done(function () {
+                var data = {
+                    "PersonId": $("#PersonId").val(),
+                    "IdentityDocumentId": $("#IdentityDocumentId").val(),
+                    "IdentityDocumentCode": $("#IdentityDocumentCode").val(),
+                    "IdentityDocumentSerialNo": $("#IdentityDocumentSerialNo").val(),
+                    "PersonIdentityDocumentDesc": $("#PersonIdentityDocumentDesc").val(),
+                    "ExpireTimeSolar": $("#ExpireTimeSolar").val(),
+                    "IdentityDocumentPic": $("#IdentityDocumentPic").val()
+                };
+                $.ajax({
+                    type: "POST",
+                    url: "../PersonIdentityDocument/CreatePersonIdentityDocument/",
+                    data: data
+                }).don(() => {
+                    $("#PersonIdentityDocumentResult").innerHtml='ثبت اطلاعات با موفقیت انجام شد';
+                    });
+            });
+        });
+    });
+</script>
+

@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="~/Content/bootstrap.css" />
+
+    <title>@ViewBag.Title</title>
+</head>
+<body >
+
+
+@*@Html.Ation("Index", "Account")*@
+
+<div class="container">
+    @RenderBody()
+</div>
+
+<script src="~/Scripts/jquery-3.0.0.min.js"></script>
+<script src="~/Scripts/bootstrap.min.js"></script>
+
+<script src="~/Scripts/angular.js"></script>
+<script src="~/Scripts/angular-route.js"></script>
+
+<script type="text/javascript" src="~/MyScripts/Common.js"></script>
+
+@*<script type="text/javascript" src="~/MyScripts/Modules/DefaultModule.js"></script>
+<script type="text/javascript" src="~/MyScripts/Services/DefaultService.js"></script>
+<script type="text/javascript" src="~/MyScripts/Controllers/Default/LoginController.js"></script>
+<script type="text/javascript" src="~/MyScripts/Controllers/Default/DefaultController.js"></script>*@
+<script type="text/javascript" src="~/MyScripts/Modules/MenuModule.js"></script>
+
+@RenderSection("Scripts", false)
+</body>
+</html>

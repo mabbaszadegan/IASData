@@ -1,0 +1,148 @@
+﻿@model DAL.FamilySearchViewModel
+@using (Ajax.BeginForm(
+    "SearchPerson",
+    "ManagePerson",
+    new { },
+    new AjaxOptions
+    {
+        UpdateTargetId = "SearchFamilyResult",
+        InsertionMode = InsertionMode.Replace,
+        LoadingElementId = "searchProgress",
+        OnComplete = "",
+
+    },
+     new { enctype = "multipart/form-data" })
+    )
+{
+    <div id="searchSection" class="card card-default mt-3">
+        <div class="card-header">جستجو</div>
+        <div class="card-body">
+            <div class="row">
+                <div class="input-group mb-3 col-md-3">
+                    <div class="input-group-append">
+                        <span class="input-group-text" id="basic-addon2">نمایندگی/ خانه ایرانی</span>
+                    </div>
+                    @Html.DropDownList("DepartmentId", null, htmlAttributes: new { @class = "form-control" })
+                </div>
+                <div class="input-group mb-3 col-md-2">
+                    <div class="input-group-append">
+                        <span class="input-group-text" id="basic-addon2">ملیت</span>
+                    </div>
+                    @Html.DropDownList("NationalityId", null, htmlAttributes: new { @class = "form-control" })
+                </div>
+                <div class="input-group col-md-2 col-sm-12 mb-3">
+                    <div class="input-group-append">
+                        <span class="input-group-text" id="basic-addon2">قومیت</span>
+                    </div>
+                    @Html.DropDownList("EthnicId", null, htmlAttributes: new { @class = "form-control" })
+                </div>
+                <div class="input-group mb-3 col-md-2">
+                    <div class="input-group-append">
+                        <span class="input-group-text" id="basic-addon2">نام</span>
+                    </div>
+                    @Html.TextBoxFor(q => q.PersonFirstName, new { @class = "form-control" })
+                </div>
+                <div class="input-group mb-3 col-md-3">
+                    <div class="input-group-append">
+                        <span class="input-group-text" id="basic-addon2">نام خانوادگی</span>
+                    </div>
+                    @Html.TextBoxFor(q => q.PersonLastName, new { @class = "form-control" })
+                </div>
+                <div class="input-group mb-3 col-md-2">
+                    <div class="input-group-append">
+                        <span class="input-group-text" id="basic-addon2">نام پدر</span>
+                    </div>
+                    @Html.TextBoxFor(q => q.PersonFatherName, new { @class = "form-control" })
+                </div>
+                <div class="input-group mb-3 col-md-2">
+                    <div class="input-group-append">
+                        <span class="input-group-text" id="basic-addon2">نام مادر</span>
+                    </div>
+                    @Html.TextBoxFor(q => q.PersonMotherName, new { @class = "form-control" })
+                </div>
+                <div class="input-group mb-3 col-md-2" id="secNationalCode">
+                    <div class="input-group-append">
+                        <span class="input-group-text" id="basic-addon2">کد ملی</span>
+                    </div>
+                    @Html.TextBoxFor(q => q.PersonNationalCode, new { @class = "form-control" })
+                </div>
+                <div class="input-group col-md-3 col-sm-12 mb-3">
+                    <div class="input-group-append">
+                        <span class="input-group-text" id="basic-addon2">وضعیت حمایتی</span>
+                    </div>
+                    @Html.DropDownList("PersonStatusId", null, htmlAttributes: new { @class = "form-control" })
+                </div>
+                <div class="input-group col-md-3 col-sm-12 mb-3">
+                    <div class="input-group-append">
+                        <span class="input-group-text" id="basic-addon2">موقعیت در خانواده</span>
+                    </div>
+                    @Html.DropDownList("RelationTypeId", null, htmlAttributes: new { @class = "form-control" })
+                </div>
+                <div class="input-group col-md-2 col-sm-12 mb-3">
+                    <div class="input-group-append">
+                        <span class="input-group-text" id="basic-addon2">جنسیت</span>
+                    </div>
+                    @Html.DropDownList("GenderId", null, htmlAttributes: new { @class = "form-control" })
+                </div>
+                <div class="input-group  col-md-3 col-sm-12 mb-3">
+                    <div class="input-group-append">
+                        <span class="input-group-text" id="basic-addon2">سال تولد از</span>
+                    </div>
+                    @Html.TextBoxFor(q => q.PersonBirthYearFrom, new { @class = "form-control" })
+                    <div class="input-group-append">
+                        <span class="input-group-text" id="basic-addon2">تا</span>
+                    </div>
+                    @Html.TextBoxFor(q => q.PersonBirthYearTo, new { @class = "form-control" })
+                </div>
+                <div class="input-group col-md-3 col-sm-12 mb-3">
+                    <div class="input-group-append">
+                        <span class="input-group-text" id="basic-addon2">وضعیت تاهل</span>
+                    </div>
+                    @Html.DropDownList("MaritalStatusId", null, htmlAttributes: new { @class = "form-control" })
+                </div>
+            </div>
+        </div>
+        <div class="card-footer">
+            <div class=" text-left">
+                <div>
+
+
+                    <button class="btn btn-success" type="submit">
+                        <span class="fa fa-search ml-3"></span>جستجو
+                    </button>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+}
+<script>
+    var nID = $("#searchSection #NationalityId").val();
+    var control = $("#searchSection #EthnicId");
+    selectNationality(nID, control);
+
+    $("#searchSection #NationalityId").change(function () {
+        var nID = $("#searchSection #NationalityId").val();
+        var control = $("#searchSection #EthnicId");
+        selectNationality(nID, control);
+    });
+
+    $("#Departments").change(function () {
+        selectDepartments();
+    });
+
+    $("#Belives").change(function () {
+        if ($("#Belives").val() === 1)
+            $("#ReligionSection").show(500);
+        else
+            $("#ReligionSection").hide(500);
+
+    });
+
+    function selectDepartments() {
+    }
+
+
+</script>

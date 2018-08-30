@@ -1,0 +1,29 @@
+﻿@{
+    var skillTypes = (List<DAL.SkillTypeViewModel>)ViewBag.SkillTypes;
+    var personId = ViewBag.PersonId;
+}
+
+<div class="row">
+    @foreach (var item in skillTypes)
+    {
+        <div class="card">
+            <div class="card-header">@item.SkillTypeName</div>
+            <div class=" card-body">
+                <fieldset class="border border-warning pr-3">
+                    <legend class="col-form-label col-sm-3 ml-1" style="width:300px;">مشاهده و اصلاح سوابق</legend>
+                    @Html.Action("Edit", "PersonTeam", new { skillTypeId = item.SkillTypeId, personId = personId })
+                </fieldset>
+                @Html.Action("Create", "PersonTeam", new { skillTypeId = item.SkillTypeId, personId = personId })
+            </div>
+        </div>
+    }
+    @foreach (var item in skillTypes)
+    {
+        <div class=" col-md-12" id="PersonTeam-@item.ParentSkillTypeId">
+
+        </div>
+    }
+</div>
+
+<script src="~/Scripts/MdBootstrapPersianDateTimePicker/jalaaliNew.js"></script>
+<script src="~/Scripts/MdBootstrapPersianDateTimePicker/jquery.Bootstrap-PersianDateTimePickerNew.js"></script>

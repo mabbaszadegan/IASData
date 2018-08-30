@@ -1,0 +1,124 @@
+﻿@model DAL.PersonViewModel
+
+@*@using (Html.BeginForm("SaveProfilePic", "ManagePerson", new { id = Model.PersonId }, FormMethod.Post, new { enctype = "multipart/form-data" }))*@
+@using (Ajax.BeginForm(
+    "SaveProfilePic",
+    "ManagePerson",
+    new { id = Model.PersonId },
+    new AjaxOptions
+    {
+        UpdateTargetId = "uploadResult",
+        InsertionMode = InsertionMode.Replace,
+        LoadingElementId = "modalProgress",
+        OnComplete = "updateProfilePic",
+
+    },
+     new { enctype = "multipart/form-data" })
+    )
+{
+    <input type="hidden" id="personId" value="@Model.PersonId" />
+
+    @Html.AntiForgeryToken()
+    <div class="container">
+        <div class="row">
+            <div class="alert alert-warning fade show" role="alert">
+                <strong>شماره پرونده: </strong> @Model.PersonCode
+            </div>
+            <div class="alert alert-warning fade show" role="alert">
+                <strong>نام و نام خانوادگی: </strong> @Model.PersonFirstName @Model.PersonLastName
+            </div>
+            <div class="alert alert-warning fade show" role="alert">
+                <strong>نام پدر: </strong> @Model.PersonFatherName
+            </div>
+        </div>
+        <div class="row">
+            <div class="panel panel-primary">
+                <div class="panel-heading"></div>
+                <div class="panel-body">
+                    <img id="imgPreviewPerson" style="margin: 8px auto;width:200px;" class="thumbnail" src="@Model.PersonProfilePic" />
+                    <div class="form-group">
+
+                        <div class="col-md-10">
+                            <input type="file" id="personProfilePic" name="personProfilePic" />
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div id="uploadResult">
+
+        </div>
+        <div class=" text-left">
+            <div>
+
+                <a class="btn btn-warning" href="#" data-dismiss="modal" aria-label="Close">
+                    <span class="fa fa-undo ml-3"></span>بازگشت
+                </a>
+                <input type="submit" class="btn btn-success" value="ثبت" />
+
+
+
+            </div>
+        </div>
+    </div>
+
+}
+<script>
+    $(document).ready(function () {
+        window.addEventListener("submit", function (e) {
+            var form = e.target;
+            if (form.getAttribute("enctype") === "multipart/form-data") {
+                if (form.dataset.ajax) {
+                    e.preventDefault();
+                    e.stopImmediatePropagation();
+                    var xhr = new XMLHttpRequest();
+                    xhr.open(form.method, form.action);
+                    xhr.onreadystatechange = function () {
+                        if (xhr.readyState == 4 && xhr.status == 200) {
+                            if (form.dataset.ajaxUpdate) {
+                                var updateTarget = document.querySelector(form.dataset.ajaxUpdate);
+                                if (updateTarget) {
+                                    updateTarget.innerHTML = xhr.responseText;
+                                }
+                            }
+                        }
+                    };
+                    xhr.send(new FormData(form));
+                }
+            }
+        }, true);
+    });
+
+    function readURL(input) {
+
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#imgPreviewPerson').attr('src', e.target.result);
+            };
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+    $("#personProfilePic").change(function () {
+            readURL(this);
+        });
+    @*function submitPersonProfilePic() {
+        debugger;
+        $.ajax({
+            url: "../ManagePerson/UploadProfilePic",
+            type: "POST",
+            data: {
+                "id":@Model.PersonId,
+            },
+        }).done(function (result) {
+            $('#ModalTitle').text('بررسی اولیه');
+            $('#createSimplePersonResult').html(result);
+            $('#createSimplePersonResult').show(500);
+
+        });
+    }*@
+</script>

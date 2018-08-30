@@ -1,0 +1,189 @@
+﻿@model List<DAL.PersonViewModel>
+
+<div class="text-right card bg-light border-info mt-3 ml-3 mr-3">
+    @* اگر موردی برای نمایش وجود داشت *@
+    @if (Model.Count() > 0)
+    {
+
+        <div class="card card-header">
+            @if (ViewBag.FamilyId == 0 || ViewBag.FamilyId == null)
+            {
+                <div class="badge badge-info text-right"><h4>فهرست افراد مشابه در سامانه</h4></div>
+                <p class="alert alert-warning">در زیر فهرست افرادی که قبلا با این مشخصات در سیستم ثبت شده اند را مشاهده میکنید، در صورتی که فردی که قصد ثبت کردن آن را دارید یکی از افراد زیر است با کلیک روی دکمه مشاهده میتوانید اطلاعات آن شخص را مشاهده کنید؛ در غیر اینصورت روی دکمه ادامه کلیک کنید</p>
+            }
+            else
+            {
+                <div class="badge badge-info text-right"><h4>فهرست اعضای خانواده</h4></div>
+                <div class="alert alert-warning">
+                    <p>
+                        با کلیک روی دکمه
+                        <span class="btn btn-info fa fa-edit"></span>
+                        میتوانید اطلاعات فرد را مشاهده و اصلاح کنید.
+                    </p>
+                    <p>
+                        با کلیک روی دکمه
+                        <span class="btn btn-warning fa fa-wrench"></span>
+                        میتوانید اطلاعات مددکاری فرد را مشاهده و اصلاح کنید.
+                    </p>
+                    <p>
+                        با کلیک روی دکمه
+                        <span class="btn btn-danger fa fa-remove"></span>
+                        میتوانید فرد را از خانواده حذف کنید.
+                    </p>
+                </div>
+            }
+        </div>
+
+
+        <div class="card-body">
+            <div class="row">
+                @for (int row = 0, personIndex = 1; row < Model.Count; row++, personIndex++)
+                {
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-3">
+                        <div class="card @(string.IsNullOrEmpty(Model[row].FamilyMemberExpireTimeSolar)?(Model[row].IsParent ? "bg-success" : ""):"bg-dark" )">
+                            <span style="cursor:pointer;" onclick="showUploadProfilePic(@Model[row].PersonId)">
+                                <img class="card-img-top" src="@Model[row].PersonProfilePic" alt="Card image" id="img-@Model[row].PersonId">
+                            </span>
+                            <div class="card-body">
+                                <h4 class="card-title">@Model[row].PersonCode</h4>
+                                <h5 class="card-text">@Model[row].PersonFirstName @Model[row].PersonLastName @(!string.IsNullOrEmpty(Model[row].PersonFatherName) ? (Model[row].PersonFatherName) : "")</h5>
+                                <h6 class="card-title">@Model[row].RelationTypeName</h6>
+
+                            </div>
+                            @if (((List<int>)ViewBag.AccessibleDepartments).Contains(Model[row].DepartmentId))
+                            {
+                                if (string.IsNullOrEmpty(Model[row].FamilyMemberExpireTimeSolar))
+                                {
+                                    if (ViewBag.PersonId != Model[row].PersonId)
+                                    {
+                                        <div class="card-footer">
+
+                                            @Ajax.ActionLink(" ", "EditMember", new { id = Model[row].PersonId }, new AjaxOptions
+                                            {
+                                                UpdateTargetId = "ModalBody",
+                                                InsertionMode = InsertionMode.Replace,
+                                                LoadingElementId = "modalProgress",
+                                                OnBegin = "showCreatePerson",
+
+                                            }, new { @class = "btn btn-info fa fa-edit" })
+                                            @Ajax.ActionLink(" ", "PersonMostInfoIndex", "PersonMostInfo", new { id = Model[row].PersonId }, new AjaxOptions
+                                            {
+                                                UpdateTargetId = "ModalBody",
+                                                InsertionMode = InsertionMode.Replace,
+                                                LoadingElementId = "modalProgress",
+                                                OnBegin = "showPersonMostInfo",
+
+                                            }, new { @class = "btn btn-warning fa fa-wrench" })
+
+                                            @Ajax.ActionLink(" ", "RemoveMember", new { id = Model[row].PersonId }, new AjaxOptions
+                                            {
+                                                UpdateTargetId = "ModalBody",
+                                                InsertionMode = InsertionMode.Replace,
+                                                LoadingElementId = "modalProgress",
+                                                OnBegin = "showRemoveMember",
+
+                                            }, new { @class = "btn btn-danger fa fa-remove" })
+
+
+                                        </div>
+                                    }
+                                }
+                            }
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+
+        <div class="card-footer">
+
+            <div class=" text-left">
+                <div>
+                    @if (ViewBag.ShowContinue == true)
+                    {
+                        @Ajax.ActionLink("ادامه", "CreateSimplePerson",
+                                                                                 new
+                                                                                 {
+                                                                                     FamilyId = ViewBag.FamilyId,
+                                                                                     NationalityId = ViewBag.NationalityId,
+                                                                                     PersonNationalCode = ViewBag.NationalCode,
+                                                                                     PersonFirstName = ViewBag.FirstName,
+                                                                                     PersonLastName = ViewBag.LastName,
+                                                                                     PersonFatherName = ViewBag.FatherName,
+                                                                                     PersonMotherName = ViewBag.MotherName,
+                                                                                     RegionId = ViewBag.RegionId,
+                                                                                     SegmentId = ViewBag.SegmentId,
+                                                                                     RelationTypeId = ViewBag.RelationTypeId,
+                                                                                     DepartmentId = ViewBag.DepartmentId,
+                                                                                     IsParent = ViewBag.IsParent,
+                                                                                 },
+                                                                                 new AjaxOptions
+                                                                                 {
+                                                                                     UpdateTargetId = "ModalBody",
+                                                                                     InsertionMode = InsertionMode.Replace,
+                                                                                     LoadingElementId = "modalProgress",
+                                                                                     OnBegin = "showCreatePerson",
+
+                                                                                 }, new { @class = "btn btn-primary" })
+                    }
+                    @if (ViewBag.ShowCreateMember == true)
+                    {
+
+                        <span class="btn btn-primary btn-sm" href="#" onclick="showAddNewMember(@ViewBag.FamilyId)">
+                            <span class="fa fa-male ml-3"></span>تعریف سایر اعضای خانواده
+                        </span>
+                    }
+                </div>
+            </div>
+
+        </div>
+    }
+    else
+    {
+        <div class="card-body">
+            <p class="badge badge-warning"> موردی یافت نشد!</p>
+        </div>
+        <div class="card-footer">
+
+            <div class=" text-left">
+                <div>
+                    @if (ViewBag.ShowContinue == true)
+                    {
+                        @Ajax.ActionLink("ادامه", "CreateSimplePerson",
+                                                                                   new
+                                                                                   {
+                                                                                       FamilyId = ViewBag.FamilyId,
+                                                                                       NationalityId = ViewBag.NationalityId,
+                                                                                       PersonNationalCode = ViewBag.NationalCode,
+                                                                                       PersonFirstName = ViewBag.FirstName,
+                                                                                       PersonLastName = ViewBag.LastName,
+                                                                                       PersonFatherName = ViewBag.FatherName,
+                                                                                       PersonMotherName = ViewBag.MotherName,
+                                                                                       RegionId = ViewBag.RegionId,
+                                                                                       SegmentId = ViewBag.SegmentId,
+                                                                                       RelationTypeId = ViewBag.RelationTypeId,
+                                                                                       DepartmentId = ViewBag.DepartmentId,
+                                                                                       IsParent = ViewBag.IsParent,
+                                                                                   },
+                                                                                   new AjaxOptions
+                                                                                   {
+                                                                                       UpdateTargetId = "ModalBody",
+                                                                                       InsertionMode = InsertionMode.Replace,
+                                                                                       LoadingElementId = "modalProgress",
+                                                                                       OnBegin = "showCreatePerson",
+
+                                                                                   }, new { @class = "btn btn-primary" })
+                    }
+                    @if (ViewBag.ShowCreateMember == true)
+                    {
+
+                        <span class="btn btn-primary btn-sm" href="#" onclick="showAddNewMember(@ViewBag.FamilyId)">
+                            <span class="fa fa-male ml-3"></span>تعریف سایر اعضای خانواده
+                        </span>
+                    }
+                </div>
+            </div>
+
+        </div>
+    }
+</div>

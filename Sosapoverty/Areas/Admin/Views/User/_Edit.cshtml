@@ -1,0 +1,40 @@
+﻿
+
+<h2>افزودن کاربر</h2>
+
+
+<dl class="dl-horizontal">
+    <dt>شناسه: </dt>
+    <dd>
+        <input type="number" ng-model="UserId" class="form-control" readonly>
+    </dd>
+
+    <dt>نام: </dt>
+    <dd>
+        <input type="text" ng-model="UserFirstName" class="form-control">
+    </dd>
+    <dt>نام خانوادگی: </dt>
+    <dd>
+        <input type="text" ng-model="UserLastName" class="form-control">
+    </dd>
+    <dt>نام کاربری: </dt>
+    <dd>
+        <input type="text" ng-model="UserName" class="form-control">
+    </dd>
+    <dt>رمز عبور : </dt>
+    <dd>
+        <input type="password" ng-model="UserPassword" class="form-control">
+    </dd>
+    <dt>فعال: </dt>
+    <dd>
+        <input type="checkbox" ng-model="UserIsActive" class="form-control">
+    </dd>
+
+
+
+
+    <dt> </dt>
+    <dd>
+        <input type="button" ng-click="save()" class="btn btn-warning" value="ویرایش">
+    </dd>
+</dl>

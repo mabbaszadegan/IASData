@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<h2>Index</h2>
+
+<div class="container" ng-app="UserApp">
+    <p>
+        <a class="btn btn-success" href="/List">نمایش لیست</a>
+        <a class="btn btn-success" href="/Create">افزودن</a>
+
+    </p>
+    <div ng-view>
+        Please Wait ...
+    </div>
+</div>
+
+@section Scripts
+{
+
+    <script type="text/javascript" src="~/MyScripts/Common.js"></script>
+    <script type="text/javascript" src="~/MyScripts/Modules/UserModule.js"></script>
+    <script type="text/javascript" src="~/MyScripts/Services/UserService.js"></script>
+    <script type="text/javascript" src="~/MyScripts/Controllers/User/addController.js"></script>
+    <script type="text/javascript" src="~/MyScripts/Controllers/User/deleteController.js"></script>
+    <script type="text/javascript" src="~/MyScripts/Controllers/User/detailController.js"></script>
+    <script type="text/javascript" src="~/MyScripts/Controllers/User/editController.js"></script>
+    <script type="text/javascript" src="~/MyScripts/Controllers/User/listController.js"></script>
+}

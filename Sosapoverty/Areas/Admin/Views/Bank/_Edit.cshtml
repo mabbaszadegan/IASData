@@ -1,0 +1,29 @@
+﻿
+<h2>ویرایش بانک</h2>
+
+
+<dl class="dl-horizontal">
+    <dt>شناسه: </dt>
+    <dd>
+        <input type="number" ng-model="BankId" class="form-control" readonly>
+    </dd>
+
+    <dt>نام : </dt>
+    <dd>
+        <input type="text" ng-model="BankName" class="form-control">
+    </dd>
+
+    <dt>نام مختصر : </dt>
+    <dd>
+        <input type="text" ng-model="BankSummaryName" class="form-control">
+    </dd>
+
+    
+
+
+
+    <dt> </dt>
+    <dd>
+        <input type="button" ng-click="edit()" class="btn btn-warning" ng-show="AccessEdit" value="Edit">
+    </dd>
+</dl>

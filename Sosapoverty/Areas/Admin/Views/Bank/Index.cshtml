@@ -1,0 +1,64 @@
+﻿
+@{
+    ViewBag.Title = "بانک";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<h2>@ViewBag.Title </h2>
+
+<div class="container" ng-app="BankApp" ng-controller="bankController">
+    <p>
+        <div class="alert alert-success text-left" ng-show="AccessCreate">
+            <a class="btn btn-success" ng-click="addBank()">افزودن</a>
+        </div>
+    </p>
+    <div ng-view>
+        Please Wait ...
+    </div>
+
+
+    @*<div class="modal fade" id="bankModal" tabindex="-1" role="dialog" style="width: 100%;" aria-labelledby="bankModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <h4 class="modal-title" id="bankModalTitle">بانک</h4>
+                    </div>
+                    <div class="modal-body" id="bankModalBody">
+                        <h2>{{2+6}}</h2>
+                    </div>
+                    <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismis="modal">بستن</button>
+                            <button type="button" class="btn btn-primary">ذخیره</button>
+                        </div>
+                </div>
+            </div>
+        </div>*@
+</div>
+
+@section Scripts
+{
+
+    <script type="text/javascript" src="~/MyScripts/Modules/BankModule.js"></script>
+    <script type="text/javascript" src="~/MyScripts/Services/BankService.js"></script>
+    <script type="text/javascript" src="~/MyScripts/Controllers/Bank/bankController.js"></script>
+    <script type="text/javascript" src="~/MyScripts/Controllers/Bank/addController.js"></script>
+    <script type="text/javascript" src="~/MyScripts/Controllers/Bank/deleteController.js"></script>
+    <script type="text/javascript" src="~/MyScripts/Controllers/Bank/detailController.js"></script>
+    <script type="text/javascript" src="~/MyScripts/Controllers/Bank/editController.js"></script>
+    <script type="text/javascript" src="~/MyScripts/Controllers/Bank/listController.js"></script>
+
+    @*<script>
+        $(document).ready(function(){
+            alert("داخل داکیومنت ردی");
+        });
+
+        aa();
+        function aa() {
+            alert("خارج از داکیومنت ردی");
+        }
+    </script>*@
+}

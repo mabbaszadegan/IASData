@@ -1,0 +1,739 @@
+﻿@model DAL.Person
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Person</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PersonCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PersonCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PersonFilingDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PersonFilingDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PersonFilingDateSolar)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PersonFilingDateSolar)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PersonFilingName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PersonFilingName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PersonCoveredDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PersonCoveredDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PersonCoveredDateSolar)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PersonCoveredDateSolar)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PersonCoveredDesc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PersonCoveredDesc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PersonFirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PersonFirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PersonLastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PersonLastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PersonFatherName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PersonFatherName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PersonIdentityNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PersonIdentityNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PersonNationalCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PersonNationalCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PersonBirthYear)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PersonBirthYear)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PersonBirthMonth)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PersonBirthMonth)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PersonBirthDay)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PersonBirthDay)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PersonBirthDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PersonBirthDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PersonBirthDateSolar)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PersonBirthDateSolar)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PersonMonthlyIncome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PersonMonthlyIncome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PersonMonthlyExpense)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PersonMonthlyExpense)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PersonDesc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PersonDesc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PersonCellPhone1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PersonCellPhone1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PersonCellPhone2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PersonCellPhone2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PersonBankAccount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PersonBankAccount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PersonBankCard)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PersonBankCard)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PersonBankBranch)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PersonBankBranch)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PersonShirtSize)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PersonShirtSize)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PersonPantSize)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PersonPantSize)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PersonShoesSize)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PersonShoesSize)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PersonHeight)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PersonHeight)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PersonWeight)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PersonWeight)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PersonBMIIndex)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PersonBMIIndex)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PersonZiped)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PersonZiped)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PersonHasPassport)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PersonHasPassport)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PersonHasCard)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PersonHasCard)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PersonLeavedFamily)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PersonLeavedFamily)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PersonLeavedFamilyDateSolar)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PersonLeavedFamilyDateSolar)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PersonLeavedFamilyDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PersonLeavedFamilyDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PersonLeavingHouseCauseDesc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PersonLeavingHouseCauseDesc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PersonLeavingHouseDesc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PersonLeavingHouseDesc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PersonAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PersonAddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PersonAddressZiped)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PersonAddressZiped)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PersonLeavedEducation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PersonLeavedEducation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PersonIsWorkedChild)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PersonIsWorkedChild)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PersonHasInjectionCard)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PersonHasInjectionCard)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PersonGetBlueCard)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PersonGetBlueCard)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PersonCanTraveling)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PersonCanTraveling)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PersonTravelingDesc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PersonTravelingDesc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PersonSupportedByOtherNGO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PersonSupportedByOtherNGO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PersonSupportedByOtherNGODesc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PersonSupportedByOtherNGODesc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PersonSupportedByIAS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PersonSupportedByIAS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EducationDesc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EducationDesc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MigrateDuration)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MigrateDuration)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PersonLivelihood)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PersonLivelihood)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.JobDesc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.JobDesc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.JobSalary)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.JobSalary)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PersonHasChildMarriage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PersonHasChildMarriage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PersonChildMarriageDesc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PersonChildMarriageDesc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InsuranceDesc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InsuranceDesc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SportTarget)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SportTarget)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InsertUserId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InsertUserId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InsertTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InsertTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UpdateUserId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UpdateUserId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UpdateTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UpdateTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Bank.BankName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Bank.BankName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Belive.BeliveName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Belive.BeliveName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BloodType.BloodTypeName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BloodType.BloodTypeName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ChildMarriageCause.ChildMarriageCauseName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ChildMarriageCause.ChildMarriageCauseName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.City.CityName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.City.CityName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Department.DepartmentCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Department.DepartmentCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DrugHistory.DrugHistoryName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DrugHistory.DrugHistoryName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DrugStatus.DrugStatusName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DrugStatus.DrugStatusName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DrugWithdrawalHistory.DrugWithdrawalHistoryName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DrugWithdrawalHistory.DrugWithdrawalHistoryName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EducationField.EducationFieldName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EducationField.EducationFieldName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EducationStatus.EducationStatusName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EducationStatus.EducationStatusName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EducationType.EducationTypeName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EducationType.EducationTypeName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ethnic.EthnicName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ethnic.EthnicName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Gender.GenderName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Gender.GenderName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HealthType.HealthTypeName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HealthType.HealthTypeName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InsuranceType.InsuranceTypeName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InsuranceType.InsuranceTypeName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Job.JobName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Job.JobName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.JobStatus.JobStatusName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.JobStatus.JobStatusName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LeavingHouseCause.LeavingHouseCauseName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LeavingHouseCause.LeavingHouseCauseName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MaritalStatus.MaritalStatusName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaritalStatus.MaritalStatusName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nationality.NationalityName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nationality.NationalityName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Person1.PersonCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Person1.PersonCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Person2.PersonCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Person2.PersonCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PersonStatus.PersonStatusName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PersonStatus.PersonStatusName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Province.ProvinceName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Province.ProvinceName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Religion.ReligionName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Religion.ReligionName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SupportingOrgan.SupportingOrganName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SupportingOrgan.SupportingOrganName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.PersonId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

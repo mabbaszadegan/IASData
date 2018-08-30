@@ -1,0 +1,72 @@
+﻿
+<nav class="navbar navbar-expand-md bg-dark navbar-dark sticky-top">
+    @*@if (User.Identity.IsAuthenticated)
+        {
+            <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+        }*@
+    <!-- Brand -->
+    @Html.ActionLink("جمعیت امداد دانشجویی مردمی امام علی (ع)", "Index", "Home", new { @class = "navbar-brand" })
+
+    <!-- Toggler/collapsibe Button -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navbar links -->
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+
+            <li class="nav-item">
+
+            </li>
+        </ul>
+    </div>
+    @if (User.Identity.IsAuthenticated)
+    {
+
+        <p class="float-left">
+            <span class=" badge badge-info">
+                <a href="#" class="badge badge-warning">@User.Identity.Name</a> خوش آمدید!
+            </span>  <a href="@Url.Action("LogOff", "Account")" class="badge badge-danger">
+                <i class="fa fa-sign-out "></i>
+                <span>
+                    <strong>خروج</strong>
+                </span>
+            </a>
+        </p>
+    }
+    else
+    { <a href="@Url.Action( "Login", "Account")">
+            <i class="fa fa-sign-in"></i>
+            <span>
+                <strong>ورود</strong>
+            </span>
+        </a>}
+</nav>
+
+@if (User.Identity.IsAuthenticated)
+{
+
+    <div id="mySidenav" class="sidenav">
+        @Html.ActionLink("مدیریت پرونده ها", "PersonIndex", "ManagePerson")
+        <a href="http://data.sosapoverty.org">سایت قدیم</a>
+
+    </div>
+}
+
+
+<script>
+    function openNav() {
+        if (document.getElementById("mySidenav").style.width == "0px") {
+            document.getElementById("mySidenav").style.width = "250px";
+            document.getElementById("main").style.marginRight = "250px";
+            document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+        }
+        else {
+            document.getElementById("mySidenav").style.width = "0px";
+            document.getElementById("main").style.marginRight = "0px";
+            document.body.style.backgroundColor = "white";
+        }
+    }
+
+</script>

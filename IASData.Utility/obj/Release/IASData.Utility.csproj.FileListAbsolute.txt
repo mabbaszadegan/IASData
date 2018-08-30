@@ -1,0 +1,14 @@
+D:\Project\SosapovertyMVC\Sosapoverty\IASData.Utility\bin\Release\IASData.Utility.dll
+D:\Project\SosapovertyMVC\Sosapoverty\IASData.Utility\bin\Release\IASData.Utility.pdb
+D:\Project\SosapovertyMVC\Sosapoverty\IASData.Utility\bin\Release\DAL.dll
+D:\Project\SosapovertyMVC\Sosapoverty\IASData.Utility\bin\Release\IASData.Enumerable.dll
+D:\Project\SosapovertyMVC\Sosapoverty\IASData.Utility\bin\Release\EntityFramework.dll
+D:\Project\SosapovertyMVC\Sosapoverty\IASData.Utility\bin\Release\DAL.pdb
+D:\Project\SosapovertyMVC\Sosapoverty\IASData.Utility\bin\Release\DAL.dll.config
+D:\Project\SosapovertyMVC\Sosapoverty\IASData.Utility\bin\Release\IASData.Enumerable.pdb
+D:\Project\SosapovertyMVC\Sosapoverty\IASData.Utility\bin\Release\EntityFramework.xml
+D:\Project\SosapovertyMVC\Sosapoverty\IASData.Utility\obj\Release\IASData.Utility.csprojAssemblyReference.cache
+D:\Project\SosapovertyMVC\Sosapoverty\IASData.Utility\obj\Release\IASData.Utility.csproj.CoreCompileInputs.cache
+D:\Project\SosapovertyMVC\Sosapoverty\IASData.Utility\obj\Release\IASData.Utility.csproj.CopyComplete
+D:\Project\SosapovertyMVC\Sosapoverty\IASData.Utility\obj\Release\IASData.Utility.dll
+D:\Project\SosapovertyMVC\Sosapoverty\IASData.Utility\obj\Release\IASData.Utility.pdb

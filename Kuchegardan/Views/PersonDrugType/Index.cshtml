@@ -1,0 +1,23 @@
+﻿@{
+    var abuseTypes = (List<DAL.DrugType>)ViewBag.DrugTypes;
+    var personId = ViewBag.PersonId;
+}
+
+<div class="row">
+ 
+        <div class="card">
+            <div class="card-header">اعتیاد</div>
+            <div class=" card-body">
+                <fieldset class="border border-warning pr-3">
+                    <legend class="col-form-label col-sm-3 ml-1" style="width:300px;">مشاهده و اصلاح سوابق</legend>
+                    @Html.Action("Edit", "PersonDrugType", new { personId = personId })
+                </fieldset>
+                @Html.Action("Create", "PersonDrugType", new { personId = personId })
+            </div>
+        </div>
+   
+        <div class=" col-md-12" id="PersonDrugType">
+
+        </div>
+ 
+</div>

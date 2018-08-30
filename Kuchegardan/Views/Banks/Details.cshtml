@@ -1,0 +1,74 @@
+﻿@model DAL.Bank
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Bank</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.BankName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BankName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BankSummaryName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BankSummaryName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BankZiped)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BankZiped)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InsertUserId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InsertUserId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InsertTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InsertTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UpdateUserId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UpdateUserId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UpdateTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UpdateTime)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.BankId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

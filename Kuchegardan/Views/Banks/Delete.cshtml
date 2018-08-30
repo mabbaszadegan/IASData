@@ -1,0 +1,80 @@
+﻿@model DAL.Bank
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Bank</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.BankName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BankName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BankSummaryName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BankSummaryName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BankZiped)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BankZiped)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InsertUserId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InsertUserId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InsertTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InsertTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UpdateUserId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UpdateUserId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UpdateTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UpdateTime)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
