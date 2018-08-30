@@ -1,0 +1,6 @@
+D:\Project\SosapovertyMVC\Sosapoverty\IASData.Enumerable\bin\Debug\IASData.Enumerable.dll
+D:\Project\SosapovertyMVC\Sosapoverty\IASData.Enumerable\bin\Debug\IASData.Enumerable.pdb
+D:\Project\SosapovertyMVC\Sosapoverty\IASData.Enumerable\obj\Debug\IASData.Enumerable.csproj.CoreCompileInputs.cache
+D:\Project\SosapovertyMVC\Sosapoverty\IASData.Enumerable\obj\Debug\IASData.Enumerable.dll
+D:\Project\SosapovertyMVC\Sosapoverty\IASData.Enumerable\obj\Debug\IASData.Enumerable.pdb
+D:\Project\SosapovertyMVC\Sosapoverty\IASData.Enumerable\obj\Debug\IASData.Enumerable.csprojAssemblyReference.cache
