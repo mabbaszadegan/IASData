@@ -1168,6 +1168,10 @@ namespace IASData.Sport.Supervisor.Controllers
                         if (!string.IsNullOrEmpty(System.IO.Path.GetExtension(postedFiles[0].FileName)) &&
                             allowExtentions.Contains(System.IO.Path.GetExtension(postedFiles[0].FileName).ToLower()))
                         {
+                            foreach (var item in db.AttachmentRepository.Get(a => a.AttachmentOwnerId == id && a.AttachmentTypeId == (int)Enumerable.AttachmentTypes.Person))
+                            {
+                                db.AttachmentRepository.Delete(item);
+                            }
                             byte[] fileData = null;
                             using (var binaryReader = new BinaryReader(postedFiles[0].InputStream))
                             {
