@@ -745,7 +745,7 @@ namespace IASData.Sport.Supervisor.Controllers
                                                     )
                                                 ),
                             NationalityId = item.NationalityId,
-                            PersonProfilePic = Constants.AttachmentServiceUrl + "?AttachmentId=" + ((attachment != null) ? attachment.AttachmentId.ToString() : "-1") + "&Thumbnail=150",
+                            PersonProfilePic = Constants.AttachmentServiceUrl + ((attachment != null) ? "AttachmentShow.ashx?AttachmentId=" + attachment.AttachmentId.ToString() + "&Thumbnail=150" : "nopic.jpg"),
                         });
                     }
 
@@ -899,7 +899,7 @@ namespace IASData.Sport.Supervisor.Controllers
                                                 "ثبت نشده"
                                             )
                                         ),
-                    PersonProfilePic = Constants.AttachmentServiceUrl + "?AttachmentId=" + ((attachment != null) ? attachment.AttachmentId.ToString() : "-1") + "&Thumbnail=150",
+                    PersonProfilePic = Constants.AttachmentServiceUrl + ((attachment != null) ? "AttachmentShow.ashx?AttachmentId=" + attachment.AttachmentId.ToString() + "&Thumbnail=150" : "nopic.jpg"),
                 });
             }
 
@@ -1073,7 +1073,7 @@ namespace IASData.Sport.Supervisor.Controllers
                                             )
                                         ),
                                 PersonIdentityDocument = item.PersonIdentityDocument,
-                                PersonProfilePic = Constants.AttachmentServiceUrl + "?AttachmentId=" + ((attachment != null) ? attachment.AttachmentId.ToString() : "-1") + "&Thumbnail=150",
+                                PersonProfilePic = Constants.AttachmentServiceUrl + ((attachment != null) ? "AttachmentShow.ashx?AttachmentId=" + attachment.AttachmentId.ToString() + "&Thumbnail=150" : "nopic.jpg"),
 
                             });
 
@@ -1142,7 +1142,7 @@ namespace IASData.Sport.Supervisor.Controllers
                                                     "ثبت نشده"
                                                 )
                                             ),
-                PersonProfilePic = Constants.AttachmentServiceUrl + "?AttachmentId=" + ((attachment != null) ? attachment.AttachmentId.ToString() : "-1") + "&Thumbnail=150",
+                PersonProfilePic = Constants.AttachmentServiceUrl + ((attachment != null) ? "AttachmentShow.ashx?AttachmentId=" + attachment.AttachmentId.ToString() + "&Thumbnail=150" : "nopic.jpg"),
             };
 
 
@@ -1309,7 +1309,7 @@ namespace IASData.Sport.Supervisor.Controllers
                 PersonNationalCode = person.PersonNationalCode,
                 ReligionId = person.ReligionId,
                 FamilyId = person.FamilyMember.FirstOrDefault().FamilyId,
-                PersonProfilePic = Constants.AttachmentServiceUrl + "?AttachmentId=" + ((attachment != null) ? attachment.AttachmentId.ToString() : "-1") + "&Thumbnail=150",
+                PersonProfilePic = Constants.AttachmentServiceUrl + ((attachment != null) ? "AttachmentShow.ashx?AttachmentId=" + attachment.AttachmentId.ToString() + "&Thumbnail=150" : "nopic.jpg"),
             };
 
             InitForm(personViewModel);
@@ -1367,7 +1367,7 @@ namespace IASData.Sport.Supervisor.Controllers
                 PersonNationalCode = person.PersonNationalCode,
                 ReligionId = person.ReligionId,
                 FamilyId = person.FamilyMember.FirstOrDefault().FamilyId,
-                PersonProfilePic = Constants.AttachmentServiceUrl + "?AttachmentId=" + ((attachment != null) ? attachment.AttachmentId.ToString() : "-1") + "&Thumbnail=150",
+                PersonProfilePic = Constants.AttachmentServiceUrl + ((attachment != null) ? "AttachmentShow.ashx?AttachmentId=" + attachment.AttachmentId.ToString() + "&Thumbnail=150" : "nopic.jpg"),
             };
 
             InitForm(personViewModel);
@@ -1425,7 +1425,7 @@ namespace IASData.Sport.Supervisor.Controllers
                 PersonNationalCode = person.PersonNationalCode,
                 ReligionId = person.ReligionId,
                 FamilyId = person.FamilyMember.FirstOrDefault().FamilyId,
-                PersonProfilePic = Constants.AttachmentServiceUrl + "?AttachmentId=" + ((attachment != null) ? attachment.AttachmentId.ToString() : "-1") + "&Thumbnail=150",
+                PersonProfilePic = Constants.AttachmentServiceUrl + ((attachment != null) ? "AttachmentShow.ashx?AttachmentId=" + attachment.AttachmentId.ToString() + "&Thumbnail=150" : "nopic.jpg"),
             };
 
             InitForm(personViewModel);
@@ -2074,7 +2074,7 @@ namespace IASData.Sport.Supervisor.Controllers
                                                     "ثبت نشده"
                                                 )
                                             ),
-                PersonProfilePic = Constants.AttachmentServiceUrl + "?AttachmentId=" + ((attachment != null) ? attachment.AttachmentId.ToString() : "-1") + "&Thumbnail=150",
+                PersonProfilePic = Constants.AttachmentServiceUrl + ((attachment != null) ? "AttachmentShow.ashx?AttachmentId=" + attachment.AttachmentId.ToString() + "&Thumbnail=150" : "nopic.jpg"),
             };
             return PartialView(personViewModel);
         }
@@ -2107,7 +2107,7 @@ namespace IASData.Sport.Supervisor.Controllers
                                                     "ثبت نشده"
                                                 )
                                             ),
-                PersonProfilePic = Constants.AttachmentServiceUrl + "?AttachmentId=" + ((attachment != null) ? attachment.AttachmentId.ToString() : "-1") + "&Thumbnail=150",
+                PersonProfilePic = Constants.AttachmentServiceUrl + ((attachment != null) ? "AttachmentShow.ashx?AttachmentId=" + attachment.AttachmentId.ToString() + "&Thumbnail=150" : "nopic.jpg"),
             };
             //LookupModel emtyItem = new LookupModel { Value = "0", Name = "" };
             //List<LookupModel> expireCauses = new List<LookupModel>();
