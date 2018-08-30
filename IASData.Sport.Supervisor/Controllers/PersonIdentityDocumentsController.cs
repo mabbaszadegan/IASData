@@ -54,8 +54,8 @@ namespace IASData.Sport.Supervisor.Controllers
 
             foreach (var item in personIdentityDocuments)
             {
-                item.IdentityDocumentPic = "../Images/Person/IdentityDocument/Thumb/" + ((!string.IsNullOrEmpty(item.IdentityDocumentPic)) ? item.IdentityDocumentPic : "nopic.jpg");
-
+                DAL.Attachment attachment = db.AttachmentRepository.Get(q => q.AttachmentTypeId == (int)Enumerable.AttachmentTypes.PersonIdentityDocument && q.AttachmentOwnerId == item.PersonIdentityDocumentId).FirstOrDefault();
+                item.IdentityDocumentPic = Constants.AttachmentServiceUrl + ((attachment != null) ? "AttachmentShow.ashx?AttachmentId=" + attachment.AttachmentId.ToString() + "&Thumbnail=150" : "nopic.jpg");// "../Images/Person/IdentityDocument/Thumb/" + ((!string.IsNullOrEmpty(item.IdentityDocumentPic)) ? item.IdentityDocumentPic : "nopic.jpg");
             }
 
 
