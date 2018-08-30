@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="IASDataLogModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="HttpLog">
+    <Key>
+      <PropertyRef Name="HttpLogId" />
+    </Key>
+    <Property Name="HttpLogId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="APPL_MD_PATH" Type="nvarchar" MaxLength="250" />
+    <Property Name="APPL_PHYSICAL_PATH" Type="nvarchar" MaxLength="250" />
+    <Property Name="AUTH_PASSWORD" Type="nvarchar" MaxLength="250" />
+    <Property Name="AUTH_TYPE" Type="nvarchar" MaxLength="250" />
+    <Property Name="AUTH_USER" Type="nvarchar" MaxLength="250" />
+    <Property Name="CERT_COOKIE" Type="nvarchar" MaxLength="250" />
+    <Property Name="CERT_FLAGS" Type="nvarchar" MaxLength="250" />
+    <Property Name="CERT_ISSUER" Type="nvarchar" MaxLength="250" />
+    <Property Name="CERT_KEYSIZE" Type="nvarchar" MaxLength="250" />
+    <Property Name="CERT_SECRETKEYSIZE" Type="nvarchar" MaxLength="250" />
+    <Property Name="CERT_SERIALNUMBER" Type="nvarchar" MaxLength="250" />
+    <Property Name="CERT_SERVER_ISSUER" Type="nvarchar" MaxLength="250" />
+    <Property Name="CERT_SERVER_SUBJECT" Type="nvarchar" MaxLength="250" />
+    <Property Name="CERT_SUBJECT" Type="nvarchar" MaxLength="250" />
+    <Property Name="CONTENT_LENGTH" Type="nvarchar" MaxLength="250" />
+    <Property Name="CONTENT_TYPE" Type="nvarchar" MaxLength="250" />
+    <Property Name="GATEWAY_INTERFACE" Type="nvarchar" MaxLength="250" />
+    <Property Name="HTTP_HeaderName" Type="nvarchar" MaxLength="250" />
+    <Property Name="HTTP_ACCEPT" Type="nvarchar" MaxLength="250" />
+    <Property Name="HTTP_ACCEPT_LANGUAGE" Type="nvarchar" MaxLength="250" />
+    <Property Name="HTTP_COOKIE" Type="nvarchar" MaxLength="800" />
+    <Property Name="HTTP_REFERER" Type="nvarchar" MaxLength="250" />
+    <Property Name="HTTP_USER_AGENT" Type="nvarchar" MaxLength="800" />
+    <Property Name="HTTPS" Type="nvarchar" MaxLength="250" />
+    <Property Name="HTTPS_KEYSIZE" Type="nvarchar" MaxLength="250" />
+    <Property Name="HTTPS_SECRETKEYSIZE" Type="nvarchar" MaxLength="250" />
+    <Property Name="HTTPS_SERVER_ISSUER" Type="nvarchar" MaxLength="250" />
+    <Property Name="HTTPS_SERVER_SUBJECT" Type="nvarchar" MaxLength="250" />
+    <Property Name="INSTANCE_ID" Type="nvarchar" MaxLength="250" />
+    <Property Name="INSTANCE_META_PATH" Type="nvarchar" MaxLength="250" />
+    <Property Name="LOCAL_ADDR" Type="nvarchar" MaxLength="250" />
+    <Property Name="LOGON_USER" Type="nvarchar" MaxLength="250" />
+    <Property Name="PATH_INFO" Type="nvarchar" MaxLength="250" />
+    <Property Name="PATH_TRANSLATED" Type="nvarchar" MaxLength="250" />
+    <Property Name="QUERY_STRING" Type="nvarchar" MaxLength="250" />
+    <Property Name="REMOTE_ADDR" Type="nvarchar" MaxLength="250" />
+    <Property Name="REMOTE_HOST" Type="nvarchar" MaxLength="250" />
+    <Property Name="REMOTE_USER" Type="nvarchar" MaxLength="250" />
+    <Property Name="REQUEST_METHOD" Type="nvarchar" MaxLength="250" />
+    <Property Name="SCRIPT_NAME" Type="nvarchar" MaxLength="250" />
+    <Property Name="SERVER_NAME" Type="nvarchar" MaxLength="250" />
+    <Property Name="SERVER_PORT" Type="nvarchar" MaxLength="250" />
+    <Property Name="SERVER_PORT_SECURE" Type="nvarchar" MaxLength="250" />
+    <Property Name="SERVER_PROTOCOL" Type="nvarchar" MaxLength="250" />
+    <Property Name="SERVER_SOFTWARE" Type="nvarchar" MaxLength="250" />
+    <Property Name="URL" Type="nvarchar" MaxLength="250" />
+    <Property Name="USER_ID" Type="int" />
+    <Property Name="SubSystemId" Type="int" />
+    <Property Name="HttpLogDateTime" Type="datetime" />
+    <Property Name="HttpLogDateTimeSolar" Type="nvarchar" MaxLength="16" />
+    <Property Name="CustomerId" Type="int" />
+    <Property Name="Area" Type="nvarchar" MaxLength="200" />
+    <Property Name="Controller" Type="nvarchar" MaxLength="200" />
+    <Property Name="Action" Type="nvarchar" MaxLength="200" />
+    <Property Name="Input" Type="ntext" />
+    <Property Name="Output" Type="ntext" />
+    <Property Name="Description" Type="ntext" />
+    <Property Name="Type" Type="int" />
+  </EntityType>
+  <EntityContainer Name="IASDataLogModelStoreContainer">
+    <EntitySet Name="HttpLog" EntityType="Self.HttpLog" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

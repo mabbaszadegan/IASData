@@ -1,0 +1,910 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0C7DCCAC-F979-4ABD-9EC1-7C4DA238A885}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DAL</RootNamespace>
+    <AssemblyName>DAL</AssemblyName>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccessLevel.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ActivityField.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ActivityType.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AddressComponent.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AddressComponentType.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Alley.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Appliance.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AssessmentModel.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AssessmentModelCategory.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AssessmentModelValue.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Attachment.cs">
+      <DependentUpon>IASDataAttachmentModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AttachmentType.cs">
+      <DependentUpon>IASDataAttachmentModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Bank.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BankHistory.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BaseInfo.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BaseInfoGroup.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BaseInfoHistory.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Belive.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BeltColor.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BloodType.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ChildAbuseType.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ChildMarriageCause.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="City.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Color.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Competition.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CompetitionMemberStatus.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CompetitionSkillTypeAgeRange.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CompetitionType.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Context\UnitOfWork.cs" />
+    <Compile Include="Country.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Course.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CourseAssessmentModel.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CrimeType.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="C_اطلاعات_فرزندان_خانوارها__.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DamageCause.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Department.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DepartmentAppliance.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DepartmentBank.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DepartmentBelive.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DepartmentChildAbuseType.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DepartmentChildMarriageCause.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DepartmentCrimeType.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DepartmentDiedCause.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DepartmentDisableType.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DepartmentDrugType.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DepartmentEducationField.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DepartmentEducationType.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DepartmentEthnic.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DepartmentFuelType.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DepartmentHouseBuildingMaterial.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DepartmentInsuranceType.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DepartmentJob.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DepartmentLeavingHouseCause.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DepartmentNationality.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DepartmentPowerSupply.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DepartmentReferrer.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DepartmentRelationType.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DepartmentReligion.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DepartmentResidenceType.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DepartmentSegment.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DepartmentSkillType.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DepartmentSupportingOrgan.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DepartmentTeam.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DepartmentTeamCompetition.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DepartmentTeamCompetitionDetail.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DepartmentTeamCompetitionMember.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DepartmentTeamCompetitionMemberHistory.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DepartmentTeamExerciseHistory.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DepartmentTeamExerciseTime.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DepartmentTeamGoods.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DepartmentType.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DepartmentWaterSource.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DiedCause.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DisableType.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DrugHistory.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DrugStatus.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DrugType.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DrugWithdrawalHistory.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EducationField.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EducationStatus.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EducationType.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EducationYear.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EducationYearClass.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EducationYearClassCourse.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EducationYearClassCourseHistory.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EducationYearClassCourseTime.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EducationYearClassMember.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EducationYearClassMemberHistory.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeHistory.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\AccessItem.cs" />
+    <Compile Include="Entities\SimpleInterceptor.cs" />
+    <Compile Include="Entities\Codding.cs" />
+    <Compile Include="EquipmentType.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Ethnic.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ExpenseType.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Expertise.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ExpireCause.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FacilityCategory.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FacilityType.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Family.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FamilyAppliance.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FamilyHistory.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FamilyLog.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FamilyMember.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FamilyMemberHistory.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FamilyPhone.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FamilyReconnaissance.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FamilyStatus.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Feature.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FeatureType.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FuelType.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Gender.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Goods.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GoodsCategory.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GoodsType.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Grade.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HealthType.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="House.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HouseAppliance.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HouseBuildingMaterial.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HouseFamily.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HousePhone.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HouseStatus.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HouseType.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HttpLog.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IASDataAttachmentModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IASDataAttachmentModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IASDataAttachmentModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IASDataAttachmentModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IASDataAttachmentModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IASDataAttachmentModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="IASDataLogModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IASDataLogModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IASDataLogModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IASDataLogModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IASDataLogModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IASDataLogModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="IASDataModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IASDataModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IASDataModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IASDataModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IASDataModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="IdentityDocument.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IncomeType.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="InsuranceType.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Job.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="JobStatus.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LeavingHouseCause.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Limb.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MaritalStatus.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MetaDataClasses\BanksMetaData.cs" />
+    <Compile Include="MetaDataClasses\FamiliesMetaData.cs" />
+    <Compile Include="MetaDataClasses\DepartmentsMetaData.cs" />
+    <Compile Include="MetaDataClasses\PersonsMetaData.cs" />
+    <Compile Include="MetaDataClasses\UsersMetaData.cs" />
+    <Compile Include="MigrationCause.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Nationality.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NeedType.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Person.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonChildAbuseType.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonCrimeType.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonDamage.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonDentalMonitoring.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonDisableType.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonDrugType.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonExpense.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonFacilityType.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonHistory.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonIdentityDocument.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonIncome.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonInsuranceType.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonJob.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonLog.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonMedicalMonitoring.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonNeedType.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Personnel.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonnelActivityField.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonnelCourse.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonnelFreeDay.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonnelLog.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonnelPursuit.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonnelPursuitResult.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonnelSkillType.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonnelStatus.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonnelWorkshop.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonNew.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonSicknessType.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonSkillType.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonStatus.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonSupportingOrgan.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonSupportingOrganServiceType.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonTalent.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonTeam.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonTeamGrade.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonToothStatus.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonTraningCourseType.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonWorkshop.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PlaceCategory.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PlaceType.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PowerSupply.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Province.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PunishmentCheckOutCause.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PunishmentClass.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PunishmentStatus.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PunishmentType.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReconnaissanceCause.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Referrer.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Region.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RelationType.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Religion.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Repositories\AttachmentRepository.cs" />
+    <Compile Include="Repositories\LogRepository.cs" />
+    <Compile Include="ResidenceType.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ResidentialContext.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Role.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RoleMember.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RoleMemberAccess.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Segment.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SegmentDrugType.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SegmentEthnic.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SegmentFuelType.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SegmentPlaceType.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SegmentReconnaissance.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SegmentReconnaissanceDrugType.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SegmentReconnaissanceEthnic.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SegmentReconnaissanceFuelType.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SegmentReconnaissancePlaceType.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SegmentReconnaissanceResidentialContext.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SegmentReconnaissanceWaterSource.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SegmentResidentialContext.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SegmentWaterSource.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ServiceType.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SicknessType.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SkillType.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SkillTypeAgeRange.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SkillTypeLevel.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Street.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SubSystem.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SupportingOrgan.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagrams.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_Cities.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_Counties.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_Provinces.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_Villages.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_Zones.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Team.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TeamRequiredGoods.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Temporal.cs" />
+    <Compile Include="Tooth.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ToothStatus.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ToothType.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TradingType.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TraningCourseType.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TreatmentStatus.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserDepartment.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserDepartmentHistory.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserInfo.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserInfoHistory.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\AuthenticationViewModel.cs" />
+    <Compile Include="ViewModels\ErrorViewModel.cs" />
+    <Compile Include="ViewModels\EventLogViewModel.cs" />
+    <Compile Include="ViewModels\DepartmentViewModel.cs" />
+    <Compile Include="ViewModels\GeographicAreaType.cs" />
+    <Compile Include="ViewModels\GeographicArea.cs" />
+    <Compile Include="Interfaces\IAccessManager.cs" />
+    <Compile Include="Entities\Address.cs" />
+    <Compile Include="ViewModels\FamilyViewModel.cs" />
+    <Compile Include="ViewModels\FamilyMemberViewModel.cs" />
+    <Compile Include="ViewModels\SkillTypeViewModel.cs" />
+    <Compile Include="ViewModels\PersonViewModel.cs" />
+    <Compile Include="ViewModels\SearchViewModels\FamilySearchViewModel.cs" />
+    <Compile Include="ViewModels\UserInfoViewModel.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Repositories\GenericRepository.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WaterSource.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WeekDay.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Workshop.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Workspace.cs">
+      <DependentUpon>IASDataModel.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <EntityDeploy Include="IASDataLogModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>IASDataLogModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <EntityDeploy Include="IASDataAttachmentModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>IASDataAttachmentModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="IASDataAttachmentModel.edmx.diagram">
+      <DependentUpon>IASDataAttachmentModel.edmx</DependentUpon>
+    </None>
+    <None Include="IASDataLogModel.edmx.diagram">
+      <DependentUpon>IASDataLogModel.edmx</DependentUpon>
+    </None>
+    <EntityDeploy Include="IASDataModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>IASDataModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="IASDataModel.edmx.diagram">
+      <DependentUpon>IASDataModel.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="IASDataAttachmentModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>IASDataAttachmentModel.edmx</DependentUpon>
+      <LastGenOutput>IASDataAttachmentModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="IASDataAttachmentModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>IASDataAttachmentModel.edmx</DependentUpon>
+      <LastGenOutput>IASDataAttachmentModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="IASDataLogModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>IASDataLogModel.edmx</DependentUpon>
+      <LastGenOutput>IASDataLogModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="IASDataLogModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>IASDataLogModel.edmx</DependentUpon>
+      <LastGenOutput>IASDataLogModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="IASDataModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>IASDataModel.edmx</DependentUpon>
+      <LastGenOutput>IASDataModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="IASDataModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>IASDataModel.edmx</DependentUpon>
+      <LastGenOutput>IASDataModel.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\IASData.Enumerable\IASData.Enumerable.csproj">
+      <Project>{1E7F6D88-82F5-4F31-BBD4-327139380231}</Project>
+      <Name>IASData.Enumerable</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

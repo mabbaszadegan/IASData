@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="IASDataAttachmentModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Attachment">
+    <Key>
+      <PropertyRef Name="AttachmentId" />
+    </Key>
+    <Property Name="AttachmentId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AttachmentDesc" Type="nvarchar" MaxLength="500" />
+    <Property Name="AttachmentFileName" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="AttachmentExtention" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="AttachmentContent" Type="varbinary(max)" Nullable="false" />
+    <Property Name="AttachmentContentType" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="AttachmentTime" Type="datetime" Nullable="false" />
+    <Property Name="AttachmentTimeSolar" Type="char" MaxLength="16" Nullable="false" />
+    <Property Name="AttachmentIsDefault" Type="bit" Nullable="false" />
+    <Property Name="AttachmentLatitudeDevice" Type="float" />
+    <Property Name="AttachmentLongitudeDevice" Type="float" />
+    <Property Name="AttachmentTypeId" Type="int" Nullable="false" />
+    <Property Name="AttachmentOwnerId" Type="bigint" Nullable="false" />
+    <Property Name="AttachmentZiped" Type="nvarchar" MaxLength="4000" Nullable="false" />
+    <Property Name="RoleId" Type="int" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="InsertUserId" Type="int" Nullable="false" />
+    <Property Name="InsertTime" Type="datetime" Nullable="false" />
+    <Property Name="UpdateUserId" Type="int" />
+    <Property Name="UpdateTime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="AttachmentType">
+    <Key>
+      <PropertyRef Name="AttachmentTypeId" />
+    </Key>
+    <Property Name="AttachmentTypeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AttachmentTypeName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="AttachmentTypeZiped" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="AttachmentTypeMaxSize" Type="int" Nullable="false" />
+    <Property Name="AttachmentTypeAllowedFormat" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="ObjectId" Type="int" Nullable="false" />
+    <Property Name="ObjectName" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="InsertUserId" Type="int" Nullable="false" />
+    <Property Name="InsertTime" Type="datetime" Nullable="false" />
+    <Property Name="UpdateUserId" Type="int" />
+    <Property Name="UpdateTime" Type="datetime" />
+  </EntityType>
+  <Association Name="FK_Attachment_AttachmentType">
+    <End Role="AttachmentType" Type="Self.AttachmentType" Multiplicity="1" />
+    <End Role="Attachment" Type="Self.Attachment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AttachmentType">
+        <PropertyRef Name="AttachmentTypeId" />
+      </Principal>
+      <Dependent Role="Attachment">
+        <PropertyRef Name="AttachmentTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="IASDataAttachmentModelStoreContainer">
+    <EntitySet Name="Attachment" EntityType="Self.Attachment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AttachmentType" EntityType="Self.AttachmentType" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Attachment_AttachmentType" Association="Self.FK_Attachment_AttachmentType">
+      <End Role="AttachmentType" EntitySet="AttachmentType" />
+      <End Role="Attachment" EntitySet="Attachment" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

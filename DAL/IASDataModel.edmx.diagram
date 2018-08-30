@@ -1,0 +1,605 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="7ca0f3ac9c104aefa1bf0130578a8e9a" Name="Diagram1">
+        <EntityTypeShape EntityType="IASDataModel.AccessLevel" Width="1.5" PointX="25" PointY="85.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.ActivityField" Width="1.5" PointX="18.75" PointY="157.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.ActivityType" Width="1.5" PointX="16.5" PointY="141.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.AddressComponent" Width="1.5" PointX="1.5" PointY="51" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.AddressComponentType" Width="1.5" PointX="1.5" PointY="46.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.Alley" Width="1.5" PointX="3.75" PointY="36.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.Appliance" Width="1.5" PointX="9" PointY="79.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.AssessmentModel" Width="1.5" PointX="23.25" PointY="68.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.AssessmentModelCategory" Width="1.5" PointX="21" PointY="68.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.AssessmentModelValue" Width="1.5" PointX="23.25" PointY="77.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.Bank" Width="1.5" PointX="6.75" PointY="65.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.BaseInfo" Width="1.5" PointX="11" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.BaseInfoGroup" Width="1.5" PointX="8.75" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.Belive" Width="1.5" PointX="6.75" PointY="69.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.BeltColor" Width="1.5" PointX="18" PointY="78.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.BloodType" Width="1.5" PointX="6.75" PointY="74" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.ChildAbuseType" Width="1.5" PointX="9" PointY="61.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.ChildMarriageCause" Width="1.5" PointX="6.75" PointY="77.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.City" Width="1.5" PointX="1.5" PointY="17.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.Color" Width="1.5" PointX="15.75" PointY="75.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.Competition" Width="1.5" PointX="18" PointY="59" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.CompetitionMemberStatus" Width="1.5" PointX="15" PointY="117.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.CompetitionSkillTypeAgeRange" Width="1.5" PointX="28.25" PointY="64.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.CompetitionType" Width="1.5" PointX="15.75" PointY="59.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.Country" Width="1.5" PointX="1.5" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.Course" Width="1.5" PointX="21" PointY="119" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.CourseAssessmentModel" Width="1.5" PointX="23.25" PointY="119.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.CrimeType" Width="1.5" PointX="18" PointY="124.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.DamageCause" Width="1.5" PointX="18" PointY="117.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.Department" Width="1.5" PointX="0.75" PointY="87.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.DepartmentAppliance" Width="1.5" PointX="11.25" PointY="73.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.DepartmentBank" Width="1.5" PointX="23" PointY="64.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.DepartmentBelive" Width="1.5" PointX="26" PointY="81.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.DepartmentChildAbuseType" Width="1.5" PointX="25.25" PointY="64.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.DepartmentChildMarriageCause" Width="1.5" PointX="26" PointY="89.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.DepartmentCrimeType" Width="1.5" PointX="28.25" PointY="106" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.DepartmentDiedCause" Width="1.5" PointX="21" PointY="57.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.DepartmentDisableType" Width="1.5" PointX="28.25" PointY="101.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.DepartmentDrugType" Width="1.5" PointX="26.25" PointY="75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.DepartmentEducationField" Width="1.5" PointX="26" PointY="93.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.DepartmentEducationType" Width="1.5" PointX="24" PointY="127" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.DepartmentEthnic" Width="1.5" PointX="13" PointY="130.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.DepartmentFuelType" Width="1.5" PointX="15.75" PointY="55.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.DepartmentHouseBuildingMaterial" Width="1.5" PointX="23.75" PointY="60.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.DepartmentInsuranceType" Width="1.5" PointX="21" PointY="135.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.DepartmentJob" Width="1.5" PointX="14" PointY="139.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.DepartmentLeavingHouseCause" Width="1.5" PointX="3" PointY="100.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.DepartmentNationality" Width="1.5" PointX="10.75" PointY="130.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.DepartmentPowerSupply" Width="1.5" PointX="26.25" PointY="60.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.DepartmentReferrer" Width="1.5" PointX="28" PointY="85.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.DepartmentRelationType" Width="1.5" PointX="24" PointY="74.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.DepartmentReligion" Width="1.5" PointX="21" PointY="138.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.DepartmentResidenceType" Width="1.5" PointX="28" PointY="97.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.DepartmentSegment" Width="1.5" PointX="3.75" PointY="67.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.DepartmentSkillType" Width="1.5" PointX="29" PointY="89.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.DepartmentSupportingOrgan" Width="1.5" PointX="11" PointY="134" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.DepartmentTeam" Width="1.5" PointX="18" PointY="69.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.DepartmentTeamCompetition" Width="1.5" PointX="20.25" PointY="61.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.DepartmentTeamCompetitionDetail" Width="1.5" PointX="20.25" PointY="77.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.DepartmentTeamCompetitionMember" Width="1.5" PointX="17.25" PointY="94.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.DepartmentTeamExerciseHistory" Width="1.5" PointX="26.25" PointY="69.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.DepartmentTeamExerciseTime" Width="1.5" PointX="28" PointY="111.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.DepartmentTeamGoods" Width="1.5" PointX="23.25" PointY="41.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.DepartmentType" Width="1.5" PointX="1.5" PointY="83.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.DepartmentWaterSource" Width="1.5" PointX="6.75" PointY="53.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.DiedCause" Width="1.5" PointX="3.75" PointY="43.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.DisableType" Width="1.5" PointX="15" PointY="126.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.DrugHistory" Width="1.5" PointX="6.75" PointY="81.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.DrugStatus" Width="1.5" PointX="6.75" PointY="84.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.DrugType" Width="1.5" PointX="18" PointY="54.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.DrugWithdrawalHistory" Width="1.5" PointX="6.75" PointY="61.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.EducationField" Width="1.5" PointX="6.75" PointY="115.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.EducationStatus" Width="1.5" PointX="6.75" PointY="57.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.EducationType" Width="1.5" PointX="6.75" PointY="142.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.EducationYear" Width="1.5" PointX="12.75" PointY="121.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.EducationYearClass" Width="1.5" PointX="15" PointY="121.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.EducationYearClassCourse" Width="1.5" PointX="21" PointY="146.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.EducationYearClassCourseHistory" Width="1.5" PointX="25.5" PointY="145.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.EducationYearClassCourseTime" Width="1.5" PointX="23.25" PointY="145.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.EducationYearClassMember" Width="1.5" PointX="17.25" PointY="105.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.EducationYearClassMemberHistory" Width="1.5" PointX="25.5" PointY="103.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.EquipmentType" Width="1.5" PointX="16.5" PointY="144.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.Ethnic" Width="1.5" PointX="6.75" PointY="146.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.ExpenseType" Width="1.5" PointX="12" PointY="118.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.Expertise" Width="1.5" PointX="18" PointY="84.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.ExpireCause" Width="1.5" PointX="12" PointY="82.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.FacilityCategory" Width="1.5" PointX="9.75" PointY="65.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.FacilityType" Width="1.5" PointX="12" PointY="64.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.Family" Width="1.5" PointX="6" PointY="88.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.FamilyAppliance" Width="1.5" PointX="11.25" PointY="100.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.FamilyLog" Width="1.5" PointX="8.25" PointY="120.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.FamilyMember" Width="1.5" PointX="14.25" PointY="99.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.FamilyPhone" Width="1.5" PointX="11.25" PointY="95.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.FamilyStatus" Width="1.5" PointX="3.75" PointY="47.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.Feature" Width="1.5" PointX="6" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.FeatureType" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.FuelType" Width="1.5" PointX="1.5" PointY="55.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.Gender" Width="1.5" PointX="6.75" PointY="151.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.Goods" Width="1.5" PointX="8.25" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.GoodsCategory" Width="1.5" PointX="3.75" PointY="13.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.GoodsType" Width="1.5" PointX="6" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.Grade" Width="1.5" PointX="18" PointY="63.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.HealthType" Width="1.5" PointX="6.75" PointY="155.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.House" Width="1.5" PointX="3.75" PointY="57.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.HouseAppliance" Width="1.5" PointX="11.25" PointY="69.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.HouseBuildingMaterial" Width="1.5" PointX="1.5" PointY="60" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.HouseFamily" Width="1.5" PointX="14.25" PointY="94.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.HousePhone" Width="1.5" PointX="10.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.HouseStatus" Width="1.5" PointX="3.75" PointY="73.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.HouseType" Width="1.5" PointX="1.5" PointY="63.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.HttpLog" Width="1.5" PointX="12.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.IdentityDocument" Width="1.5" PointX="15" PointY="65.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.IncomeType" Width="1.5" PointX="15" PointY="86.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.InsuranceType" Width="1.5" PointX="6.75" PointY="159.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.Job" Width="1.5" PointX="6.75" PointY="163.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.JobStatus" Width="1.5" PointX="4.5" PointY="163.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.LeavingHouseCause" Width="1.5" PointX="0.75" PointY="99.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.Limb" Width="1.5" PointX="18" PointY="120.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.MaritalStatus" Width="1.5" PointX="3.75" PointY="76.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.MigrationCause" Width="1.5" PointX="3.75" PointY="80.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.Nationality" Width="1.5" PointX="4.5" PointY="146.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.NeedType" Width="1.5" PointX="21" PointY="115.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.Person" Width="1.5" PointX="9" PointY="84.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.PersonChildAbuseType" Width="1.5" PointX="11.25" PointY="90.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.PersonCrimeType" Width="1.5" PointX="20.25" PointY="98.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.PersonDamage" Width="1.5" PointX="20.25" PointY="92" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.PersonDentalMonitoring" Width="1.5" PointX="11.25" PointY="108.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.PersonDisableType" Width="1.5" PointX="17.25" PointY="109" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.PersonDrugType" Width="1.5" PointX="20.25" PointY="105.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.PersonExpense" Width="1.5" PointX="14.25" PointY="104.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.PersonFacilityType" Width="1.5" PointX="14.25" PointY="90.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.PersonIdentityDocument" Width="1.5" PointX="17.25" PointY="89.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.PersonIncome" Width="1.5" PointX="17.25" PointY="99.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.PersonInsuranceType" Width="1.5" PointX="20.25" PointY="110.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.PersonJob" Width="1.5" PointX="23.25" PointY="99.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.PersonLog" Width="1.5" PointX="11.25" PointY="149.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.PersonMedicalMonitoring" Width="1.5" PointX="11.25" PointY="140.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.PersonNeedType" Width="1.5" PointX="23.25" PointY="93.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.Personnel" Width="1.5" PointX="18.75" PointY="139.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.PersonnelActivityField" Width="1.5" PointX="21" PointY="142.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.PersonnelCourse" Width="1.5" PointX="23.25" PointY="136" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.PersonnelFreeDay" Width="1.5" PointX="21" PointY="150.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.PersonnelLog" Width="1.5" PointX="21" PointY="157.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.PersonnelPursuit" Width="1.5" PointX="24" PointY="141" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.PersonnelPursuitResult" Width="1.5" PointX="21.75" PointY="131.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.PersonnelSkillType" Width="1.5" PointX="26.25" PointY="116.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.PersonnelStatus" Width="1.5" PointX="16.5" PointY="148.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.PersonnelWorkshop" Width="1.5" PointX="24" PointY="151" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.PersonNew" Width="1.5" PointX="14.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.PersonSicknessType" Width="1.5" PointX="23.25" PointY="104.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.PersonSkillType" Width="1.5" PointX="23.25" PointY="88.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.PersonStatus" Width="1.5" PointX="6.75" PointY="168.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.PersonSupportingOrgan" Width="1.5" PointX="23.25" PointY="111.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.PersonSupportingOrganServiceType" Width="1.5" PointX="25.5" PointY="112.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.PersonTalent" Width="1.5" PointX="11.25" PointY="184.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.PersonTeam" Width="1.5" PointX="20.25" PointY="84.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.PersonTeamGrade" Width="1.5" PointX="22.5" PointY="82" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.PersonToothStatus" Width="1.5" PointX="13.5" PointY="110" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.PersonTraningCourseType" Width="1.5" PointX="11.25" PointY="85.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.PersonWorkshop" Width="1.5" PointX="11.25" PointY="113.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.PlaceCategory" Width="1.5" PointX="1.5" PointY="73.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.PlaceType" Width="1.5" PointX="1.5" PointY="68.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.PowerSupply" Width="1.5" PointX="9" PointY="49.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.Province" Width="1.5" PointX="1.5" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.PunishmentCheckOutCause" Width="1.5" PointX="18" PointY="128.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.PunishmentClass" Width="1.5" PointX="15.75" PointY="135.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.PunishmentStatus" Width="1.5" PointX="18" PointY="131.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.PunishmentType" Width="1.5" PointX="18" PointY="135.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.ReconnaissanceCause" Width="1.5" PointX="9" PointY="76.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.Referrer" Width="1.5" PointX="3.75" PointY="84.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.Region" Width="1.5" PointX="1.5" PointY="23" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.RelationType" Width="1.5" PointX="3.75" PointY="87.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.Religion" Width="1.5" PointX="6.75" PointY="171.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.ResidenceType" Width="1.5" PointX="3.75" PointY="93.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.ResidentialContext" Width="1.5" PointX="1.5" PointY="42.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.Role" Width="1.5" PointX="11.75" PointY="170" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.RoleMember" Width="1.5" PointX="14" PointY="172.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.RoleMemberAccess" Width="1.5" PointX="16.25" PointY="113.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.Segment" Width="1.5" PointX="1.5" PointY="27.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.SegmentDrugType" Width="1.5" PointX="20.25" PointY="41.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.SegmentEthnic" Width="1.5" PointX="12" PointY="77.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.SegmentFuelType" Width="1.5" PointX="6.75" PointY="42.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.SegmentPlaceType" Width="1.5" PointX="3.75" PointY="51.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.SegmentReconnaissance" Width="1.5" PointX="11.25" PointY="47.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.SegmentReconnaissanceDrugType" Width="1.5" PointX="20.25" PointY="51.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.SegmentReconnaissanceEthnic" Width="1.5" PointX="25.5" PointY="97.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.SegmentReconnaissanceFuelType" Width="1.5" PointX="13.5" PointY="51.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.SegmentReconnaissancePlaceType" Width="1.5" PointX="13.5" PointY="58.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.SegmentReconnaissanceResidentialContext" Width="1.5" PointX="13.5" PointY="46.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.SegmentReconnaissanceWaterSource" Width="1.5" PointX="6.75" PointY="25.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.SegmentResidentialContext" Width="1.5" PointX="3.75" PointY="29.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.SegmentWaterSource" Width="1.5" PointX="6.75" PointY="29.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.ServiceType" Width="1.5" PointX="23.25" PointY="123.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.SicknessType" Width="1.5" PointX="21" PointY="123.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.SkillType" Width="1.5" PointX="15.75" PointY="78.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.SkillTypeAgeRange" Width="1.5" PointX="13.5" PointY="69.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.SkillTypeLevel" Width="1.5" PointX="21" PointY="73.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.Street" Width="1.5" PointX="1.5" PointY="36.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.SubSystem" Width="1.5" PointX="3.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.SupportingOrgan" Width="1.5" PointX="6.75" PointY="176.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.tbl_Cities" Width="1.5" PointX="8" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.tbl_Counties" Width="1.5" PointX="10.25" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.tbl_Provinces" Width="1.5" PointX="5.75" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.tbl_Villages" Width="1.5" PointX="12.5" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.tbl_Zones" Width="1.5" PointX="14.75" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.Team" Width="1.5" PointX="15.75" PointY="69.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.TeamRequiredGoods" Width="1.5" PointX="18" PointY="41.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.Tooth" Width="1.5" PointX="11.25" PointY="56.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.ToothStatus" Width="1.5" PointX="11.25" PointY="126.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.ToothType" Width="1.5" PointX="9" PointY="56.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.TradingType" Width="1.5" PointX="16.5" PointY="151.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.TraningCourseType" Width="1.5" PointX="9" PointY="72.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.TreatmentStatus" Width="1.5" PointX="21" PointY="127.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.UserDepartment" Width="1.5" PointX="11.75" PointY="174.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.UserInfo" Width="1.5" PointX="9.5" PointY="173.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.WaterSource" Width="1.5" PointX="4.5" PointY="26" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.WeekDay" Width="1.5" PointX="18.75" PointY="161.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.Workshop" Width="1.5" PointX="9" PointY="142.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.Workspace" Width="1.5" PointX="13.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.C_اطلاعات_فرزندان_خانوارها__" Width="1.5" PointX="16.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.BankHistory" Width="1.5" PointX="16.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.BaseInfoHistory" Width="1.5" PointX="16.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.DepartmentTeamCompetitionMemberHistory" Width="1.5" PointX="3.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.EmployeeHistory" Width="1.5" PointX="8.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.FamilyHistory" Width="1.5" PointX="18.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.FamilyMemberHistory" Width="1.5" PointX="5.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.FamilyReconnaissance" Width="1.5" PointX="11.25" PointY="103.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.PersonHistory" Width="1.5" PointX="20.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.UserDepartmentHistory" Width="1.5" PointX="20.75" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IASDataModel.UserInfoHistory" Width="1.5" PointX="22.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="IASDataModel.FK_AccessLevel_Feature" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_AccessLevel_Role" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_PersonnelActivityField_ActivityField" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_Personnel_ActivityType" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_AddressComponent_AddressComponent" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_AddressComponent_AddressComponentType" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_AddressComponent_Segment" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_House_AddressComponent" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_Alley_Alley" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_Alley_Street" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_Family_Alley" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_House_Alley" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_DepartmentAppliance_Appliance" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_FamilyAppliance_Appliance" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_HouseAppliance_Appliance" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_AssessmentModel_AssessmentModelCategory" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_AssessmentModelValue_AssessmentModel" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_CourseAssessmentModel_AssessmentModel" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_EducationYearClassMemberHistory_AssessmentModel" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_EducationYearClassMemberHistory_AssessmentModelValue" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_DepartmentBank_Bank" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_Person_Bank" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_PersonNew_Bank" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_BaseInfo_BaseInfoGroup" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_DepartmentBelive_Belive" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_Person_Belive" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_PersonNew_Belive" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_Religion_Belive" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_BeltColor_Color" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_BeltColor_SkillType" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_PersonTeam_BeltColor" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_PersonTeamGrade_BeltColor" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_Person_BloodType" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_PersonNew_BloodType" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_DepartmentChildAbuseType_ChildAbuseType" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_PersonChildAbuseType_ChildAbuseType" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_DepartmentChildMarriageCause_ChildMarriageCause" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_Person_ChildMarriageCause" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_PersonNew_ChildMarriageCause" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_City_Province" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_Person_City" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_Personnel_City" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_PersonNew_City" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_Region_City" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_Competition_CompetitionType" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_CompetitionSkillTypeAgeRange_Competition" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_DepartmentTeamCompetition_Competition" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_DepartmentTeamCompetitionMember_CompetitionMemberStatus" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_CompetitionSkillTypeAgeRange_SkillTypeAgeRange" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_Nationality_Country" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_Personnel_Country" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_Province_Country" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_CourseAssessmentModel_Course" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_EducationYearClassCourse_Course" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_PersonnelCourse_Course" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_EducationYearClassMemberHistory_CourseAssessmentModel" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_DepartmentCrimeType_CrimeType" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_PersonCrimeType_CrimeType" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_PersonDamage_DamageCause" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_Department_DepartmentType" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_DepartmentAppliance_Department" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_DepartmentBank_Department" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_DepartmentBelive_Department" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_DepartmentChildAbuseType_Department" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_DepartmentChildMarriageCause_Department" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_DepartmentCrimeType_Department" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_DepartmentDiedCause_Department" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_DepartmentDisableType_Department" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_DepartmentDrugType_Department" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_DepartmentEducationField_Department" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_DepartmentEducationType_Department" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_DepartmentEthnic_Department" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_DepartmentFuelType_Department" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_DepartmentHouseBuildingMaterial_Department" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_DepartmentInsuranceType_Department" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_DepartmentJob_Department" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_DepartmentLeavingHouseCause_Department" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_DepartmentNationality_Department" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_DepartmentPowerSupply_Department" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_DepartmentReferrer_Department" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_DepartmentRelationType_Department" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_DepartmentReligion_Department" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_DepartmentResidenceType_Department" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_DepartmentSegment_Department" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_DepartmentSkillType_Department" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_DepartmentSupportingOrgan_Department" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_DepartmentTeam_Department" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_DepartmentWaterSource_Department" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_EducationYear_Department" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_Person_Department" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_Personnel_Department" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_PersonNew_Department" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_UserDepartment_Department" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_DepartmentDiedCause_DiedCause" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_DepartmentDisableType_DisableType" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_DepartmentDrugType_DrugType" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_DepartmentEducationField_EducationField" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_DepartmentEducationType_EducationType" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_DepartmentEthnic_Ethnic" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_DepartmentFuelType_FuelType" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_DepartmentHouseBuildingMaterial_HouseBuildingMaterial" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_DepartmentInsuranceType_InsuranceType" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_DepartmentJob_Job" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_DepartmentLeavingHouseCause_LeavingHouseCause" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_DepartmentNationality_Nationality" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_DepartmentPowerSupply_PowerSupply" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_DepartmentReferrer_Referrer" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_DepartmentRelationType_RelationType" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_DepartmentReligion_Religion" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_DepartmentResidenceType_ResidenceType" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_DepartmentSegment_Segment" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_DepartmentSkillType_SkillType" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_DepartmentSupportingOrgan_SupportingOrgan" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_DepartmentTeam_Team" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_DepartmentTeamCompetition_DepartmentTeam" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_DepartmentTeamCompetitionDetail_DepartmentTeam_Opponet" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_DepartmentTeamExerciseHistory_DepartmentTeam" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_DepartmentTeamExerciseTime_DepartmentTeam" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_DepartmentTeamGoods_DepartmentTeam" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_PersonTeam_DepartmentTeam" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_DepartmentTeamCompetition_Grade" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_DepartmentTeamCompetitionDetail_DepartmentTeamCompetition" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_DepartmentTeamCompetitionMember_DepartmentTeamCompetition" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_PersonTeamGrade_DepartmentTeamCompetition" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_DepartmentTeamCompetitionDetail_CompetitionResult" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_DepartmentTeamCompetitionDetail_Grade" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_PersonTeamGrade_DepartmentTeamCompetitionDetail" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_DepartmentTeamCompetitionMember_Person" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_DepartmentTeamExerciseHistory_DepartmentTeamExerciseTime" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_DepartmentTeamExerciseTime_WeekDay" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_DepartmentTeamGoods_Goods" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_DepartmentWaterSource_WaterSource" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_Family_DiedCause" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_Family_DiedCause1" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_PersonDisableType_DisableType" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_Person_DrugHistory" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_PersonNew_DrugHistory" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_Person_DrugStatus" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_PersonNew_DrugStatus" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_PersonDrugType_DrugType" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_SegmentDrugType_DrugType" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_SegmentReconnaissanceDrugType_DrugType" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_Person_DrugWithdrawalHistory" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_PersonNew_DrugWithdrawalHistory" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_Person_EducationField" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_Personnel_Field" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_PersonNew_EducationField" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_Person_EducationStatus" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_PersonNew_EducationStatus" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_Person_EducationType" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_Personnel_EducationTypeId" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_PersonNew_EducationType" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_EducationYearClass_EducationYear" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_EducationYearClassCourse_EducationYearClass" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_EducationYearClassMember_EducationYearClass" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_EducationYearClassCourse_Personnel" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_EducationYearClassCourseTime_EducationYearClassCourse" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_EducationYearClassCourseHistory_EducationYearClassCourseTime" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_EducationYearClassCourseHistory_Personnel" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_EducationYearClassMemberHistory_EducationYearClassCourseTime" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_EducationYearClassMember_Person" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_EducationYearClassMemberHistory_EducationYearClassMember" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_EducationYearClassMemberHistory_Personnel" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_Personnel_EquipmentType" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_Ethnic_Nationality" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_Person_Ethnic" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_PersonNew_Ethnic" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_SegmentEthnic_Ethnic" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_SegmentReconnaissanceEthnic_Ethnic" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_PersonExpense_ExpenseType" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_Expertise_SkillType" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_PersonTeam_Expertise" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_PersonTeamGrade_Expertise" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_FamilyMember_ExpireCause" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_FacilityType_FacilityCategory" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_PersonFacilityType_FacilityType" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_Family_FamilyStatus" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_Family_House" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_Family_HouseBuildingMaterial" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_Family_HouseStatus" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_Family_LeavingHouseCause" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_Family_LeavingHouseCause1" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_Family_MaritalStatus" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_Family_MigrationCause" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_Family_Person" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_Family_Referrer" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_Family_RelationType" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_Family_ResidenceType" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_Family_Segment" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_Family_Street" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_FamilyAppliance_Family" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_FamilyLog_Family" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_FamilyMember_Family" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_FamilyPhone_Family" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_FamilyReconnaissance_Family" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_HouseFamily_Family" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_PersonExpense_Family" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_PersonIncome_Family" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_FamilyMember_Person" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_FamilyMember_RelationType" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_FamilyPhone_Person" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_Feature_SubSystem" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_Feature_SubSystem1" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_House_FuelType" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_SegmentFuelType_FuelType" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_SegmentReconnaissanceFuelType_FuelType" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_Person_Gender" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_Personnel_Gender" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_PersonNew_Gender" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_RelationType_Gender" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_Team_Gender" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_Goods_GoodsType" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_TeamRequiredGoods_Goods" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_GoodsType_GoodsCategory" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_Grade_SkillType" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_PersonTeamGrade_Grade" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_Person_HealthType" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_PersonNew_HealthType" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_House_HouseBuildingMaterial" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_House_HouseType" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_House_PlaceType" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_House_Street" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_HouseAppliance_House" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_HouseFamily_House" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_HouseFamily_LeavingHouseCause" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_PersonIdentityDocument_IdentityDocument" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_PersonIncome_IncomeType" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_Person_InsuranceType" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_PersonInsuranceType_InsuranceType" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_PersonNew_InsuranceType" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_Job_JobStatus" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_Person_Job" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_PersonJob_Job" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_Personnel_Job" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_PersonNew_Job" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_Person_JobStatus" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_Personnel_JobStatus" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_PersonNew_JobStatus" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_Person_LeavingHouseCause" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_PersonNew_LeavingHouseCause" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_PersonDamage_Limb" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_Person_MaritalStatus" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_Personnel_MaritalStatus" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_PersonNew_MaritalStatus" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_Person_Nationality" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_Personnel_Nationality" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_PersonNew_Nationality" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_PersonNeedType_NeedType" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_Person_Person" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_Person_PersonStatus" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_Person_Province" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_Person_Religion" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_Person_SupportingOrgan" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_PersonAssessmentModel_Person" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_PersonChildAbuseType_Person" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_PersonCrimeType_Person" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_PersonDamage_Person" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_PersonDentalMonitoring_Person" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_PersonDisableType_Person1" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_PersonDrugType_Person" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_PersonExpense_Person" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_PersonFacilityType_Person" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_PersonIdentityDocument_Person" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_PersonIncome_Person" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_PersonInsuranceType_Person" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_PersonJob_Person" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_PersonLog_Person" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_PersonMedicalMonitoring_Person" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_PersonNeedType_Person" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_PersonNew_Person" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_PersonNew_PersonStatus" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_PersonNew_Province" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_PersonNew_Religion" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_PersonNew_SupportingOrgan" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_PersonSicknessType_Person1" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_PersonSkillType_Person" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_PersonSupportingOrgan_Person" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_PersonTeam_Person" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_PersonTraningCourseType_Person" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_PersonWorkshop_Person" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_RoleMemberAccess_Person" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_PersonChildAbuseType_RelationType" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_PersonCrimeType_PunishmentCheckOutCause" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_PersonCrimeType_PunishmentStatus" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_PersonCrimeType_PunishmentType" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_PersonToothStatus_PersonDentalMonitoring" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_Personnel_PersonnelStatus" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_Personnel_Province" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_Personnel_TradingType" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_PersonnelActivityField_Personnel" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_PersonnelCourse_Personnel" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_PersonnelFreeDay_Personnel" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_PersonnelLog_Personnel" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_PersonnelPursuit_Personnel" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_PersonnelSkillType_Personnel" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_PersonnelWorkshop_Personnel" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_UserInfo_Personnel" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_PersonnelFreeDay_WeekDay" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_PersonnelPursuit_PersonnelPursuitResult" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_PersonnelPursuitResult_PersonnelStatus" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_PersonnelSkillType_SkillType" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_PersonnelSkillType_SkillTypeLevel" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_PersonnelWorkshop_Workshop" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_PersonSicknessType_SicknessType" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_PersonSicknessType_TreatmentStatus" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_PersonSkillType_SkillType" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_PersonSkillType_SkillTypeLevel" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_PersonSupportingOrgan_SupportingOrgan" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_PersonSupportingOrganServiceType_PersonSupportingOrgan" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_PersonSupportingOrganServiceType_ServiceType" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_PersonTeamGrade_PersonTeam" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_PersonTeamGrade_PersonTeam_OpponentPerson" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_PersonToothStatus_Tooth" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_PersonToothStatus_ToothStatus" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_PersonTraningCourseType_TraningCourseType" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_PersonWorkshop_Workshop" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_PlaceType_PlaceCategory" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_SegmentPlaceType_PlaceType" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_SegmentReconnaissancePlaceType_PlaceType" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_SegmentReconnaissance_PowerSupply" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_PunishmentType_PunishmentClass" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_FamilyReconnaissance_ReconnaissanceCause" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_SegmentReconnaissance_ReconnaissanceCause" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_Segment_Region" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_SegmentReconnaissanceResidentialContext_ResidentialContext" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_SegmentResidentialContext_ResidentialContext" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_RoleMember_Role1" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_RoleMember_Role" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_RoleMember_UserInfo" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_RoleMemberAccess_RoleMember" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_SegmentDrugType_Segment" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_SegmentEthnic_Segment" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_SegmentFuelType_Segment" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_SegmentPlaceType_Segment" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_SegmentReconnaissance_Segment" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_SegmentResidentialContext_Segment" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_SegmentWaterSource_Segment" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_Street_Segment" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_SegmentReconnaissanceDrugType_SegmentReconnaissance" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_SegmentReconnaissanceEthnic_SegmentReconnaissance" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_SegmentReconnaissanceFuelType_SegmentReconnaissance" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_SegmentReconnaissancePlaceType_SegmentReconnaissance" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_SegmentReconnaissanceResidentialContext_SegmentReconnaissance" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_SegmentReconnaissanceWaterSource_WaterSource" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_SegmentWaterSource_WaterSource" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_SicknessType_SicknessType" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_SkillType_SkillType" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_SkillTypeAgeRange_SkillType" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_Team_SkillType" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_Team_SkillTypeMethod" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_Team_SkillTypeAgeRange" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_Street_Street" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_SubSystem_Parent" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_dbo_tbl_Cities_dbo_tbl_Provinces_ProvinceId" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_dbo_tbl_Counties_dbo_tbl_Cities_CityId" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_dbo_tbl_Villages_dbo_tbl_Counties_CountyId" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_dbo_tbl_Zones_dbo_tbl_Counties_CountyId" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_dbo_tbl_Zones_dbo_tbl_Villages_VillageId" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_TeamRequiredGoods_Team" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_Tooth_ToothType" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_UserDepartment_UserInfo" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_Workshop_Workshop" ManuallyRouted="false" />
+        <AssociationConnector Association="IASDataModel.FK_Feature_FeatureType" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

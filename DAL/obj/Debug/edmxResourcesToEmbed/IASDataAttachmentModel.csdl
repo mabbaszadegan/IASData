@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="IASDataAttachmentModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Attachment">
+    <Key>
+      <PropertyRef Name="AttachmentId" />
+    </Key>
+    <Property Name="AttachmentId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AttachmentDesc" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="AttachmentFileName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="AttachmentExtention" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="AttachmentContent" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+    <Property Name="AttachmentContentType" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="AttachmentTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="AttachmentTimeSolar" Type="String" MaxLength="16" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="AttachmentIsDefault" Type="Boolean" Nullable="false" />
+    <Property Name="AttachmentLatitudeDevice" Type="Double" />
+    <Property Name="AttachmentLongitudeDevice" Type="Double" />
+    <Property Name="AttachmentTypeId" Type="Int32" Nullable="false" />
+    <Property Name="AttachmentOwnerId" Type="Int64" Nullable="false" />
+    <Property Name="AttachmentZiped" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="RoleId" Type="Int32" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="InsertUserId" Type="Int32" Nullable="false" />
+    <Property Name="InsertTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateUserId" Type="Int32" />
+    <Property Name="UpdateTime" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="AttachmentType" Relationship="Self.FK_Attachment_AttachmentType" FromRole="Attachment" ToRole="AttachmentType" />
+  </EntityType>
+  <EntityType Name="AttachmentType">
+    <Key>
+      <PropertyRef Name="AttachmentTypeId" />
+    </Key>
+    <Property Name="AttachmentTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AttachmentTypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="AttachmentTypeZiped" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="AttachmentTypeMaxSize" Type="Int32" Nullable="false" />
+    <Property Name="AttachmentTypeAllowedFormat" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ObjectId" Type="Int32" Nullable="false" />
+    <Property Name="ObjectName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="InsertUserId" Type="Int32" Nullable="false" />
+    <Property Name="InsertTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateUserId" Type="Int32" />
+    <Property Name="UpdateTime" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Attachments" Relationship="Self.FK_Attachment_AttachmentType" FromRole="AttachmentType" ToRole="Attachment" />
+  </EntityType>
+  <Association Name="FK_Attachment_AttachmentType">
+    <End Role="AttachmentType" Type="Self.AttachmentType" Multiplicity="1" />
+    <End Role="Attachment" Type="Self.Attachment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AttachmentType">
+        <PropertyRef Name="AttachmentTypeId" />
+      </Principal>
+      <Dependent Role="Attachment">
+        <PropertyRef Name="AttachmentTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="IASDataAttachmentEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Attachments" EntityType="Self.Attachment" />
+    <EntitySet Name="AttachmentTypes" EntityType="Self.AttachmentType" />
+    <AssociationSet Name="FK_Attachment_AttachmentType" Association="Self.FK_Attachment_AttachmentType">
+      <End Role="AttachmentType" EntitySet="AttachmentTypes" />
+      <End Role="Attachment" EntitySet="Attachments" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
