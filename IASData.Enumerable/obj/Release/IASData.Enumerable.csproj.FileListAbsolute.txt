@@ -1,6 +1,0 @@
-D:\Project\SosapovertyMVC\Sosapoverty\IASData.Enumerable\bin\Release\IASData.Enumerable.dll
-D:\Project\SosapovertyMVC\Sosapoverty\IASData.Enumerable\bin\Release\IASData.Enumerable.pdb
-D:\Project\SosapovertyMVC\Sosapoverty\IASData.Enumerable\obj\Release\IASData.Enumerable.csprojAssemblyReference.cache
-D:\Project\SosapovertyMVC\Sosapoverty\IASData.Enumerable\obj\Release\IASData.Enumerable.csproj.CoreCompileInputs.cache
-D:\Project\SosapovertyMVC\Sosapoverty\IASData.Enumerable\obj\Release\IASData.Enumerable.dll
-D:\Project\SosapovertyMVC\Sosapoverty\IASData.Enumerable\obj\Release\IASData.Enumerable.pdb
