@@ -3,7 +3,9 @@ using IASData.Enumerable;
 using IASData.Utility;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.IO;
+//using System.Data.Entity;
 using System.Linq;
 using System.Web.Mvc;
 using System.Web.Script.Serialization;
@@ -65,6 +67,8 @@ namespace IASData.Sport.Supervisor.Controllers
         }
 
         [HttpPost]
+
+        [ValidateAntiForgeryToken]
         public ActionResult CreatePersonIdentityDocument(DAL.PersonIdentityDocument personIdentityDocument)
         {
             List<SystemMessageViewModel> messageViewModel = new List<SystemMessageViewModel>();
@@ -170,6 +174,8 @@ namespace IASData.Sport.Supervisor.Controllers
         }
 
         [HttpPost]
+
+        [ValidateAntiForgeryToken]
         public ActionResult EditPersonIdentityDocument(DAL.PersonIdentityDocument model)
         {
             List<SystemMessageViewModel> messageViewModel = new List<SystemMessageViewModel>();

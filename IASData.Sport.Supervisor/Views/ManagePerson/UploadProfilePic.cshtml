@@ -13,7 +13,7 @@
         OnComplete = "updateProfilePic",
 
     },
-     new { enctype = "multipart/form-data" })
+     new { enctype = "multipart/form-data",id= "frmSaveProfilePic" })
     )
 {
     <input type="hidden" id="personId" value="@Model.PersonId" />
@@ -56,7 +56,7 @@
                 <a class="btn btn-warning" href="#" data-dismiss="modal" aria-label="Close">
                     <span class="fa fa-undo ml-3"></span>بازگشت
                 </a>
-                <input type="submit" class="btn btn-success" value="ثبت" />
+                <input type="button" class="btn btn-success" value="ثبت" onclick="submitForm('frmSaveProfilePic')"/>
 
 
 

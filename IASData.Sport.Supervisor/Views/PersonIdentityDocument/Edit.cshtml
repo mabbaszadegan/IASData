@@ -17,9 +17,10 @@
             InsertionMode = InsertionMode.Replace,
             LoadingElementId = "searchProgress",
             OnComplete = "",
+            HttpMethod="POST"
 
         },
-         new { enctype = "multipart/form-data" })
+         new { enctype = "multipart/form-data", id = "frmEditPersonIdentityDocument" })
         )
     {
         @Html.AntiForgeryToken()
@@ -37,7 +38,6 @@
 
                         <div class="col-md-10">
                             <input type="file" id="IdentityDocumentPic-@item.PersonIdentityDocumentId" name="IdentityDocumentPic-@item.PersonIdentityDocumentId" />
-
                         </div>
                     </div>
                 </div>
@@ -107,7 +107,7 @@
 
                     }, new { @class = "btn btn-danger btn-sm fa fa-remove" })
 
-                    <button class="btn btn-warning btn-sm" type="submit">
+                    <button class="btn btn-warning btn-sm" type="button" onclick="submitForm('frmEditPersonIdentityDocument');">
                         <span class="fa fa-edit pl-2"></span>اصلاح
                     </button>
 

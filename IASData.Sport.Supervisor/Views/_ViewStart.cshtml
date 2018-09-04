@@ -1,3 +1,14 @@
 ﻿@{
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
+
+<script>
+    function submitForm(frm) {
+        if ($('#' + frm + " input:file")[0].files[0].size <= 300000) {
+            //$('#' + frm).attr("data-ajax","false");
+            $('#' + frm).submit();
+        }
+        else
+            alert('حجم فایل ارسالی بیش از حد مجاز است! حداکثر حجم مجاز 300 کیلوبایت است!');
+    }
+</script>
