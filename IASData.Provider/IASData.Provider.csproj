@@ -106,6 +106,28 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="BaseControllers\Family\BaseManagePersonController.cs" />
+    <Compile Include="BaseControllers\Family\BaseFamilyController.cs" />
+    <Compile Include="BaseControllers\Family\BasePersonChildAbuseTypeController.cs" />
+    <Compile Include="BaseControllers\Family\BasePersonCrimeTypeController.cs" />
+    <Compile Include="BaseControllers\Family\BasePersonDamageController.cs" />
+    <Compile Include="BaseControllers\Family\BasePersonDisableTypeController.cs" />
+    <Compile Include="BaseControllers\Family\BasePersonDrugTypeController.cs" />
+    <Compile Include="BaseControllers\Family\BasePersonExpenseController.cs" />
+    <Compile Include="BaseControllers\Family\BasePersonIdentityDocumentsController.cs" />
+    <Compile Include="BaseControllers\Family\BasePersonIncomeController.cs" />
+    <Compile Include="BaseControllers\Family\BasePersonInsuranceTypeController.cs" />
+    <Compile Include="BaseControllers\Family\BasePersonJobController.cs" />
+    <Compile Include="BaseControllers\Family\BasePersonMostInfoController.cs" />
+    <Compile Include="BaseControllers\Family\BasePersonNeedTypeController.cs" />
+    <Compile Include="BaseControllers\Family\BasePersonSicknessTypeController.cs" />
+    <Compile Include="BaseControllers\Family\BasePersonSkillTypeController.cs" />
+    <Compile Include="BaseControllers\Family\BasePersonSupportingOrganController.cs" />
+    <Compile Include="BaseControllers\Family\BasePersonTalentController.cs" />
+    <Compile Include="BaseControllers\Family\BasePersonTeamController.cs" />
+    <Compile Include="BaseControllers\Family\BasePersonTeamGradeController.cs" />
+    <Compile Include="BaseControllers\Family\BasePersonTraningCourseTypeController.cs" />
+    <Compile Include="BaseControllers\Family\BasePersonWorkshopController.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="Controllers\BaseAccountController.cs" />
     <Compile Include="Controllers\LoockupController.cs" />
@@ -127,6 +149,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\BaseManagePerson\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DAL\DAL.csproj">

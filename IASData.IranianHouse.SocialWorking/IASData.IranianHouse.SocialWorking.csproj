@@ -154,6 +154,8 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Family\Controllers\ManagePersonController.cs" />
+    <Compile Include="Areas\Family\FamilyAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -176,6 +178,26 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Areas\Admin\Views\web.config" />
+    <Content Include="Areas\Family\Views\web.config" />
+    <Content Include="Areas\Family\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Family\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Family\Views\ManagePerson\Index.cshtml" />
+    <Content Include="Areas\Family\Views\ManagePerson\AddNewMember.cshtml" />
+    <Content Include="Areas\Family\Views\ManagePerson\CheckPerson.cshtml" />
+    <Content Include="Areas\Family\Views\ManagePerson\Create.cshtml" />
+    <Content Include="Areas\Family\Views\ManagePerson\CreateSimplePerson.cshtml" />
+    <Content Include="Areas\Family\Views\ManagePerson\Delete.cshtml" />
+    <Content Include="Areas\Family\Views\ManagePerson\Details.cshtml" />
+    <Content Include="Areas\Family\Views\ManagePerson\Edit.cshtml" />
+    <Content Include="Areas\Family\Views\ManagePerson\EditMember.cshtml" />
+    <Content Include="Areas\Family\Views\ManagePerson\IX.cshtml" />
+    <Content Include="Areas\Family\Views\ManagePerson\MemberSportInfo.cshtml" />
+    <Content Include="Areas\Family\Views\ManagePerson\PersonIndex.cshtml" />
+    <Content Include="Areas\Family\Views\ManagePerson\PersonList.cshtml" />
+    <Content Include="Areas\Family\Views\ManagePerson\RemoveMember.cshtml" />
+    <Content Include="Areas\Family\Views\ManagePerson\SearchForm.cshtml" />
+    <Content Include="Areas\Family\Views\ManagePerson\test.cshtml" />
+    <Content Include="Areas\Family\Views\ManagePerson\UploadProfilePic.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -210,6 +232,7 @@
     <Folder Include="Areas\Admin\Controllers\" />
     <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Areas\Admin\Views\Shared\" />
+    <Folder Include="Areas\Family\Models\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
