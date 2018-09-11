@@ -27,6 +27,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IASData.Enumerable", "IASDa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IASData.Provider", "IASData.Provider\IASData.Provider.csproj", "{D4594E0E-B6CA-4E0A-A82B-BC05213270F9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IASData.IranianHouse.SocialWorking", "IASData.IranianHouse.SocialWorking\IASData.IranianHouse.SocialWorking.csproj", "{454EF7A4-240B-4F84-A88D-59F19F7DF7EA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -65,6 +67,10 @@ Global
 		{D4594E0E-B6CA-4E0A-A82B-BC05213270F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D4594E0E-B6CA-4E0A-A82B-BC05213270F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D4594E0E-B6CA-4E0A-A82B-BC05213270F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{454EF7A4-240B-4F84-A88D-59F19F7DF7EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{454EF7A4-240B-4F84-A88D-59F19F7DF7EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{454EF7A4-240B-4F84-A88D-59F19F7DF7EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{454EF7A4-240B-4F84-A88D-59F19F7DF7EA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -78,46 +84,9 @@ Global
 		{325C76E2-FFAB-475E-93D6-D1F0948D84BB} = {878FD230-7254-4306-BA2E-40AE7F99BA87}
 		{1E7F6D88-82F5-4F31-BBD4-327139380231} = {878FD230-7254-4306-BA2E-40AE7F99BA87}
 		{D4594E0E-B6CA-4E0A-A82B-BC05213270F9} = {878FD230-7254-4306-BA2E-40AE7F99BA87}
+		{454EF7A4-240B-4F84-A88D-59F19F7DF7EA} = {2678AF3C-A7EA-45E9-9700-D50C7EA4ACCF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {59A3903E-FD32-403A-80BA-CC7AE06F2EBD}
-	EndGlobalSection
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 9
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = https://mabbaszadegan.visualstudio.com/
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = DAL\\DAL.csproj
-		SccProjectTopLevelParentUniqueName1 = Sosapoverty.sln
-		SccProjectName1 = DAL
-		SccLocalPath1 = DAL
-		SccProjectUniqueName2 = Kuchegardan\\Kuchegardan.csproj
-		SccProjectTopLevelParentUniqueName2 = Sosapoverty.sln
-		SccProjectName2 = Kuchegardan
-		SccLocalPath2 = Kuchegardan
-		SccProjectUniqueName3 = Sosapoverty\\Sosapoverty.csproj
-		SccProjectTopLevelParentUniqueName3 = Sosapoverty.sln
-		SccProjectName3 = Sosapoverty
-		SccLocalPath3 = Sosapoverty
-		SccProjectUniqueName4 = WebService\\WebService.csproj
-		SccProjectTopLevelParentUniqueName4 = Sosapoverty.sln
-		SccProjectName4 = WebService
-		SccLocalPath4 = WebService
-		SccProjectUniqueName5 = IASData.Sport.Supervisor\\IASData.Sport.Supervisor.csproj
-		SccProjectTopLevelParentUniqueName5 = Sosapoverty.sln
-		SccProjectName5 = IASData.Sport.Supervisor
-		SccLocalPath5 = IASData.Sport.Supervisor
-		SccProjectUniqueName6 = IASData.Utility\\IASData.Utility.csproj
-		SccProjectTopLevelParentUniqueName6 = Sosapoverty.sln
-		SccProjectName6 = IASData.Utility
-		SccLocalPath6 = IASData.Utility
-		SccProjectUniqueName7 = IASData.Enumerable\\IASData.Enumerable.csproj
-		SccProjectTopLevelParentUniqueName7 = Sosapoverty.sln
-		SccProjectName7 = IASData.Enumerable
-		SccLocalPath7 = IASData.Enumerable
-		SccProjectUniqueName8 = IASData.Provider\\IASData.Provider.csproj
-		SccProjectTopLevelParentUniqueName8 = Sosapoverty.sln
-		SccProjectName8 = IASData.Provider
-		SccLocalPath8 = IASData.Provider
 	EndGlobalSection
 EndGlobal
