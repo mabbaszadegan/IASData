@@ -107,6 +107,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Class1.cs" />
+    <Compile Include="Controllers\BaseAccountController.cs" />
     <Compile Include="Controllers\LoockupController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -115,7 +116,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\web.config" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -127,12 +127,19 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
-    <Folder Include="Views\Loockup\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DAL\DAL.csproj">
       <Project>{0C7DCCAC-F979-4ABD-9EC1-7C4DA238A885}</Project>
       <Name>DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IASData.Enumerable\IASData.Enumerable.csproj">
+      <Project>{1E7F6D88-82F5-4F31-BBD4-327139380231}</Project>
+      <Name>IASData.Enumerable</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IASData.Utility\IASData.Utility.csproj">
+      <Project>{325C76E2-FFAB-475E-93D6-D1F0948D84BB}</Project>
+      <Name>IASData.Utility</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

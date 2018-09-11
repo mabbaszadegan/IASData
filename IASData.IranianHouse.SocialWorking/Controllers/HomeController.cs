@@ -26,5 +26,9 @@ namespace IASData.IranianHouse.SocialWorking.Controllers
 
             return View();
         }
+        public ActionResult Menubar()
+        {
+            return PartialView("_Menubar");
+        }
     }
 }

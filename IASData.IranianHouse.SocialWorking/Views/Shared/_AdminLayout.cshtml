@@ -1,0 +1,41 @@
+﻿@using System.Web.Optimization
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    
+    <script src="http://data.sosapoverty.org/CustomReferences/Scripts/jquery-3.0.0.js"></script>
+    <script src="http://data.sosapoverty.org/CustomReferences/Scripts/jquery-3.3.1.js"></script>
+    <script src="http://data.sosapoverty.org/CustomReferences/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <script src="http://data.sosapoverty.org/CustomReferences/Scripts/popper.js"></script>
+    <script src="http://data.sosapoverty.org/CustomReferences/Scripts/bootstrap.js"></script>
+    <script src="http://data.sosapoverty.org/CustomReferences/Scripts/respond.js"></script>
+
+    <script type="text/javascript" src="http://data.sosapoverty.org/CustomReferences/MyScripts/Common.js"></script>
+
+    @RenderSection("Scripts", false)
+
+    <link rel="stylesheet" href="http://data.sosapoverty.org/CustomReferences/Content/bootstrap.css" />
+    <link href="http://data.sosapoverty.org/CustomReferences/Content/MdBootstrapPersianDateTimePicker/jquery.Bootstrap-PersianDateTimePicker.css" rel="stylesheet" />
+    <link href="http://data.sosapoverty.org/CustomReferences/Content/Site.css" rel="stylesheet" />
+    <link rel="stylesheet" href="http://data.sosapoverty.org/CustomReferences/Content/FontManaging.css" />
+    <link rel="stylesheet" href="http://data.sosapoverty.org/CustomReferences/Content/font-awesome.min.css" />
+
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+
+
+    @Html.Action("Menubar", "Home")
+   
+
+    @*@Html.Ation("Index", "Account")*@
+
+    <div id="main" class="container-fluid">
+        @RenderBody()
+    </div>
+
+
+</body>
+</html>
