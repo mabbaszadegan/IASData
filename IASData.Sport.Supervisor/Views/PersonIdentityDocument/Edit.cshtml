@@ -10,17 +10,25 @@
     i++;
     using (Ajax.BeginForm(
         "EditPersonIdentityDocument",
-        "Family",
+        "PersonIdentityDocument",
+        new
+        {
+            PersonIdentityDocumentId = item.PersonIdentityDocumentId,
+            PersonId = item.PersonId,
+            IdentityDocumentId = item.IdentityDocumentId,
+            IdentityDocumentCode = item.IdentityDocumentCode,
+            IdentityDocumentSerialNo = item.IdentityDocumentSerialNo,
+
+        },
         new AjaxOptions
         {
             UpdateTargetId = "ModalBody",
             InsertionMode = InsertionMode.Replace,
             LoadingElementId = "searchProgress",
             OnComplete = "",
-            HttpMethod="POST"
 
         },
-         new { enctype = "multipart/form-data", id = "frmEditPersonIdentityDocument" })
+         new { enctype = "multipart/form-data", id = "frmEditPersonIdentityDocument-" + item.PersonIdentityDocumentId })
         )
     {
         @Html.AntiForgeryToken()
@@ -28,7 +36,6 @@
         <input type="hidden" name="PersonId" value="@item.PersonId" />
 
 
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
         <div class='row ml-3 mr-3 mb-3 pt-3 @(i%2==0?"bg-light":"")'>
             <div class="col-3">
@@ -94,6 +101,7 @@
                     </div>
                 </div>
             </div>
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
             <div class="col-12 text-left">
                 <div class=" btn btn-group-sm col-md-2 col-sm-12 mb-3">
@@ -107,7 +115,7 @@
 
                     }, new { @class = "btn btn-danger btn-sm fa fa-remove" })
 
-                    <button class="btn btn-warning btn-sm" type="button" onclick="submitForm('frmEditPersonIdentityDocument');">
+                    <button class="btn btn-warning btn-sm" type="button" onclick="submitForm('frmEditPersonIdentityDocument-@item.PersonIdentityDocumentId');">
                         <span class="fa fa-edit pl-2"></span>اصلاح
                     </button>
 

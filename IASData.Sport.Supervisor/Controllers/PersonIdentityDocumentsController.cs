@@ -174,9 +174,8 @@ namespace IASData.Sport.Supervisor.Controllers
         }
 
         [HttpPost]
-
         [ValidateAntiForgeryToken]
-        public ActionResult EditPersonIdentityDocument(DAL.PersonIdentityDocument model)
+        public ActionResult EditPersonIdentityDocument(DAL.PersonIdentityDocument model, FormCollection collection)
         {
             List<SystemMessageViewModel> messageViewModel = new List<SystemMessageViewModel>();
             UserInfo userInfo = db.UserInfoRepository.Get(q => q.UserName == User.Identity.Name).FirstOrDefault();
@@ -288,6 +287,120 @@ namespace IASData.Sport.Supervisor.Controllers
             ViewBag.Messages = messageViewModel;
             return RedirectToAction("Index", new { id = model.PersonId });
         }
+        //[HttpPost]
+        //public ActionResult EditPersonIdentityDocument(int PersonIdentityDocumentId,int PersonId,int IdentityDocumentId,string IdentityDocumentCode, string PersonIdentityDocumentDesc, string IdentityDocumentSerialNo, string ExpireTimeSolar)
+        //{
+        //    List<SystemMessageViewModel> messageViewModel = new List<SystemMessageViewModel>();
+        //    UserInfo userInfo = db.UserInfoRepository.Get(q => q.UserName == User.Identity.Name).FirstOrDefault();
+        //    DAL.PersonIdentityDocument personIdentityDocument = db.PersonIdentityDocumentRepository.GetById(PersonIdentityDocumentId);
+
+        //    DAL.Attachment attachment = new Attachment();
+        //    AttachmentType attachmentType = db.AttachmentTypeRepository.GetById((int)Enumerable.AttachmentTypes.PersonIdentityDocument);
+        //    string attachmentTypeAllowedFormat = attachmentType.AttachmentTypeAllowedFormat;
+        //    var postedFiles = Request.Files;
+        //    if (postedFiles.Count == 1)
+        //    {
+        //        if (postedFiles[0] != null && postedFiles[0].IsImage())
+        //        {
+        //            if (postedFiles[0].ContentLength <= attachmentType.AttachmentTypeMaxSize)
+        //            {
+        //                string[] allowExtentions = attachmentTypeAllowedFormat.Split(',');
+        //                if (!string.IsNullOrEmpty(System.IO.Path.GetExtension(postedFiles[0].FileName)) &&
+        //                    allowExtentions.Contains(System.IO.Path.GetExtension(postedFiles[0].FileName).ToLower()))
+        //                {
+        //                    foreach (var item in db.AttachmentRepository.Get(a => a.AttachmentOwnerId == personIdentityDocument.PersonIdentityDocumentId && a.AttachmentTypeId == (int)Enumerable.AttachmentTypes.PersonIdentityDocument))
+        //                    {
+        //                        db.AttachmentRepository.Delete(item);
+        //                    }
+        //                    byte[] fileData = null;
+        //                    using (var binaryReader = new BinaryReader(postedFiles[0].InputStream))
+        //                    {
+        //                        binaryReader.BaseStream.Position = 0;
+        //                        fileData = binaryReader.ReadBytes(postedFiles[0].ContentLength);
+        //                    }
+        //                    attachment.AttachmentContent = fileData;
+        //                    attachment.AttachmentDesc = "عکس پرسنلی";
+        //                    attachment.AttachmentExtention = System.IO.Path.GetExtension(postedFiles[0].FileName).Replace(".", "");  //(fuPersonalImage.FileName.Substring(fuPersonalImage.FileName.IndexOf(".") + 1));
+        //                    attachment.AttachmentFileName = Guid.NewGuid() + "_" + postedFiles[0].FileName;
+        //                    attachment.AttachmentZiped = postedFiles[0].FileName.ToZipedTextOnly();
+        //                    // OBJA.AttachmentContent =Convert.ToByte(fuPersonalImage.PostedFile);
+        //                    attachment.AttachmentContentType = postedFiles[0].ContentType;
+
+        //                    attachment.AttachmentOwnerId = personIdentityDocument.PersonIdentityDocumentId;
+
+
+        //                    attachment.AttachmentTypeId = (int)Enumerable.AttachmentTypes.PersonIdentityDocument;
+        //                    attachment.AttachmentTime = DateTime.Now;
+        //                    attachment.AttachmentTimeSolar = DateTime.Now.ToDateSolar();
+        //                    attachment.UserId = userInfo.UserId;
+
+
+        //                    attachment.InsertUserId = userInfo.UserId;
+        //                    attachment.InsertTime = DateTime.Now;
+        //                    db.AttachmentRepository.Insert(attachment);
+        //                }
+        //                else
+        //                {
+        //                    messageViewModel.Add(new SystemMessageViewModel
+        //                    {
+        //                        Title = "خطا!",
+        //                        Desc = "فرمت فایل مجاز نیست!"
+        //                    });
+        //                }
+        //            }
+        //            else
+        //            {
+        //                messageViewModel.Add(new SystemMessageViewModel
+        //                {
+        //                    Title = "خطا!",
+        //                    Desc = "حجم تصویر بیش از حد مجاز است!"
+        //                });
+        //            }
+        //        }
+        //        else
+        //        {
+        //            messageViewModel.Add(new SystemMessageViewModel
+        //            {
+        //                Title = "خطا!",
+        //                Desc = "فرمت فایل غیر مجاز است!"
+        //            });
+        //        }
+        //    }
+        //    if (!string.IsNullOrEmpty(ExpireTimeSolar))
+        //    {
+        //        personIdentityDocument.ExpireTimeSolar = ExpireTimeSolar;
+        //        personIdentityDocument.ExpireTime = ExpireTimeSolar.ToZipedTextOnly().ToDate();
+        //    }
+        //    personIdentityDocument.IdentityDocumentCode = IdentityDocumentCode;
+        //    personIdentityDocument.IdentityDocumentId = IdentityDocumentId;
+        //    personIdentityDocument.IdentityDocumentSerialNo = IdentityDocumentSerialNo;
+        //    personIdentityDocument.PersonIdentityDocumentDesc = PersonIdentityDocumentDesc;
+
+        //    //personIdentityDocument.PersonIdentityDocumentDesc = model.PersonIdentityDocumentDesc;
+        //    personIdentityDocument.IdentityDocumentId = IdentityDocumentId;
+        //    personIdentityDocument.UpdateTime = DateTime.Now;
+        //    personIdentityDocument.UpdateUserId = userInfo.UserId;
+        //    db.PersonIdentityDocumentRepository.Update(personIdentityDocument);
+        //    db.Save();
+
+        //    var input = "";//new JavaScriptSerializer().Serialize(model);
+        //    var output = "personId=" + PersonIdentityDocumentId;
+        //    EventLogViewModel eventLogView = new EventLogViewModel
+        //    {
+        //        Area = null,
+        //        Controller = "PersonIdentityDocument",
+        //        Action = "EditPersonIdentityDocument",
+        //        Type = EventLogType.Update,
+        //        Input = input,
+        //        Output = output,
+        //        Description = "",
+        //        //UserId=User.Identity.
+        //    };
+        //    Common.HttpLogInsert(eventLogView);
+        //    ViewBag.Messages = messageViewModel;
+        //    return RedirectToAction("Index", new { id = PersonId });
+        //}
+
         public ActionResult RemovePersonIdentityDocument(int id)
         {
             var personIdentityDocument = db.PersonIdentityDocumentRepository.GetById(id);

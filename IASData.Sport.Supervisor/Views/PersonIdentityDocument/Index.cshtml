@@ -26,7 +26,8 @@
 <script src="~/Scripts/MdBootstrapPersianDateTimePicker/jquery.Bootstrap-PersianDateTimePickerNew.js"></script>
 <script>
     $(document).ready(function () {
-        window.addEventListener("submit", function (e) {
+
+        $('#frmEditPersonIdentityDocument-107').on("submit", function (e) {
             var form = e.target;
             if (form.getAttribute("enctype") === "multipart/form-data") {
                 if (form.dataset.ajax) {
@@ -35,7 +36,7 @@
                     var xhr = new XMLHttpRequest();
                     xhr.open(form.method, form.action);
                     xhr.onreadystatechange = function () {
-                        if (xhr.readyState == 4 && xhr.status == 200) {
+                        if (xhr.readyState === 4 && xhr.status === 200) {
                             if (form.dataset.ajaxUpdate) {
                                 var updateTarget = document.querySelector(form.dataset.ajaxUpdate);
                                 if (updateTarget) {
@@ -57,7 +58,7 @@
 
             reader.onload = function (e) {
                 $('#imgPreviewPerson').attr('src', e.target.result);
-            }
+            };
 
             reader.readAsDataURL(input.files[0]);
         }
