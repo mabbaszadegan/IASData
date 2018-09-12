@@ -1,0 +1,168 @@
+﻿
+
+<div class="row">
+    <div class="col-2">
+        <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+            @Ajax.ActionLink("تصویر پرسنلی", "UploadProfilePic", "ManagePerson", new { id = ViewBag.PersonId }, new AjaxOptions
+            {
+                UpdateTargetId = "personMostInfo",
+                InsertionMode = InsertionMode.Replace,
+                LoadingElementId = "modalProgress",
+                OnBegin = "",
+                OnComplete = "activeTab(6)"
+
+            }, new
+            {
+                @class = "nav-link",
+                id = "tab-6",
+                //data_toggle = "pill",
+                //href = "#v-pills-0",
+                //role = "tab",
+                //aria_controls = "v-pills-profile",
+                //aria_selected = "false"
+            })
+            @Ajax.ActionLink("سابقه آزار", "Index", "PersonChildAbuseType", new { id = ViewBag.PersonId }, new AjaxOptions
+            {
+                UpdateTargetId = "personMostInfo",
+                InsertionMode = InsertionMode.Replace,
+                LoadingElementId = "modalProgress",
+                OnBegin = "",
+                OnComplete = "activeTab(0)"
+
+            }, new
+            {
+                @class = "nav-link",
+                id = "tab-0",
+                //data_toggle = "pill",
+                //href = "#personMostInfo",
+                //role = "tab",
+                //aria_controls = "v-pills-profile",
+                //aria_selected = "true"
+            })
+
+            @Ajax.ActionLink("معلولیت ها", "Index", "PersonDisableType", new { id = ViewBag.PersonId }, new AjaxOptions
+            {
+                UpdateTargetId = "personMostInfo",
+                InsertionMode = InsertionMode.Replace,
+                LoadingElementId = "modalProgress",
+                OnBegin = "",
+                OnComplete = "activeTab(1)"
+
+            }, new
+            {
+                @class = "nav-link",
+                id = "tab-1",
+                //data_toggle = "pill",
+                //href = "#personMostInfo",
+                //role = "tab",
+                //aria_controls = "v-pills-profile",
+                //aria_selected = "false"
+            })
+            @Ajax.ActionLink("اعتیاد", "Index", "PersonDrugType", new { id = ViewBag.PersonId }, new AjaxOptions
+            {
+                UpdateTargetId = "personMostInfo",
+                InsertionMode = InsertionMode.Replace,
+                LoadingElementId = "modalProgress",
+                OnBegin = "",
+                OnComplete = "activeTab(2)"
+
+            }, new
+            {
+                @class = "nav-link",
+                id = "tab-2",
+                //data_toggle = "pill",
+                //href = "#personMostInfo",
+                //role = "tab",
+                //aria_controls = "v-pills-profile",
+                //aria_selected = "false"
+            })
+
+            @Ajax.ActionLink("اطلاعات مددکاری فرد", "PersonSocialWorkInfo", "PersonMostInfo", new { id = ViewBag.PersonId }, new AjaxOptions
+            {
+                UpdateTargetId = "personMostInfo",
+                InsertionMode = InsertionMode.Replace,
+                LoadingElementId = "modalProgress",
+                OnBegin = "",
+                OnComplete = "activeTab(3)"
+
+            }, new
+            {
+                @class = "nav-link active show",
+                id = "tab-3",
+                //data_toggle = "pill",
+                //href = "#v-pills-0",
+                //role = "tab",
+                //aria_controls = "v-pills-profile",
+                //aria_selected = "false"
+            })
+
+            @Ajax.ActionLink("مدارک هویتی", "Index", "PersonIdentityDocument", new { id = ViewBag.PersonId }, new AjaxOptions
+            {
+                UpdateTargetId = "personMostInfo",
+                InsertionMode = InsertionMode.Replace,
+                LoadingElementId = "modalProgress",
+                OnBegin = "",
+                OnComplete = "activeTab(4)"
+
+            }, new
+            {
+                @class = "nav-link",
+                id = "tab-4",
+                //data_toggle = "pill",
+                //href = "#v-pills-0",
+                //role = "tab",
+                //aria_controls = "v-pills-profile",
+                //aria_selected = "false"
+            })
+            @Ajax.ActionLink("تیم های ورزشی", "Index", "PersonTeam", new { id = ViewBag.PersonId }, new AjaxOptions
+            {
+                UpdateTargetId = "personMostInfo",
+                InsertionMode = InsertionMode.Replace,
+                LoadingElementId = "modalProgress",
+                OnBegin = "",
+                OnComplete = "activeTab(5)"
+
+            }, new
+            {
+                @class = "nav-link",
+                id = "tab-5",
+                //data_toggle = "pill",
+                //href = "#v-pills-0",
+                //role = "tab",
+                //aria_controls = "v-pills-profile",
+                //aria_selected = "false"
+            })
+            @*<a class="nav-link active show" id="v-pills-0-tab" data-toggle="pill" href="#v-pills-0" role="tab" aria-controls="v-pills-profile" aria-selected="true">اطلاعات تماس</a>
+                <a class="nav-link" id="v-pills-1-tab" data-toggle="pill" href="#v-pills-1" role="tab" aria-controls="v-pills-1" aria-selected="false">اطلاعات مسکن</a>*@
+            @*<a class="nav-link" id="v-pills-3-tab" data-toggle="pill" href="#v-pills-3" role="tab" aria-controls="v-pills-3" aria-selected="false">قیم خانواده</a>*@
+            @*<a class="nav-link" id="v-pills-4-tab" data-toggle="pill" href="#v-pills-4" role="tab" aria-controls="v-pills-4" aria-selected="false">مادر</a>
+                <a class="nav-link" id="v-pills-5-tab" data-toggle="pill" href="#v-pills-5" role="tab" aria-controls="v-pills-5" aria-selected="false">پدر</a>*@
+            @*<a class="nav-link" id="v-pills-2-tab" data-toggle="pill" href="#v-pills-2" role="tab" aria-controls="v-pills-2" aria-selected="false">مددکاری خانواده</a>*@
+        </div>
+    </div>
+    <div class="col-10">
+        <div class="tab-content" id="v-pills-tabContent">
+            <div class="tab-pane fade  active show" id="personMostInfo" role="tabpanel" aria-labelledby="v-pills-0-tab">
+                @Html.Action("PersonSocialWorkInfo", "PersonMostInfo", new { id = ViewBag.PersonId })
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<script>
+    function activeTab(tabId) {
+        for (i = 0; i <= 7; i++) {
+            if (i == tabId) {
+                $("#tab-" + i).removeAttr("class");
+                $("#tab-" + i).attr("class", "nav-link active show");
+            }
+            else {
+                $("#tab-" + i).removeAttr("class");
+                $("#tab-" + i).attr("class", "nav-link");
+            }
+        }
+    }
+</script>

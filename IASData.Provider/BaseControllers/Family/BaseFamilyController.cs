@@ -10,7 +10,7 @@ using System.Web.Script.Serialization;
 
 namespace IASData.Provider.BaseControllers.Family
 {
-    public class FamilyController : Controller
+    public class BaseFamilyController : Controller
     {
         private UnitOfWork db = new UnitOfWork();
 

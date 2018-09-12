@@ -1,0 +1,69 @@
+﻿@{
+    var abuseTypes = (List<DAL.IdentityDocument>)ViewBag.IdentityDocuments;
+    var personId = ViewBag.PersonId;
+}
+
+<div class="row">
+
+    <div class="card">
+        <div class="card-header">مدارک هویتی</div>
+        <div class=" card-body">
+            <fieldset class="border border-warning pr-3">
+                <legend class="col-form-label col-sm-3 ml-1" style="width:300px;">مشاهده و اصلاح سوابق</legend>
+                @Html.Action("Edit", "PersonIdentityDocument", new { personId = personId })
+            </fieldset>
+            @Html.Action("Create", "PersonIdentityDocument", new { personId = personId })
+        </div>
+    </div>
+
+    <div class=" col-md-12" id="PersonIdentityDocumentResult">
+
+    </div>
+
+</div>
+
+<script src="~/Scripts/MdBootstrapPersianDateTimePicker/jalaaliNew.js"></script>
+<script src="~/Scripts/MdBootstrapPersianDateTimePicker/jquery.Bootstrap-PersianDateTimePickerNew.js"></script>
+<script>
+    $(document).ready(function () {
+        window.addEventListener("submit", function (e) {
+            var form = e.target;
+            if (form.getAttribute("enctype") === "multipart/form-data") {
+                if (form.dataset.ajax) {
+                    e.preventDefault();
+                    e.stopImmediatePropagation();
+                    var xhr = new XMLHttpRequest();
+                    xhr.open(form.method, form.action);
+                    xhr.onreadystatechange = function () {
+                        if (xhr.readyState == 4 && xhr.status == 200) {
+                            if (form.dataset.ajaxUpdate) {
+                                var updateTarget = document.querySelector(form.dataset.ajaxUpdate);
+                                if (updateTarget) {
+                                    updateTarget.innerHTML = xhr.responseText;
+                                }
+                            }
+                        }
+                    };
+                    xhr.send(new FormData(form));
+                }
+            }
+        }, true);
+    });
+
+    function readURL(input) {
+
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#imgPreviewPerson').attr('src', e.target.result);
+            }
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+    $("#IdentityDocumentPic").change(function () {
+        readURL(this);
+    });
+
+</script>

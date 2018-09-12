@@ -1,0 +1,174 @@
+﻿@model DAL.FamilyViewModel
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+@using (Ajax.BeginForm(
+    "EditFatherInfo",
+    "Family",
+    new { id = Model.FamilyId },
+    new AjaxOptions
+    {
+        UpdateTargetId = "editFatherInfoResult",
+        InsertionMode = InsertionMode.Replace,
+        LoadingElementId = "modalProgress",
+        OnComplete = "",
+
+    },
+     new { enctype = "multipart/form-data" })
+    )
+{
+    @Html.AntiForgeryToken()
+
+
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.FamilyId)
+    <div class="row form-group">
+        <div class="col-12">
+            <div class=" col-xs-12 col-sm-6 col-md-2 col-lg-2">
+                <div class="input-group">
+
+                    <label for="FatherIsDied" class="btn btn-warning">
+                        فوت کرده
+                        @Html.CheckBoxFor(Model => Model.FatherIsDied, new { @class = "", @id = "FatherIsDied" })
+
+                    </label>
+
+
+                </div>
+            </div>
+            <div id="fatherDiedSection" class="row" >
+                <div class="input-group  col-md-3 col-sm-12 mb-3">
+                    <div class="input-group-append">
+                        <span class="input-group-text" id="basic-addon2">تاریخ فوت</span>
+                    </div>
+                    @*@Html.EditorFor(model => model.FatherDiedDateSolar, new { htmlAttributes = new { @class = "form-control" } })*@
+
+                    <input type="text" class="form-control" name="FatherDiedDateSolar" value="@Model.FatherDiedDateSolar" id="FatherDiedDateSolar" placeholder="" data-name="datepicker1" data-mddatetimepicker="true" data-targetselector="#FatherDiedDateSolar"
+                           data-trigger="click" />
+                    <div class="input-group-append" data-name="datepicker1" data-mddatetimepicker="true" data-targetselector="#FatherDiedDateSolar"
+                         data-trigger="click" data-enabletimepicker="false" data-isgregorian="false" data-englishnumber="false">
+                        <span class="input-group-text" id="basic-addon2"><span class="fa fa-calendar"></span></span>
+                    </div>
+                    @Html.ValidationMessageFor(model => model.FatherDiedDateSolar, "", new { @class = "text-danger" })
+
+                </div>
+                <div class="input-group  col-md-6 col-sm-12 mb-3">
+                    <div class="input-group-append">
+                        <span class="input-group-text" id="basic-addon2">علت فوت</span>
+                    </div>
+                    @Html.DropDownList("FatherDiedCauseId", null, htmlAttributes: new { @class = "form-control" })
+                    @Html.EditorFor(model => model.FatherDiedCauseDesc, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.FatherDiedCauseId, "", new { @class = "text-danger" })
+                </div>
+                <div class="input-group  col-md-2 col-sm-12 mb-3">
+                    <div class="input-group-append">
+                        @Html.LabelFor(model => model.FatherDiedAge, htmlAttributes: new { @class = "input-group-text" })
+                    </div>
+                    @Html.EditorFor(model => model.FatherDiedAge, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.FatherDiedAge, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+        <div class="col-12">
+            <div class=" col-xs-12 col-sm-6 col-md-2 col-lg-2">
+                <div class="input-group">
+                    <label for="FatherIsLeavedFamily" class="btn btn-warning">
+                        ترک خانواده
+                        @Html.CheckBoxFor(Model => Model.FatherIsLeavedFamily, new { @class = "", @id = "FatherIsLeavedFamily" })
+
+                    </label>
+                </div>
+            </div>
+            <div id="fatherLeavedSection" class="row">
+
+                <div class="input-group  col-md-3 col-sm-12 mb-3">
+                    <div class="input-group-append">
+                        <span class="input-group-text" id="basic-addon2">تاریخ ترک خانواده</span>
+                    </div>
+                    @*@Html.EditorFor(model => model.FatherLeavedFamilyDateSolar, new { htmlAttributes = new { @class = "form-control" } })*@
+
+                    <input type="text" class="form-control" name="FatherLeavedFamilyDateSolar" value="@Model.FatherLeavedFamilyDateSolar" id="FatherLeavedFamilyDateSolar" placeholder="" data-name="datepicker1" data-mddatetimepicker="true" data-targetselector="#FatherLeavedFamilyDateSolar"
+                           data-trigger="click" />
+                    <div class="input-group-append" data-name="datepicker1" data-mddatetimepicker="true" data-targetselector="#FatherLeavedFamilyDateSolar"
+                         data-trigger="click" data-enabletimepicker="false" data-isgregorian="false" data-englishnumber="false">
+                        <span class="input-group-text" id="basic-addon2"><span class="fa fa-calendar"></span></span>
+                    </div>
+                    @Html.ValidationMessageFor(model => model.FatherLeavedFamilyDateSolar, "", new { @class = "text-danger" })
+
+                </div>
+                <div class="input-group  col-md-6 col-sm-12 mb-3">
+                    <div class="input-group-append">
+                        <span class="input-group-text" id="basic-addon2">علت ترک خانواده</span>
+                    </div>
+                    @Html.DropDownList("FatherLeavingHouseCauseId", null, htmlAttributes: new { @class = "form-control" })
+                    @Html.EditorFor(model => model.FatherLeavingHouseCauseDesc, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.FatherLeavingHouseCauseId, "", new { @class = "text-danger" })
+                </div>
+                <div class="input-group  col-md-12 col-sm-12 mb-3">
+                    <div class="input-group-append">
+                        <span class="input-group-text" id="basic-addon2">نشانی محل زندگی پدر</span>
+                    </div>
+                    @Html.EditorFor(model => model.FatherAddress, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.FatherAddress, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+        </div>
+    <div class=" text-left">
+        <div class="">
+
+            <a class="btn btn-warning" href="#" data-dismiss="modal" aria-label="Close">
+                <span class="fa fa-undo ml-3"></span>بازگشت
+            </a>
+
+
+            <button class="btn btn-success" type="submit">
+                <span class="fa fa-edit ml-3"></span>ثبت
+            </button>
+
+        </div>
+    </div>
+    <div class="" id="editFatherInfoResult">
+
+    </div>
+}
+
+<script src="~/Scripts/MdBootstrapPersianDateTimePicker/jalaaliNew.js"></script>
+<script src="~/Scripts/MdBootstrapPersianDateTimePicker/jquery.Bootstrap-PersianDateTimePickerNew.js"></script>
+<script>
+    $(document).ready(function () {
+        setFatherIsDiedRelated();
+        setFatherIsLeavedRelated();
+
+        $("#FatherIsDied").change(function () {
+            setFatherIsDiedRelated();
+        });
+        $("#FatherIsLeavedFamily").change(function () {
+            setFatherIsLeavedRelated();
+        });
+    });
+
+    function setFatherIsDiedRelated() {
+        debugger;
+        if ($("#FatherIsDied").prop('checked')== true) {
+            $("#fatherDiedSection").show(500);
+        }
+        else {
+            $("#fatherDiedSection").hide(500);
+            //$("#nationalCode").val("");
+        }
+    }
+
+    function setFatherIsLeavedRelated() {
+        debugger;
+        if ($("#FatherIsLeavedFamily").prop('checked') == true) {
+            $("#fatherLeavedSection").show(500);
+        }
+        else {
+            $("#fatherLeavedSection").hide(500);
+            //$("#nationalCode").val("");
+        }
+    }
+</script>
