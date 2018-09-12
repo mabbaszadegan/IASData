@@ -119,7 +119,7 @@ function SeparateStr(Price) {
 
 function selectNationality(nID, targetControl, selectedValue) {
     debugger;
-    $.getJSON("../Loockup/LoadEthnicsByNationalityId", { id: nID },
+    $.getJSON("../General/Loockup/LoadEthnicsByNationalityId", { id: nID },
         function (data) {
             targetControl.empty();
             targetControl.append($('<option/>', {
@@ -147,7 +147,7 @@ function selectNationality(nID, targetControl, selectedValue) {
 
 function selectProvince(pID, targetControl, selectedValue) {
     debugger;
-    $.getJSON("../Loockup/LoadCitiesByProvinceId", { id: pID },
+    $.getJSON("../General/Loockup/LoadCitiesByProvinceId", { id: pID },
         function (data) {
             targetControl.empty();
             targetControl.append($('<option/>', {
@@ -175,7 +175,7 @@ function selectProvince(pID, targetControl, selectedValue) {
 
 function selectCity(cID, targetControl, selectedValue) {
     debugger;
-    $.getJSON("../Loockup/LoadRegionsByCityId", { id: cID },
+    $.getJSON("../General/Loockup/LoadRegionsByCityId", { id: cID },
         function (data) {
             targetControl.empty();
             targetControl.append($('<option/>', {
@@ -203,7 +203,7 @@ function selectCity(cID, targetControl, selectedValue) {
 
 function selectRegion(rID, targetControl, selectedValue) {
     debugger;
-    $.getJSON("../Loockup/LoadSegmentsByRegionId", { id: rID },
+    $.getJSON("../General/Loockup/LoadSegmentsByRegionId", { id: rID },
         function (data) {
             targetControl.empty();
             targetControl.append($('<option/>', {
@@ -230,7 +230,7 @@ function selectRegion(rID, targetControl, selectedValue) {
 
 function selectJobStatus(jsID, targetControl, selectedValue) {
     debugger;
-    $.getJSON("../Loockup/LoadJobsByJobStatusId", { id: jsID },
+    $.getJSON("../General/Loockup/LoadJobsByJobStatusId", { id: jsID },
         function (data) {
             targetControl.empty();
             targetControl.append($('<option/>', {

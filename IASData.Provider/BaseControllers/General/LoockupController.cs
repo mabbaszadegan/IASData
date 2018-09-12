@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace IASData.Provider.Controllers
+namespace IASData.Provider.BaseControllers.General
 {
     public class LoockupController : Controller
     {
