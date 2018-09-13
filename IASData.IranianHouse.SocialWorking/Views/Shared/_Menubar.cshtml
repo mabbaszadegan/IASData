@@ -27,7 +27,7 @@
         <p class="float-left">
             <span class=" badge badge-info">
                 <a href="#" class="badge badge-warning">@User.Identity.Name</a> خوش آمدید!
-            </span>  <a href="@Url.Action("LogOff", "Account")" class="badge badge-danger">
+            </span>  <a href="@Url.Action("LogOff", "Account",new { ReturnUrl="/IranianHouse.SocialWorking"})" class="badge badge-danger">
                 <i class="fa fa-sign-out "></i>
                 <span>
                     <strong>خروج</strong>
@@ -36,7 +36,7 @@
         </p>
     }
     else
-    { <a href="@Url.Action( "Login", "Account")">
+    { <a href="@Url.Action( "Login", "Account",new { ReturnUrl="/IranianHouse.SocialWorking"})">
             <i class="fa fa-sign-in"></i>
             <span>
                 <strong>ورود</strong>

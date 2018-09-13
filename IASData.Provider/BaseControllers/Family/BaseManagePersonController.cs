@@ -1156,7 +1156,7 @@ namespace IASData.Provider.BaseControllers.Family
             }
             return PartialView("IX", familyList);
         }
-        public ActionResult SearchForm(DAL.FamilySearchViewModel model)
+        public ActionResult SearchForm()
         {
             InitForm();
             return PartialView();

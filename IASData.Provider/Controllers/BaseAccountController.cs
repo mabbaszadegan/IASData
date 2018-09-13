@@ -16,7 +16,7 @@ namespace IASData.Provider.Controllers
         UnitOfWork db = new UnitOfWork();
         // GET: Authentication
 
-        [Route("Login")]
+        //[Route("Login")]
         public ActionResult Login()
         {
 
@@ -24,7 +24,7 @@ namespace IASData.Provider.Controllers
         }
 
         [HttpPost]
-        [Route("Login")]
+        //[Route("Login")]
         public ActionResult Login(LoginViewModel login, string ReturnUrl)
         {
             EventLogViewModel eventLogView = new EventLogViewModel();
@@ -102,7 +102,7 @@ namespace IASData.Provider.Controllers
             return View();
         }
 
-        [Route("LogOff")]
+        //[Route("LogOff")]
         public ActionResult LogOff()
         {
             FormsAuthentication.SignOut();
