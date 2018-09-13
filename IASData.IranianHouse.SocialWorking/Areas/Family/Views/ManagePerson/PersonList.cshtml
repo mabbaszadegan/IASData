@@ -63,30 +63,30 @@
                                         <div class="card-footer">
 
                                             @Ajax.ActionLink(" ", "EditMember", new { id = Model[row].PersonId }, new AjaxOptions
-                                            {
-                                                UpdateTargetId = "ModalBody",
-                                                InsertionMode = InsertionMode.Replace,
-                                                LoadingElementId = "modalProgress",
-                                                OnBegin = "showCreatePerson",
+                                       {
+                                           UpdateTargetId = "ModalBody",
+                                           InsertionMode = InsertionMode.Replace,
+                                           LoadingElementId = "modalProgress",
+                                           OnBegin = "showCreatePerson('اصلاح اطلاعات "+ Model[row].PersonFullName + "')",
 
-                                            }, new { @class = "btn btn-info fa fa-edit" })
+                                       }, new { @class = "btn btn-info fa fa-edit" })
                                             @Ajax.ActionLink(" ", "PersonMostInfoIndex", "PersonMostInfo", new { id = Model[row].PersonId }, new AjaxOptions
-                                            {
-                                                UpdateTargetId = "ModalBody",
-                                                InsertionMode = InsertionMode.Replace,
-                                                LoadingElementId = "modalProgress",
-                                                OnBegin = "showPersonMostInfo",
+                                       {
+                                           UpdateTargetId = "ModalBody",
+                                           InsertionMode = InsertionMode.Replace,
+                                           LoadingElementId = "modalProgress",
+                                           OnBegin = "showPersonMostInfo(اطلاعات تکمیلی '" + Model[row].PersonFullName + "')",
 
-                                            }, new { @class = "btn btn-warning fa fa-wrench" })
+                                       }, new { @class = "btn btn-warning fa fa-wrench" })
 
                                             @Ajax.ActionLink(" ", "RemoveMember", new { id = Model[row].PersonId }, new AjaxOptions
-                                            {
-                                                UpdateTargetId = "ModalBody",
-                                                InsertionMode = InsertionMode.Replace,
-                                                LoadingElementId = "modalProgress",
-                                                OnBegin = "showRemoveMember",
+                                       {
+                                           UpdateTargetId = "ModalBody",
+                                           InsertionMode = InsertionMode.Replace,
+                                           LoadingElementId = "modalProgress",
+                                           OnBegin = "showRemoveMember(حذف اطلاعات '" + Model[row].PersonFullName + "')",
 
-                                            }, new { @class = "btn btn-danger fa fa-remove" })
+                                       }, new { @class = "btn btn-danger fa fa-remove" })
 
 
                                         </div>
@@ -126,7 +126,7 @@
                                                                                      UpdateTargetId = "ModalBody",
                                                                                      InsertionMode = InsertionMode.Replace,
                                                                                      LoadingElementId = "modalProgress",
-                                                                                     OnBegin = "showCreatePerson",
+                                                                                     OnBegin = "showCreatePerson(تعریف فرد جدید)",
 
                                                                                  }, new { @class = "btn btn-primary" })
                     }
@@ -174,7 +174,7 @@
                                                                                        UpdateTargetId = "ModalBody",
                                                                                        InsertionMode = InsertionMode.Replace,
                                                                                        LoadingElementId = "modalProgress",
-                                                                                       OnBegin = "showCreatePerson",
+                                                                                       OnBegin = "showCreatePerson(تعریف فرد جدید)",
 
                                                                                    }, new { @class = "btn btn-primary" })
                     }

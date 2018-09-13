@@ -1395,10 +1395,10 @@ namespace IASData.Provider.BaseControllers.Family
             //genders.AddRange(db.GenderRepository.Get().Select(q => new LookupModel { Value = q.GenderId.ToString(), Name = q.GenderName }).OrderBy(q => q.Name));
             //ViewBag.GenderId = new SelectList(genders, "Value", "Name", person.GenderId);
 
-            //List<Gender> genders = new List<Gender>();
-            //genders.Add(new Gender { GenderId = -1, GenderName = "" });
-            //genders.AddRange(db.GenderRepository.Get().OrderBy(q => q.GenderName));
-            //ViewBag.GenderId = new SelectList(db.GenderRepository.Get(), "GenderId", "GenderName", person.GenderId);
+            List<Gender> genders = new List<Gender>();
+            genders.Add(new Gender { GenderId = -1, GenderName = "" });
+            genders.AddRange(db.GenderRepository.Get().OrderBy(q => q.GenderName));
+            ViewBag.GenderId = new SelectList(db.GenderRepository.Get(), "GenderId", "GenderName", person.GenderId);
 
             List<Nationality> nationalityId = new List<Nationality>
             {
