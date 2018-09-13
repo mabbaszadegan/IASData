@@ -27,7 +27,7 @@
     </div>
 </div>
 <div id="SearchFamilyResult">
-    @Html.Partial("IX",Model)
+    @Html.Partial("IX", Model)
 </div>
 
 <div class="modal fade modal-backdrop" id="myModal" style="width:100%" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -64,8 +64,6 @@
 <script type="text/javascript">
 
     function updateProfilePic() {
-
-        debugger;
         if ($("#personId").val() !== "") {
             id = $("#personId").val();
 
@@ -86,172 +84,98 @@
             $('#secSearch').html(result);
         });
     }
-    function showUploadProfilePic(id) {
+    function showUploadProfilePic(id, title) {
         $.ajax({
             url: "../ManagePerson/UploadProfilePic/" + id,
             type: "GET"
         }).done(function (result) {
-            $('#ModalTitle').text('آپلود تصویر پروفایل');
+            $('#ModalTitle').text(title);
             $('#ModalBody').html(result);
             $('#myModal').modal({ backdrop: 'static', keyboard: false });
         });
     }
-    function showCreatePerson() {
-        $('#ModalTitle').text('بررسی اولیه');
+    function showCreatePerson(title) {
+        $('#ModalTitle').text(title);
         $('#ModalBody').html("");
         $('#myModal').modal({ backdrop: 'static', keyboard: false });
 
 
-        //debugger;
-        //$.ajax({
-        //    url: "../ManagePerson/CheckPerson",
-        //    type: "GET"
-        //}).done(function (result) {
-        //    $('#ModalTitle').text('بررسی اولیه');
-        //    $('#ModalBody').html(result);
-        //    $('#myModal').modal({ backdrop: 'static', keyboard: false });
-        //});
     }
-    function showAddNewMember(id) {
-        debugger;
+    function showAddNewMember(id, title) {
+
         $.ajax({
             url: "../ManagePerson/CheckPerson?familyId=" + id,
             type: "GET"
         }).done(function (result) {
-            $('#ModalTitle').text('افزودن');
+            $('#ModalTitle').text(title);
             $('#ModalBody').html(result);
             $('#myModal').modal({ backdrop: 'static', keyboard: false });
         });
     }
-    function showEditMember(id) {
-        //$('#ModalTitle').text('ویرایش');
-        //$('#ModalBody').html("");
-        //$('#myModal').modal({ backdrop: 'static', keyboard: false });
+    function showEditMember(id, title) {
 
-        debugger;
         $.ajax({
             url: "../ManagePerson/EditMember/" + id,
             type: "GET"
         }).done(function (result) {
-            $('#ModalTitle').text('ویرایش');
+            $('#ModalTitle').text(title);
             $('#ModalBody').html(result);
             $('#myModal').modal({ backdrop: 'static', keyboard: false });
         });
     }
-    function showMemberSportInfo(id) {
-        debugger;
+    function showMemberSportInfo(id, title) {
         $.ajax({
             url: "../ManagePerson/MemberSportInfo/" + id,
             type: "GET"
         }).done(function (result) {
-            $('#ModalTitle').text('اطلاعات ورزشی');
+            $('#ModalTitle').text(title);
             $('#ModalBody').html(result);
             $('#myModal').modal({ backdrop: 'static', keyboard: false });
         });
     }
-    function showRemoveMember(id) {
-        debugger;
-         $('#ModalTitle').text('حذف');
+    function showRemoveMember(title) {
+        $('#ModalTitle').text(title);
         $('#ModalBody').html("");
         $('#myModal').modal({ backdrop: 'static', keyboard: false });
-
-        //$.ajax({
-        //    url: "../ManagePerson/RemoveMember/" + id,
-        //    type: "GET"
-        //}).done(function (result) {
-        //    $('#ModalTitle').text('حذف از خانواده');
-        //    $('#ModalBody').html(result);
-        //    $('#myModal').modal({ backdrop: 'static', keyboard: false });
-        //});
     }
 
     function showMembersSection(tabId, trId) {
-        debugger;
         $("#dep-" + tabId + " #tr-" + trId).show(500);
         $("#dep-" + tabId + " #plus-" + trId).hide(0);
         $("#dep-" + tabId + " #minus-" + trId).show(0);
     }
     function hideMembersSection(tabId, trId) {
-        debugger;
         $("#dep-" + tabId + " #tr-" + trId).hide(500);
         $("#dep-" + tabId + " #plus-" + trId).show(0);
         $("#dep-" + tabId + " #minus-" + trId).hide(0);
     }
 
-    function showPersonMostInfoSection() {
-        $('#ModalTitle').text('اطلاعات تکمیلی فرد');
+    function showPersonMostInfoSection(title) {
+        $('#ModalTitle').text(title);
         $('#ModalBody').html("");
         $('#myModal').modal({ backdrop: 'static', keyboard: false });
-
-        //debugger;
-        //$.ajax({
-        //    url: "../Family/FamilyIndex/" + id,
-        //    type: "GET"
-        //}).done(function (result) {
-        //    $('#ModalTitle').text('تکمیل اطلاعات خانواده');
-        //    $('#ModalBody').html(result);
-        //    $('#myModal').modal({ backdrop: 'static', keyboard: false });
-        //});
     }
 
-    function showFamilyInfoSection() {
-        $('#ModalTitle').text('تکمیل اطلاعات خانواده');
+    function showFamilyInfoSection(title) {
+        $('#ModalTitle').text(title);
         $('#ModalBody').html("");
         $('#myModal').modal({ backdrop: 'static', keyboard: false });
-
-        //debugger;
-        //$.ajax({
-        //    url: "../Family/FamilyIndex/" + id,
-        //    type: "GET"
-        //}).done(function (result) {
-        //    $('#ModalTitle').text('تکمیل اطلاعات خانواده');
-        //    $('#ModalBody').html(result);
-        //    $('#myModal').modal({ backdrop: 'static', keyboard: false });
-        //});
+        
     }
-    function openSaveSimplePerson() {
-        debugger;
-        $('#ModalTitle').text('ایجاد');
+    function openSaveSimplePerson(title) {
+        $('#ModalTitle').text(title);
         $('#ModalBody #CreateSimplePerson').html("");
         $('#createPersonSection #checkPersonSection').hide(500);
         $('#ModalBody #CreateSimplePerson').show(500);
-
-        //$.ajax({
-        //    url: "../ManagePerson/CreateSimplePerson",
-        //    type: "GET",
-        //    data: {
-        //        "nationalityId": $("#NationalityId").val(),
-        //        "nationalCode": $("#nationalCode").val(),
-        //        "firstName": $("#firstName").val(),
-        //        "lastName": $("#lastName").val(),
-        //        "fatherName": $("#fatherName").val(),
-        //        "motherName": $("#motherName").val(),
-        //        "familyId": $("#familyId").val(),
-        //    },
-        //}).done(function (result) {
-        //    if (($("#nationalCode").val() != "") ||
-        //        (
-        //            ($("#firstName").val() != "") &&
-        //            ($("#lastName").val() != "") &&
-        //            ($("#fatherName").val() != "") &&
-        //            ($("#motherName").val() != "")
-        //        )
-        //    ) {
-        //        $('#ModalTitle').text('ایجاد');
-        //        $('#ModalBody #CreateSimplePerson').html(result);
-        //        $('#createPersonSection #checkPersonSection').hide(500);
-        //        $('#ModalBody #CreateSimplePerson').show(500);
-
-        //    }
-        //});
+        
     }
-    function showPersonMostInfo() {
-        $('#ModalTitle').text('بررسی اولیه');
+    function showPersonMostInfo(title) {
+        $('#ModalTitle').text(title);
         $('#ModalBody').html("");
         $('#myModal').modal({ backdrop: 'static', keyboard: false });
     }
 
 
-  
+
 </script>
 
