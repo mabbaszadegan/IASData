@@ -661,6 +661,7 @@ namespace IASData.Provider.BaseControllers.Family
         {
             ViewBag.ShowCreateMember = false;
             ViewBag.ShowContinue = true;
+            DAL.Attachment attachment = db.AttachmentRepository.Get(q => q.AttachmentTypeId == (int)Enumerable.AttachmentTypes.Person && q.AttachmentOwnerId == personViewModel.PersonId).FirstOrDefault();
 
             EventLogViewModel eventLogView = new EventLogViewModel();
             ViewBag.NationalityId = personViewModel.NationalityId;
@@ -814,7 +815,7 @@ namespace IASData.Provider.BaseControllers.Family
                                                     )
                                                 ),
                             NationalityId = item.NationalityId,
-                            PersonProfilePic = "../Images/Person/Personal/Thumb/" + ((!string.IsNullOrEmpty(item.PersonProfilePic)) ? item.PersonProfilePic : "nopic.jpg")
+                            PersonProfilePic = Constants.AttachmentServiceUrl + ((attachment != null) ? "AttachmentShow.ashx?AttachmentId=" + attachment.AttachmentId.ToString() + "&Thumbnail=150" : "nopic.jpg"),
                         });
                     }
 
@@ -929,12 +930,13 @@ namespace IASData.Provider.BaseControllers.Family
             List<Person> person = db.FamilyMemberRepository.Get(q => q.FamilyId == familyId).Select(q => q.Person).ToList();
             List<PersonViewModel> personViewModels = new List<PersonViewModel>();
             var user = db.UserInfoRepository.Get(u => u.UserName == User.Identity.Name).SingleOrDefault();
-            List<int> departments = user.UserDepartment.Where(q => q.Department.DepartmentIsActive && q.Department.DepartmentTypeId!= (int)Enumerable.DepartmentType.DiscoveryTeam).Select(q => q.DepartmentId).ToList();
+            List<int> departments = user.UserDepartment.Where(q => q.Department.DepartmentIsActive && q.Department.DepartmentTypeId != (int)Enumerable.DepartmentType.DiscoveryTeam).Select(q => q.DepartmentId).ToList();
             ViewBag.AccessibleDepartments = departments;
 
 
             foreach (var item in person)
             {
+                DAL.Attachment attachment = db.AttachmentRepository.Get(q => q.AttachmentTypeId == (int)Enumerable.AttachmentTypes.Person && q.AttachmentOwnerId == item.PersonId).FirstOrDefault();
                 personViewModels.Add(new PersonViewModel
                 {
                     PersonId = item.PersonId,
@@ -967,7 +969,7 @@ namespace IASData.Provider.BaseControllers.Family
                                                 "ثبت نشده"
                                             )
                                         ),
-                    PersonProfilePic = "../Images/Person/Personal/Thumb/" + ((!string.IsNullOrEmpty(item.PersonProfilePic)) ? item.PersonProfilePic : "nopic.jpg")
+                    PersonProfilePic = Constants.AttachmentServiceUrl + ((attachment != null) ? "AttachmentShow.ashx?AttachmentId=" + attachment.AttachmentId.ToString() + "&Thumbnail=150" : "nopic.jpg"),
                 });
             }
 
@@ -1199,32 +1201,62 @@ namespace IASData.Provider.BaseControllers.Family
         [ValidateAntiForgeryToken]
         public ActionResult SaveProfilePic(int id)
         {
+            UserInfo userInfo = db.UserInfoRepository.Get(q => q.UserName == User.Identity.Name).FirstOrDefault();
             List<SystemMessageViewModel> messageViewModel = new List<SystemMessageViewModel>();
-            DAL.Person person = db.PersonRepository.GetById(id);
+            DAL.Attachment attachment = new Attachment();
+            AttachmentType attachmentType = db.AttachmentTypeRepository.GetById((int)Enumerable.AttachmentTypes.Person);
+            string attachmentTypeAllowedFormat = attachmentType.AttachmentTypeAllowedFormat;
             var postedFiles = Request.Files;
             if (postedFiles.Count == 1)
             {
                 if (postedFiles[0] != null && postedFiles[0].IsImage())
                 {
-                    if (postedFiles[0].ContentLength <= 500000)
+                    if (postedFiles[0].ContentLength <= attachmentType.AttachmentTypeMaxSize)
                     {
-                        person.PersonProfilePic = Guid.NewGuid().ToString() + Path.GetExtension(postedFiles[0].FileName);
-                        db.PersonRepository.Update(person);
-                        db.Save();
-
-                        if (!string.IsNullOrEmpty(person.PersonProfilePic))
+                        string[] allowExtentions = attachmentTypeAllowedFormat.Split(',');
+                        if (!string.IsNullOrEmpty(System.IO.Path.GetExtension(postedFiles[0].FileName)) &&
+                            allowExtentions.Contains(System.IO.Path.GetExtension(postedFiles[0].FileName).ToLower()))
                         {
-                            if (person.PersonProfilePic != "nopic.jpg")
+                            foreach (var item in db.AttachmentRepository.Get(a => a.AttachmentOwnerId == id && a.AttachmentTypeId == (int)Enumerable.AttachmentTypes.Person))
                             {
-                                System.IO.File.Delete(Server.MapPath("../../Images/Person/Personal/" + person.PersonProfilePic));
-                                System.IO.File.Delete(Server.MapPath("../../Images/Person/Personal/Thumb/" + person.PersonProfilePic));
+                                db.AttachmentRepository.Delete(item);
                             }
-                        }
+                            byte[] fileData = null;
+                            using (var binaryReader = new BinaryReader(postedFiles[0].InputStream))
+                            {
+                                binaryReader.BaseStream.Position = 0;
+                                fileData = binaryReader.ReadBytes(postedFiles[0].ContentLength);
+                            }
+                            attachment.AttachmentContent = fileData;
+                            attachment.AttachmentDesc = "عکس پرسنلی";
+                            attachment.AttachmentExtention = System.IO.Path.GetExtension(postedFiles[0].FileName).Replace(".", "");  //(fuPersonalImage.FileName.Substring(fuPersonalImage.FileName.IndexOf(".") + 1));
+                            attachment.AttachmentFileName = Guid.NewGuid() + "_" + postedFiles[0].FileName;
+                            attachment.AttachmentZiped = postedFiles[0].FileName.ToZipedTextOnly();
+                            // OBJA.AttachmentContent =Convert.ToByte(fuPersonalImage.PostedFile);
+                            attachment.AttachmentContentType = postedFiles[0].ContentType;
 
-                        postedFiles[0].SaveAs(Server.MapPath("../../Images/Person/Personal/" + person.PersonProfilePic));
-                        ImageResizer img = new ImageResizer();
-                        img.Resize(Server.MapPath("../../Images/Person/Personal/" + person.PersonProfilePic),
-                            Server.MapPath("../../Images/Person/Personal/Thumb/" + person.PersonProfilePic));
+                            attachment.AttachmentOwnerId = id;
+
+
+                            attachment.AttachmentTypeId = (int)Enumerable.AttachmentTypes.Person;
+                            attachment.AttachmentTime = DateTime.Now;
+                            attachment.AttachmentTimeSolar = DateTime.Now.ToDateSolar();
+                            attachment.UserId = userInfo.UserId;
+
+
+                            attachment.InsertUserId = userInfo.UserId;
+                            attachment.InsertTime = DateTime.Now;
+                            db.AttachmentRepository.Insert(attachment);
+                            db.Save();
+                        }
+                        else
+                        {
+                            messageViewModel.Add(new SystemMessageViewModel
+                            {
+                                Title = "خطا!",
+                                Desc = "فرمت فایل مجاز نیست!"
+                            });
+                        }
                     }
                     else
                     {
@@ -1255,7 +1287,7 @@ namespace IASData.Provider.BaseControllers.Family
             var output = new JavaScriptSerializer().Serialize(messageViewModel);
             EventLogViewModel eventLogView = new EventLogViewModel
             {
-                Area = null,
+                Area = "Family",
                 Controller = "ManagePerson",
                 Action = "SaveProfilePic",
                 Type = EventLogType.Insert,
@@ -1267,7 +1299,6 @@ namespace IASData.Provider.BaseControllers.Family
             Common.HttpLogInsert(eventLogView);
 
             return PartialView("_SystemMessages", messageViewModel);
-            //  return RedirectToAction("PersonIndex", new { tabId = person.DepartmentId, pageId = ViewBag.PageID});
         }
 
         public ActionResult AddNewMember(int id)
