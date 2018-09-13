@@ -179,6 +179,7 @@
     <Compile Include="Areas\Family\FamilyAreaRegistration.cs" />
     <Compile Include="Areas\General\Controllers\LookupController.cs" />
     <Compile Include="Areas\General\GeneralAreaRegistration.cs" />
+    <Compile Include="Areas\Person\PersonAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -251,6 +252,7 @@
     <Content Include="Areas\Family\Views\PersonTeam\Edit.cshtml" />
     <Content Include="Areas\Family\Views\PersonTeam\Index.cshtml" />
     <Content Include="Areas\General\Views\web.config" />
+    <Content Include="Areas\Person\Views\web.config" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
@@ -289,6 +291,9 @@
     <Folder Include="Areas\Family\Models\" />
     <Folder Include="Areas\General\Models\" />
     <Folder Include="Areas\General\Views\Shared\" />
+    <Folder Include="Areas\Person\Controllers\" />
+    <Folder Include="Areas\Person\Models\" />
+    <Folder Include="Areas\Person\Views\Shared\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>

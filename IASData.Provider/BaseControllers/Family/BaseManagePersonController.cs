@@ -1167,6 +1167,7 @@ namespace IASData.Provider.BaseControllers.Family
         public ActionResult UploadProfilePic(int id)
         {
             DAL.Person person = db.PersonRepository.GetById(id);
+            DAL.Attachment attachment = db.AttachmentRepository.Get(q => q.AttachmentTypeId == (int)Enumerable.AttachmentTypes.Person && q.AttachmentOwnerId == person.PersonId).FirstOrDefault();
             PersonViewModel personViewModel = new PersonViewModel
             {
                 PersonId = person.PersonId,
@@ -1191,7 +1192,7 @@ namespace IASData.Provider.BaseControllers.Family
                                                     "ثبت نشده"
                                                 )
                                             ),
-                PersonProfilePic = "../Images/Person/Personal/Thumb/" + person.PersonProfilePic,
+                PersonProfilePic = Constants.AttachmentServiceUrl + ((attachment != null) ? "AttachmentShow.ashx?AttachmentId=" + attachment.AttachmentId.ToString() + "&Thumbnail=150" : "nopic.jpg"),
             };
 
 
