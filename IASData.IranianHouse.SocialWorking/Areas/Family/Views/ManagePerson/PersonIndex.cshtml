@@ -16,7 +16,7 @@
         UpdateTargetId = "ModalBody",
         InsertionMode = InsertionMode.Replace,
         LoadingElementId = "modalProgress",
-        OnBegin = "showCreatePerson",
+        OnBegin = "showCreatePerson('تعریف فرد جدید')",
 
     }, new { @class = "btn btn-primary" })
     @*<a href="#" onClick="showCreatePerson()" class="btn btn-primary"><span class="fa fa-plus"></span>تعریف فرد جدید</a>*@
@@ -30,7 +30,7 @@
     @Html.Partial("IX", Model)
 </div>
 
-<div class="modal fade modal-backdrop" id="myModal" style="width:100%" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal fade modal-backdrop" id="myModal" style="width:100%;padding-top:40px;" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 
 
     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
@@ -57,8 +57,8 @@
 </div>
 
 
-<script src="~/Scripts/MdBootstrapPersianDateTimePicker/jalaaliNew.js"></script>
-<script src="~/Scripts/MdBootstrapPersianDateTimePicker/jquery.Bootstrap-PersianDateTimePickerNew.js"></script>
+<script src="http://data.sosapoverty.org/CustomReferences/Scripts/MdBootstrapPersianDateTimePicker/jalaaliNew.js"></script>
+<script src="http://data.sosapoverty.org/CustomReferences/Scripts/MdBootstrapPersianDateTimePicker/jquery.Bootstrap-PersianDateTimePickerNew.js"></script>
 
 
 <script type="text/javascript">
