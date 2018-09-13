@@ -20,7 +20,7 @@ namespace DAL
         {
             get
             {
-                return PersonFirstName + " " + PersonLastName + ((!string.IsNullOrEmpty(PersonFatherName) ? "فرزند " + PersonFatherName : ""));
+                return PersonFirstName + " " + PersonLastName + ((!string.IsNullOrEmpty(PersonFatherName) ? " فرزند " + PersonFatherName : ""));
             }
         }
 
