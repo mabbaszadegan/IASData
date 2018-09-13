@@ -676,7 +676,7 @@ namespace IASData.Provider.BaseControllers.Family
             ViewBag.DepartmentId = personViewModel.DepartmentId;
             ViewBag.IsParent = personViewModel.IsParent;
             var user = db.UserInfoRepository.Get(u => u.UserName == User.Identity.Name).SingleOrDefault();
-            List<int> departments = user.UserDepartment.Where(q => q.Department.DepartmentIsActive).Select(q => q.DepartmentId).ToList();
+            List<int> departments = user.UserDepartment.Where(q => q.Department.DepartmentIsActive && q.Department.DepartmentTypeId != (int)Enumerable.DepartmentType.DiscoveryTeam).Select(q => q.DepartmentId).ToList();
             ViewBag.AccessibleDepartments = departments;
             List<SystemMessageViewModel> messageViewModel = new List<SystemMessageViewModel>();
 
@@ -690,7 +690,7 @@ namespace IASData.Provider.BaseControllers.Family
                         messageViewModel.Add(new SystemMessageViewModel { Title = "خطا", Desc = "موقعیت انتخابی فرد در خانواده تکراری است!" });
                     }
                 }
-                List<Person> person = db.PersonRepository.Get(q => q.NationalityId == personViewModel.NationalityId).ToList();
+                IQueryable<Person> person = db.PersonRepository.Get(q => q.NationalityId == personViewModel.NationalityId);
                 List<PersonViewModel> personViewModels = new List<PersonViewModel>();
                 if (
                     !string.IsNullOrEmpty(personViewModel.PersonNationalCode) ||
@@ -700,7 +700,7 @@ namespace IASData.Provider.BaseControllers.Family
                     {
                         if (personViewModel.PersonNationalCode.IsNationalCode())
                         {
-                            person = person.Where(q => q.PersonNationalCode == personViewModel.PersonNationalCode).ToList();
+                            person = person.Where(q => q.PersonNationalCode == personViewModel.PersonNationalCode);
                         }
                         else
                         {
@@ -726,7 +726,7 @@ namespace IASData.Provider.BaseControllers.Family
                     {
                         try
                         {
-                            person = person.Where(q => (q.PersonFirstName != null) ? q.PersonFirstName.Contains(personViewModel.PersonFirstName) : false).ToList();
+                            person = person.Where(q => (q.PersonFirstName != null) ? q.PersonFirstName.Contains(personViewModel.PersonFirstName) : false);
 
                         }
                         catch (Exception)
@@ -739,7 +739,7 @@ namespace IASData.Provider.BaseControllers.Family
                     {
                         try
                         {
-                            person = person.Where(q => (q.PersonLastName != null) ? q.PersonLastName.ToZipedTextOnly().Contains(personViewModel.PersonLastName.ToZipedTextOnly()) : false).ToList();
+                            person = person.Where(q => (q.PersonLastName != null) ? q.PersonLastName.ToZipedTextOnly().Contains(personViewModel.PersonLastName.ToZipedTextOnly()) : false);
                         }
                         catch (Exception)
                         {
@@ -751,7 +751,7 @@ namespace IASData.Provider.BaseControllers.Family
                     {
                         try
                         {
-                            person = person.Where(q => ((q.PersonFatherName != null) ? q.PersonFatherName.ToZipedTextOnly().Contains(personViewModel.PersonFatherName.ToZipedTextOnly()) : false) || q.FamilyMember.FirstOrDefault().Family.FamilyMember.Any(p => p.RelationTypeId == 2 && ((p.Person.PersonFirstName != null) ? p.Person.PersonFirstName.ToZipedTextOnly().Contains(personViewModel.PersonFatherName.ToZipedTextOnly()) : false))).ToList();
+                            person = person.Where(q => ((q.PersonFatherName != null) ? q.PersonFatherName.ToZipedTextOnly().Contains(personViewModel.PersonFatherName.ToZipedTextOnly()) : false) || q.FamilyMember.FirstOrDefault().Family.FamilyMember.Any(p => p.RelationTypeId == 2 && ((p.Person.PersonFirstName != null) ? p.Person.PersonFirstName.ToZipedTextOnly().Contains(personViewModel.PersonFatherName.ToZipedTextOnly()) : false)));
                         }
                         catch (Exception)
                         {
@@ -765,7 +765,7 @@ namespace IASData.Provider.BaseControllers.Family
                         {
                             person = person.Where(q => (
                             (q.PersonFatherName != null) ? q.PersonFatherName.ToZipedTextOnly().Contains(personViewModel.PersonFatherName.ToZipedTextOnly()) : false) ||
-                            q.FamilyMember.FirstOrDefault().Family.FamilyMember.Any(p => p.RelationTypeId == 1 && ((p.Person.PersonFirstName != null) ? p.Person.PersonFirstName.ToZipedTextOnly().Contains(personViewModel.PersonMotherName.ToZipedTextOnly()) : false))).ToList();
+                            q.FamilyMember.FirstOrDefault().Family.FamilyMember.Any(p => p.RelationTypeId == 1 && ((p.Person.PersonFirstName != null) ? p.Person.PersonFirstName.ToZipedTextOnly().Contains(personViewModel.PersonMotherName.ToZipedTextOnly()) : false)));
 
                         }
                         catch (Exception)
@@ -779,7 +779,7 @@ namespace IASData.Provider.BaseControllers.Family
                         return HttpNotFound();
                     }
 
-                    if (person.Count == 1 && !string.IsNullOrEmpty(personViewModel.PersonNationalCode))
+                    if (person.Count() == 1 && !string.IsNullOrEmpty(personViewModel.PersonNationalCode))
                     {
                         ViewBag.ShowContinue = false;
                     }
@@ -929,7 +929,7 @@ namespace IASData.Provider.BaseControllers.Family
             List<Person> person = db.FamilyMemberRepository.Get(q => q.FamilyId == familyId).Select(q => q.Person).ToList();
             List<PersonViewModel> personViewModels = new List<PersonViewModel>();
             var user = db.UserInfoRepository.Get(u => u.UserName == User.Identity.Name).SingleOrDefault();
-            List<int> departments = user.UserDepartment.Where(q => q.Department.DepartmentIsActive).Select(q => q.DepartmentId).ToList();
+            List<int> departments = user.UserDepartment.Where(q => q.Department.DepartmentIsActive && q.Department.DepartmentTypeId!= (int)Enumerable.DepartmentType.DiscoveryTeam).Select(q => q.DepartmentId).ToList();
             ViewBag.AccessibleDepartments = departments;
 
 
@@ -1004,7 +1004,7 @@ namespace IASData.Provider.BaseControllers.Family
                 if (User.Identity.IsAuthenticated)
                 {
                     var user = db.UserInfoRepository.Get(u => u.UserName == User.Identity.Name).SingleOrDefault();
-                    List<int> accesibleDepartments = user.UserDepartment.Where(q => q.Department.DepartmentIsActive).Select(q => q.DepartmentId).ToList();
+                    List<int> accesibleDepartments = user.UserDepartment.Where(q => q.Department.DepartmentIsActive && q.Department.DepartmentTypeId != (int)Enumerable.DepartmentType.DiscoveryTeam).Select(q => q.DepartmentId).ToList();
 
                     IQueryable<DAL.Family> families = db.FamilyRepository.Get(q => accesibleDepartments.Contains(q.FamilyMember.FirstOrDefault().Person.DepartmentId));
                     //IQueryable<DAL.Family> families = db.FamilyRepository.Get();
