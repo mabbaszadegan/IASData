@@ -1,6 +1,8 @@
 ﻿@{
     ViewBag.Title = "سامانه جامع مدیریت داده جمعیت امام علی(ع)";
     Layout = "";
+
+    var a = IASData.Utility.ConfigReader.ReferenceSeverUrl;
 }
 
 <!DOCTYPE html>
@@ -16,13 +18,13 @@
     <title></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="http://data.sosapoverty.org/CustomReferences/AdminPanel/css/bootstrap-responsive.min.css">
-    <link rel="stylesheet" href="http://data.sosapoverty.org/CustomReferences/Content/FontManaging.css" />
-    <link rel="stylesheet" href="http://data.sosapoverty.org/CustomReferences/Content/font-awesome.min.css" />
+    <link rel="stylesheet" href="@IASData.Utility.ConfigReader.ReferenceSeverUrl/AdminPanel/css/bootstrap-responsive.min.css">
+    <link rel="stylesheet" href="@IASData.Utility.ConfigReader.ReferenceSeverUrl/Content/FontManaging.css" />
+    <link rel="stylesheet" href="@IASData.Utility.ConfigReader.ReferenceSeverUrl/Content/font-awesome.min.css" />
     @*<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>*@
 
-    <link rel="stylesheet" href="http://data.sosapoverty.org/CustomReferences/AdminPanel/css/styles.css">
-    <link href="http://data.sosapoverty.org/CustomReferences/Content/Site.css" rel="stylesheet" />
+    <link rel="stylesheet" href="@IASData.Utility.ConfigReader.ReferenceSeverUrl/AdminPanel/css/styles.css">
+    <link href="@IASData.Utility.ConfigReader.ReferenceSeverUrl/Content/Site.css" rel="stylesheet" />
 
 </head><!-- Share BY ME In (www.20script.ir) -->
 <body class="dashboard">
@@ -1989,29 +1991,29 @@
     <!-- ==================== END OF PAGE CONTENT ==================== -->
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="http://data.sosapoverty.org/CustomReferences/AdminPanel/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
-    <script src="http://data.sosapoverty.org/CustomReferences/AdminPanel/js/vendor/bootstrap-slider.js"></script>                   <!-- bootstrap slider plugin -->
-    <script src="http://data.sosapoverty.org/CustomReferences/AdminPanel/js/vendor/jquery.sparkline.min.js"></script>               <!-- small charts plugin -->
-    <script src="http://data.sosapoverty.org/CustomReferences/AdminPanel/js/vendor/jquery.flot.min.js"></script>                    <!-- charts plugin -->
-    <script src="http://data.sosapoverty.org/CustomReferences/AdminPanel/js/vendor/jquery.flot.resize.min.js"></script>             <!-- charts plugin / resizing extension -->
-    <script src="http://data.sosapoverty.org/CustomReferences/AdminPanel/js/vendor/jquery.flot.pie.min.js"></script>                <!-- charts plugin / pie chart extension -->
-    <script src="http://data.sosapoverty.org/CustomReferences/AdminPanel/js/vendor/wysihtml5-0.3.0_rc2.min.js"></script>            <!-- wysiwyg plugin -->
-    <script src="http://data.sosapoverty.org/CustomReferences/AdminPanel/js/vendor/bootstrap-wysihtml5-0.0.2.min.js"></script>      <!-- wysiwyg plugin / bootstrap extension -->
-    <script src="http://data.sosapoverty.org/CustomReferences/AdminPanel/js/vendor/bootstrap-tags.js"></script>                     <!-- multivalue input tags -->
-    <script src="http://data.sosapoverty.org/CustomReferences/AdminPanel/js/vendor/jquery.tablesorter.min.js"></script>             <!-- tablesorter plugin -->
-    <script src="http://data.sosapoverty.org/CustomReferences/AdminPanel/js/vendor/jquery.tablesorter.widgets.min.js"></script>     <!-- tablesorter plugin / widgets extension -->
-    <script src="http://data.sosapoverty.org/CustomReferences/AdminPanel/js/vendor/jquery.tablesorter.pager.min.js"></script>       <!-- tablesorter plugin / pager extension -->
-    <script src="http://data.sosapoverty.org/CustomReferences/AdminPanel/js/vendor/raphael.2.1.0.min.js"></script>                  <!-- vector graphic plugin / for justgage.js -->
-    <script src="http://data.sosapoverty.org/CustomReferences/AdminPanel/js/vendor/jquery.animate-shadow-min.js"></script>          <!-- shadow animation plugin -->
-    <script src="http://data.sosapoverty.org/CustomReferences/AdminPanel/js/vendor/justgage.js"></script>                           <!-- justgage plugin -->
-    <script src="http://data.sosapoverty.org/CustomReferences/AdminPanel/js/vendor/bootstrap-multiselect.js"></script>              <!-- multiselect plugin -->
-    <script src="http://data.sosapoverty.org/CustomReferences/AdminPanel/js/vendor/bootstrap-datepicker.js"></script>               <!-- datepicker plugin -->
-    <script src="http://data.sosapoverty.org/CustomReferences/AdminPanel/js/vendor/bootstrap-colorpicker.js"></script>              <!-- colorpicker plugin -->
-    <script src="http://data.sosapoverty.org/CustomReferences/AdminPanel/js/vendor/parsley.min.js"></script>                        <!-- parsley validator plugin -->
-    <script src="http://data.sosapoverty.org/CustomReferences/AdminPanel/js/vendor/formToWizard.js"></script>                       <!-- form wizard plugin -->
-    <script src="http://data.sosapoverty.org/CustomReferences/AdminPanel/js/vendor/bootstrap.min.js"></script>
-    <script src="http://data.sosapoverty.org/CustomReferences/AdminPanel/js/vendor/bootstrap-editable.min.js"></script>             <!-- editable fields plugin -->
-    <script src="http://data.sosapoverty.org/CustomReferences/AdminPanel/js/thekamarel.min.js"></script>                            <!-- main project js file -->
+    <script>window.jQuery || document.write('<script src="@IASData.Utility.ConfigReader.ReferenceSeverUrl/AdminPanel/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+    <script src="@IASData.Utility.ConfigReader.ReferenceSeverUrl/AdminPanel/js/vendor/bootstrap-slider.js"></script>                   <!-- bootstrap slider plugin -->
+    <script src="@IASData.Utility.ConfigReader.ReferenceSeverUrl/AdminPanel/js/vendor/jquery.sparkline.min.js"></script>               <!-- small charts plugin -->
+    <script src="@IASData.Utility.ConfigReader.ReferenceSeverUrl/AdminPanel/js/vendor/jquery.flot.min.js"></script>                    <!-- charts plugin -->
+    <script src="@IASData.Utility.ConfigReader.ReferenceSeverUrl/AdminPanel/js/vendor/jquery.flot.resize.min.js"></script>             <!-- charts plugin / resizing extension -->
+    <script src="@IASData.Utility.ConfigReader.ReferenceSeverUrl/AdminPanel/js/vendor/jquery.flot.pie.min.js"></script>                <!-- charts plugin / pie chart extension -->
+    <script src="@IASData.Utility.ConfigReader.ReferenceSeverUrl/AdminPanel/js/vendor/wysihtml5-0.3.0_rc2.min.js"></script>            <!-- wysiwyg plugin -->
+    <script src="@IASData.Utility.ConfigReader.ReferenceSeverUrl/AdminPanel/js/vendor/bootstrap-wysihtml5-0.0.2.min.js"></script>      <!-- wysiwyg plugin / bootstrap extension -->
+    <script src="@IASData.Utility.ConfigReader.ReferenceSeverUrl/AdminPanel/js/vendor/bootstrap-tags.js"></script>                     <!-- multivalue input tags -->
+    <script src="@IASData.Utility.ConfigReader.ReferenceSeverUrl/AdminPanel/js/vendor/jquery.tablesorter.min.js"></script>             <!-- tablesorter plugin -->
+    <script src="@IASData.Utility.ConfigReader.ReferenceSeverUrl/AdminPanel/js/vendor/jquery.tablesorter.widgets.min.js"></script>     <!-- tablesorter plugin / widgets extension -->
+    <script src="@IASData.Utility.ConfigReader.ReferenceSeverUrl/AdminPanel/js/vendor/jquery.tablesorter.pager.min.js"></script>       <!-- tablesorter plugin / pager extension -->
+    <script src="@IASData.Utility.ConfigReader.ReferenceSeverUrl/AdminPanel/js/vendor/raphael.2.1.0.min.js"></script>                  <!-- vector graphic plugin / for justgage.js -->
+    <script src="@IASData.Utility.ConfigReader.ReferenceSeverUrl/AdminPanel/js/vendor/jquery.animate-shadow-min.js"></script>          <!-- shadow animation plugin -->
+    <script src="@IASData.Utility.ConfigReader.ReferenceSeverUrl/AdminPanel/js/vendor/justgage.js"></script>                           <!-- justgage plugin -->
+    <script src="@IASData.Utility.ConfigReader.ReferenceSeverUrl/AdminPanel/js/vendor/bootstrap-multiselect.js"></script>              <!-- multiselect plugin -->
+    <script src="@IASData.Utility.ConfigReader.ReferenceSeverUrl/AdminPanel/js/vendor/bootstrap-datepicker.js"></script>               <!-- datepicker plugin -->
+    <script src="@IASData.Utility.ConfigReader.ReferenceSeverUrl/AdminPanel/js/vendor/bootstrap-colorpicker.js"></script>              <!-- colorpicker plugin -->
+    <script src="@IASData.Utility.ConfigReader.ReferenceSeverUrl/AdminPanel/js/vendor/parsley.min.js"></script>                        <!-- parsley validator plugin -->
+    <script src="@IASData.Utility.ConfigReader.ReferenceSeverUrl/AdminPanel/js/vendor/formToWizard.js"></script>                       <!-- form wizard plugin -->
+    <script src="@IASData.Utility.ConfigReader.ReferenceSeverUrl/AdminPanel/js/vendor/bootstrap.min.js"></script>
+    <script src="@IASData.Utility.ConfigReader.ReferenceSeverUrl/AdminPanel/js/vendor/bootstrap-editable.min.js"></script>             <!-- editable fields plugin -->
+    <script src="@IASData.Utility.ConfigReader.ReferenceSeverUrl/AdminPanel/js/thekamarel.min.js"></script>                            <!-- main project js file -->
 
     <script>
         $(function () {

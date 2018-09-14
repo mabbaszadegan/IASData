@@ -11,6 +11,7 @@ IASData.Utility/IASData.Utility.csproj.user
 *.com
 *.class
 *.dll
+*.config
 *.exe
 *.o
 *.so
