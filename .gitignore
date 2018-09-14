@@ -46,3 +46,6 @@ ehthumbs.db
 Thumbs.db
 IASData.Utility/obj/
 DAL/bin/
+*.diagram
+*.pubxml
+*.csproj
