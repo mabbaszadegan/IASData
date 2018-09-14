@@ -17,6 +17,10 @@ namespace IASData.Provider.BaseControllers.Family
         // GET: ManagePerson
         public ActionResult PersonIndex(int? tabId = null, int pageId = 0)
         {
+            if (!User.Identity.IsAuthenticated)
+            {
+                return RedirectToAction("Login", new { area = "", controller = "Account" });
+            }
             //var ssa = Roles.GetAllRoles();
             //var ss = Roles.GetRolesForUser(User.Identity.Name);
             //int pageSize = 20;
