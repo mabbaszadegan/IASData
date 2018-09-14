@@ -58,7 +58,7 @@ namespace IASData.Provider.Controllers
                         if (!string.IsNullOrEmpty(ReturnUrl))
                             return Redirect(ReturnUrl);
                         else
-                            return Redirect("/");
+                            return Redirect("~/");
                     }
                     else
                     {
