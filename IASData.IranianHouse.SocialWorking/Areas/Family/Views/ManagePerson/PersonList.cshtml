@@ -75,7 +75,7 @@
                                            UpdateTargetId = "ModalBody",
                                            InsertionMode = InsertionMode.Replace,
                                            LoadingElementId = "modalProgress",
-                                           OnBegin = "showPersonMostInfo(اطلاعات تکمیلی '" + Model[row].PersonFullName + "')",
+                                           OnBegin = "showPersonMostInfo('اطلاعات تکمیلی " + Model[row].PersonFullName + "')",
 
                                        }, new { @class = "btn btn-warning fa fa-wrench" })
 
@@ -84,7 +84,7 @@
                                            UpdateTargetId = "ModalBody",
                                            InsertionMode = InsertionMode.Replace,
                                            LoadingElementId = "modalProgress",
-                                           OnBegin = "showRemoveMember(حذف اطلاعات '" + Model[row].PersonFullName + "')",
+                                           OnBegin = "showRemoveMember('حذف اطلاعات " + Model[row].PersonFullName + "')",
 
                                        }, new { @class = "btn btn-danger fa fa-remove" })
 
@@ -126,14 +126,14 @@
                                                                                      UpdateTargetId = "ModalBody",
                                                                                      InsertionMode = InsertionMode.Replace,
                                                                                      LoadingElementId = "modalProgress",
-                                                                                     OnBegin = "showCreatePerson(تعریف فرد جدید)",
+                                                                                     OnBegin = "showCreatePerson('تعریف فرد جدید')",
 
                                                                                  }, new { @class = "btn btn-primary" })
                     }
                     @if (ViewBag.ShowCreateMember == true)
                     {
 
-                        <span class="btn btn-primary btn-sm" href="#" onclick="showAddNewMember(@ViewBag.FamilyId)">
+                        <span class="btn btn-primary btn-sm" href="#" onclick="showAddNewMember(@ViewBag.FamilyId,'تعریف سایر اعضای خانواده')">
                             <span class="fa fa-male ml-3"></span>تعریف سایر اعضای خانواده
                         </span>
                     }
@@ -174,14 +174,14 @@
                                                                                        UpdateTargetId = "ModalBody",
                                                                                        InsertionMode = InsertionMode.Replace,
                                                                                        LoadingElementId = "modalProgress",
-                                                                                       OnBegin = "showCreatePerson(تعریف فرد جدید)",
+                                                                                       OnBegin = "showCreatePerson('تعریف فرد جدید')",
 
                                                                                    }, new { @class = "btn btn-primary" })
                     }
                     @if (ViewBag.ShowCreateMember == true)
                     {
 
-                        <span class="btn btn-primary btn-sm" href="#" onclick="showAddNewMember(@ViewBag.FamilyId)">
+                        <span class="btn btn-primary btn-sm" href="#" onclick="showAddNewMember(@ViewBag.FamilyId,'تعریف سایر اعضای خانواده')">
                             <span class="fa fa-male ml-3"></span>تعریف سایر اعضای خانواده
                         </span>
                     }

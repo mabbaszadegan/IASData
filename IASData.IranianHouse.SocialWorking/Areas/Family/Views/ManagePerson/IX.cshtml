@@ -178,13 +178,13 @@
 
                                     <td>
                                         @Ajax.ActionLink("تکمیل اطلاعات خانواده", "FamilyIndex", "Family", new { id = family.FamilyId }, new AjaxOptions
-                                        {
-                                            UpdateTargetId = "ModalBody",
-                                            InsertionMode = InsertionMode.Replace,
-                                            LoadingElementId = "modalProgress",
-                                            OnBegin = "showFamilyInfoSection",
+                                   {
+                                       UpdateTargetId = "ModalBody",
+                                       InsertionMode = InsertionMode.Replace,
+                                       LoadingElementId = "modalProgress",
+                                       OnBegin = "showFamilyInfoSection('اطلاعات تکمیلی خانواده " + family.FamilyCode + "')",
 
-                                        }, new { @class = "btn btn-info btn-sm" })
+                                   }, new { @class = "btn btn-info btn-sm" })
 
                                         @*<a class="btn btn-info btn-sm" href="#" onclick="showFamilyInfoSection(@family.FamilyId);">
                                                 <span class="fa fa-home ml-3"></span>تکمیل اطلاعات خانواده

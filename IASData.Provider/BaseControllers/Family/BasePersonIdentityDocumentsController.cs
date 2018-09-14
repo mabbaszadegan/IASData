@@ -5,7 +5,6 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using System.Web.Script.Serialization;
 
@@ -51,8 +50,8 @@ namespace IASData.Provider.BaseControllers.Family
 
             foreach (var item in personIdentityDocuments)
             {
-                item.IdentityDocumentPic = "../Images/Person/IdentityDocument/Thumb/" + ((!string.IsNullOrEmpty(item.IdentityDocumentPic)) ? item.IdentityDocumentPic : "nopic.jpg");
-
+                DAL.Attachment attachment = db.AttachmentRepository.Get(q => q.AttachmentTypeId == (int)Enumerable.AttachmentTypes.PersonIdentityDocument && q.AttachmentOwnerId == item.PersonIdentityDocumentId).FirstOrDefault();
+                item.IdentityDocumentPic = Constants.AttachmentServiceUrl + ((attachment != null) ? "AttachmentShow.ashx?AttachmentId=" + attachment.AttachmentId.ToString() + "&Thumbnail=150" : "nopic.jpg");
             }
 
 
@@ -66,25 +65,59 @@ namespace IASData.Provider.BaseControllers.Family
         {
             List<SystemMessageViewModel> messageViewModel = new List<SystemMessageViewModel>();
             UserInfo userInfo = db.UserInfoRepository.Get(q => q.UserName == User.Identity.Name).FirstOrDefault();
+            DAL.Attachment attachment = new Attachment();
+            AttachmentType attachmentType = db.AttachmentTypeRepository.GetById((int)Enumerable.AttachmentTypes.PersonIdentityDocument);
+            string attachmentTypeAllowedFormat = attachmentType.AttachmentTypeAllowedFormat;
             var postedFiles = Request.Files;
             if (postedFiles.Count == 1)
             {
                 if (postedFiles[0] != null && postedFiles[0].IsImage())
                 {
-                    if (postedFiles[0].ContentLength <= 500000)
+                    if (postedFiles[0].ContentLength <= attachmentType.AttachmentTypeMaxSize)
                     {
-                        personIdentityDocument.IdentityDocumentPic = Guid.NewGuid().ToString() + Path.GetExtension(postedFiles[0].FileName);
-                        if (!string.IsNullOrEmpty(personIdentityDocument.IdentityDocumentPic))
-                            if (personIdentityDocument.IdentityDocumentPic != "nopic.jpg")
+                        string[] allowExtentions = attachmentTypeAllowedFormat.Split(',');
+                        if (!string.IsNullOrEmpty(System.IO.Path.GetExtension(postedFiles[0].FileName)) &&
+                            allowExtentions.Contains(System.IO.Path.GetExtension(postedFiles[0].FileName).ToLower()))
+                        {
+                            foreach (var item in db.AttachmentRepository.Get(a => a.AttachmentOwnerId == personIdentityDocument.PersonIdentityDocumentId && a.AttachmentTypeId == (int)Enumerable.AttachmentTypes.PersonIdentityDocument))
                             {
-                                System.IO.File.Delete(Server.MapPath("../Images/Person/IdentityDocument/" + personIdentityDocument.IdentityDocumentPic));
-                                System.IO.File.Delete(Server.MapPath("../Images/Person/IdentityDocument/Thumb/" + personIdentityDocument.IdentityDocumentPic));
+                                db.AttachmentRepository.Delete(item);
                             }
+                            byte[] fileData = null;
+                            using (var binaryReader = new BinaryReader(postedFiles[0].InputStream))
+                            {
+                                binaryReader.BaseStream.Position = 0;
+                                fileData = binaryReader.ReadBytes(postedFiles[0].ContentLength);
+                            }
+                            attachment.AttachmentContent = fileData;
+                            attachment.AttachmentDesc = "عکس پرسنلی";
+                            attachment.AttachmentExtention = System.IO.Path.GetExtension(postedFiles[0].FileName).Replace(".", "");  //(fuPersonalImage.FileName.Substring(fuPersonalImage.FileName.IndexOf(".") + 1));
+                            attachment.AttachmentFileName = Guid.NewGuid() + "_" + postedFiles[0].FileName;
+                            attachment.AttachmentZiped = postedFiles[0].FileName.ToZipedTextOnly();
+                            // OBJA.AttachmentContent =Convert.ToByte(fuPersonalImage.PostedFile);
+                            attachment.AttachmentContentType = postedFiles[0].ContentType;
 
-                        postedFiles[0].SaveAs(Server.MapPath("../Images/Person/IdentityDocument/" + personIdentityDocument.IdentityDocumentPic));
-                        ImageResizer img = new ImageResizer();
-                        img.Resize(Server.MapPath("../Images/Person/IdentityDocument/" + personIdentityDocument.IdentityDocumentPic),
-                            Server.MapPath("../Images/Person/IdentityDocument/Thumb/" + personIdentityDocument.IdentityDocumentPic));
+                            attachment.AttachmentOwnerId = personIdentityDocument.PersonIdentityDocumentId;
+
+
+                            attachment.AttachmentTypeId = (int)Enumerable.AttachmentTypes.PersonIdentityDocument;
+                            attachment.AttachmentTime = DateTime.Now;
+                            attachment.AttachmentTimeSolar = DateTime.Now.ToDateSolar();
+                            attachment.UserId = userInfo.UserId;
+
+
+                            attachment.InsertUserId = userInfo.UserId;
+                            attachment.InsertTime = DateTime.Now;
+                            db.AttachmentRepository.Insert(attachment);
+                        }
+                        else
+                        {
+                            messageViewModel.Add(new SystemMessageViewModel
+                            {
+                                Title = "خطا!",
+                                Desc = "فرمت فایل مجاز نیست!"
+                            });
+                        }
                     }
                     else
                     {
@@ -140,28 +173,59 @@ namespace IASData.Provider.BaseControllers.Family
             UserInfo userInfo = db.UserInfoRepository.Get(q => q.UserName == User.Identity.Name).FirstOrDefault();
             DAL.PersonIdentityDocument personIdentityDocument = db.PersonIdentityDocumentRepository.GetById(model.PersonIdentityDocumentId);
 
+            DAL.Attachment attachment = new Attachment();
+            AttachmentType attachmentType = db.AttachmentTypeRepository.GetById((int)Enumerable.AttachmentTypes.PersonIdentityDocument);
+            string attachmentTypeAllowedFormat = attachmentType.AttachmentTypeAllowedFormat;
             var postedFiles = Request.Files;
             if (postedFiles.Count == 1)
             {
                 if (postedFiles[0] != null && postedFiles[0].IsImage())
                 {
-                    if (postedFiles[0].ContentLength <= 500000)
+                    if (postedFiles[0].ContentLength <= attachmentType.AttachmentTypeMaxSize)
                     {
-                        personIdentityDocument.IdentityDocumentPic = Guid.NewGuid().ToString() + Path.GetExtension(postedFiles[0].FileName);
-                        personIdentityDocument.UpdateTime = DateTime.Now;
-                        personIdentityDocument.UpdateUserId = userInfo.UserId;
-
-                        if (!string.IsNullOrEmpty(personIdentityDocument.IdentityDocumentPic))
-                            if (personIdentityDocument.IdentityDocumentPic != "nopic.jpg")
+                        string[] allowExtentions = attachmentTypeAllowedFormat.Split(',');
+                        if (!string.IsNullOrEmpty(System.IO.Path.GetExtension(postedFiles[0].FileName)) &&
+                            allowExtentions.Contains(System.IO.Path.GetExtension(postedFiles[0].FileName).ToLower()))
+                        {
+                            foreach (var item in db.AttachmentRepository.Get(a => a.AttachmentOwnerId == personIdentityDocument.PersonIdentityDocumentId && a.AttachmentTypeId == (int)Enumerable.AttachmentTypes.PersonIdentityDocument))
                             {
-                                System.IO.File.Delete(Server.MapPath("../Images/Person/IdentityDocument/" + personIdentityDocument.IdentityDocumentPic));
-                                System.IO.File.Delete(Server.MapPath("../Images/Person/IdentityDocument/Thumb/" + personIdentityDocument.IdentityDocumentPic));
+                                db.AttachmentRepository.Delete(item);
                             }
+                            byte[] fileData = null;
+                            using (var binaryReader = new BinaryReader(postedFiles[0].InputStream))
+                            {
+                                binaryReader.BaseStream.Position = 0;
+                                fileData = binaryReader.ReadBytes(postedFiles[0].ContentLength);
+                            }
+                            attachment.AttachmentContent = fileData;
+                            attachment.AttachmentDesc = "عکس پرسنلی";
+                            attachment.AttachmentExtention = System.IO.Path.GetExtension(postedFiles[0].FileName).Replace(".", "");  //(fuPersonalImage.FileName.Substring(fuPersonalImage.FileName.IndexOf(".") + 1));
+                            attachment.AttachmentFileName = Guid.NewGuid() + "_" + postedFiles[0].FileName;
+                            attachment.AttachmentZiped = postedFiles[0].FileName.ToZipedTextOnly();
+                            // OBJA.AttachmentContent =Convert.ToByte(fuPersonalImage.PostedFile);
+                            attachment.AttachmentContentType = postedFiles[0].ContentType;
 
-                        postedFiles[0].SaveAs(Server.MapPath("../Images/Person/IdentityDocument/" + personIdentityDocument.IdentityDocumentPic));
-                        ImageResizer img = new ImageResizer();
-                        img.Resize(Server.MapPath("../Images/Person/IdentityDocument/" + personIdentityDocument.IdentityDocumentPic),
-                            Server.MapPath("../Images/Person/IdentityDocument/Thumb/" + personIdentityDocument.IdentityDocumentPic));
+                            attachment.AttachmentOwnerId = personIdentityDocument.PersonIdentityDocumentId;
+
+
+                            attachment.AttachmentTypeId = (int)Enumerable.AttachmentTypes.PersonIdentityDocument;
+                            attachment.AttachmentTime = DateTime.Now;
+                            attachment.AttachmentTimeSolar = DateTime.Now.ToDateSolar();
+                            attachment.UserId = userInfo.UserId;
+
+
+                            attachment.InsertUserId = userInfo.UserId;
+                            attachment.InsertTime = DateTime.Now;
+                            db.AttachmentRepository.Insert(attachment);
+                        }
+                        else
+                        {
+                            messageViewModel.Add(new SystemMessageViewModel
+                            {
+                                Title = "خطا!",
+                                Desc = "فرمت فایل مجاز نیست!"
+                            });
+                        }
                     }
                     else
                     {

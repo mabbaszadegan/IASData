@@ -24,14 +24,14 @@
 <script>
     $(document).ready(function () {
         if ($("#createSimplePersonResult #PersonId").val() !== undefined)
-            personInserted();
+            personInserted('تعریف فرد جدید');
 
     });
-    function personInserted() {
-        debugger;
+    function personInserted(title) {
+      
         if ($("#createSimplePersonResult #PersonId").val() !== "") {
             id = $("#createSimplePersonResult #PersonId").val();
-            showEditMember(id);
+            showEditMember(id,title);
         }
     }
 </script>

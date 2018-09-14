@@ -691,7 +691,7 @@ namespace IASData.Provider.BaseControllers.Family
                         messageViewModel.Add(new SystemMessageViewModel { Title = "خطا", Desc = "موقعیت انتخابی فرد در خانواده تکراری است!" });
                     }
                 }
-                IQueryable<Person> person = db.PersonRepository.Get(q => q.NationalityId == personViewModel.NationalityId);
+                List<Person> person = db.PersonRepository.Get(q => q.NationalityId == personViewModel.NationalityId).ToList();
                 List<PersonViewModel> personViewModels = new List<PersonViewModel>();
                 if (
                     !string.IsNullOrEmpty(personViewModel.PersonNationalCode) ||
@@ -701,7 +701,7 @@ namespace IASData.Provider.BaseControllers.Family
                     {
                         if (personViewModel.PersonNationalCode.IsNationalCode())
                         {
-                            person = person.Where(q => q.PersonNationalCode == personViewModel.PersonNationalCode);
+                            person = person.Where(q => q.PersonNationalCode == personViewModel.PersonNationalCode).ToList();
                         }
                         else
                         {
@@ -727,7 +727,7 @@ namespace IASData.Provider.BaseControllers.Family
                     {
                         try
                         {
-                            person = person.Where(q => (q.PersonFirstName != null) ? q.PersonFirstName.Contains(personViewModel.PersonFirstName) : false);
+                            person = person.Where(q => (q.PersonFirstName != null) ? q.PersonFirstName.Contains(personViewModel.PersonFirstName) : false).ToList();
 
                         }
                         catch (Exception)
@@ -740,7 +740,7 @@ namespace IASData.Provider.BaseControllers.Family
                     {
                         try
                         {
-                            person = person.Where(q => (q.PersonLastName != null) ? q.PersonLastName.ToZipedTextOnly().Contains(personViewModel.PersonLastName.ToZipedTextOnly()) : false);
+                            person = person.Where(q => (q.PersonLastName != null) ? q.PersonLastName.ToZipedTextOnly().Contains(personViewModel.PersonLastName.ToZipedTextOnly()) : false).ToList();
                         }
                         catch (Exception)
                         {
@@ -752,7 +752,7 @@ namespace IASData.Provider.BaseControllers.Family
                     {
                         try
                         {
-                            person = person.Where(q => ((q.PersonFatherName != null) ? q.PersonFatherName.ToZipedTextOnly().Contains(personViewModel.PersonFatherName.ToZipedTextOnly()) : false) || q.FamilyMember.FirstOrDefault().Family.FamilyMember.Any(p => p.RelationTypeId == 2 && ((p.Person.PersonFirstName != null) ? p.Person.PersonFirstName.ToZipedTextOnly().Contains(personViewModel.PersonFatherName.ToZipedTextOnly()) : false)));
+                            person = person.Where(q => ((q.PersonFatherName != null) ? q.PersonFatherName.ToZipedTextOnly().Contains(personViewModel.PersonFatherName.ToZipedTextOnly()) : false) || q.FamilyMember.FirstOrDefault().Family.FamilyMember.Any(p => p.RelationTypeId == 2 && ((p.Person.PersonFirstName != null) ? p.Person.PersonFirstName.ToZipedTextOnly().Contains(personViewModel.PersonFatherName.ToZipedTextOnly()) : false))).ToList();
                         }
                         catch (Exception)
                         {
@@ -766,7 +766,7 @@ namespace IASData.Provider.BaseControllers.Family
                         {
                             person = person.Where(q => (
                             (q.PersonFatherName != null) ? q.PersonFatherName.ToZipedTextOnly().Contains(personViewModel.PersonFatherName.ToZipedTextOnly()) : false) ||
-                            q.FamilyMember.FirstOrDefault().Family.FamilyMember.Any(p => p.RelationTypeId == 1 && ((p.Person.PersonFirstName != null) ? p.Person.PersonFirstName.ToZipedTextOnly().Contains(personViewModel.PersonMotherName.ToZipedTextOnly()) : false)));
+                            q.FamilyMember.FirstOrDefault().Family.FamilyMember.Any(p => p.RelationTypeId == 1 && ((p.Person.PersonFirstName != null) ? p.Person.PersonFirstName.ToZipedTextOnly().Contains(personViewModel.PersonMotherName.ToZipedTextOnly()) : false))).ToList();
 
                         }
                         catch (Exception)
@@ -1467,10 +1467,12 @@ namespace IASData.Provider.BaseControllers.Family
             departmentId.AddRange(departments.OrderBy(q => q.DepartmentName));
             ViewBag.DepartmentId = new SelectList(departmentId, "DepartmentId", "DepartmentName");
 
-            //List<LookupModel> belives = new List<LookupModel>();
-            //belives.Add(emtyItem);
-            //belives.AddRange(db.BeliveRepository.Get().Select(q => new LookupModel { Value = q.BeliveId.ToString(), Name = q.BeliveName }).OrderBy(q => q.Name));
-            //ViewBag.BeliveId = new SelectList(belives, "Value", "Name");
+            List<Belive> beliveId = new List<Belive>
+            {
+                new Belive { BeliveName = "" }
+            };
+            beliveId.AddRange(db.BeliveRepository.Get().OrderBy(q => q.BeliveName));
+            ViewBag.BeliveId = new SelectList(beliveId, "BeliveId", "BeliveName");
 
             List<Ethnic> EthnicId = new List<Ethnic>
             {

@@ -100,7 +100,7 @@
                 </div>
                 @*@Html.EditorFor(model => model.PersonFilingDateSolar, new { htmlAttributes = new { @class = "form-control" } })*@
 
-                <input type="text" class="form-control" name="PersonFilingDateSolar" value="@DateTime.Now.ToDateSolar()" id="PersonFilingDateSolar" placeholder="" data-name="datepicker1" data-mddatetimepicker="true" data-targetselector="#PersonFilingDateSolar"
+                <input type="text" class="form-control" name="PersonFilingDateSolar" value="@IASData.Utility.Common.ToDateSolar(DateTime.Now)" id="PersonFilingDateSolar" placeholder="" data-name="datepicker1" data-mddatetimepicker="true" data-targetselector="#PersonFilingDateSolar"
                        data-trigger="click" />
                 <div class="input-group-append" data-name="datepicker1" data-mddatetimepicker="true" data-targetselector="#PersonFilingDateSolar"
                      data-trigger="click" data-enabletimepicker="false" data-isgregorian="false" data-englishnumber="false">
