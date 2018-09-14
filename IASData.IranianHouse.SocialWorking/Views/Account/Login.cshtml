@@ -2,49 +2,73 @@
 
 @{
     ViewBag.Title = "ورود";
+    Layout = "";
 }
+<link rel="stylesheet" href="http://data.sosapoverty.org/CustomReferences/AdminPanel/css/styles.css">
+<link rel="stylesheet" href="http://data.sosapoverty.org/CustomReferences/Content/font-awesome.min.css" />
+<script src="http://data.sosapoverty.org/CustomReferences/AdminPanel/js/vendor/bootstrap.min.js"></script>
 
-<h2>ورود</h2>
 
+<div class="container-fluid">
+
+    @*<form class="form-signin">
+            <h2 class="form-signin-heading"><strong>ورود</strong></h2>
+            <div class="input-prepend">
+                <span class="add-on"><i class="icon-user"></i></span>
+                <input type="text" placeholder="Username">
+            </div>
+            <div class="input-prepend">
+                <span class="add-on"><i class="icon-lock"></i></span>
+                <input type="password" placeholder="Password">
+                <a href="index-2.html"><span class="add-on" id="login"><i class="icon-arrow-left"></i></span></a>
+            </div>
+        </form>
+
+        <div class="signInRow">
+            <div><h1>Sign in</h1></div>
+            <div><a href="#">Lost your password?</a></div>
+        </div>*@
+
+</div>
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
 
-<div class="align-items-center">
+    <div class="container-fluid">
+        <div class="form-signin">
+            <h2 class="form-signin-heading"><strong>ورود</strong></h2>
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="input-prepend">
+                <span class="add-on"><i class="icon-user"></i></span>
+                @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "" } })
+                @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger" })
+            </div>
 
-    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-    <div class="form-group">
-        @Html.LabelFor(model => model.Username, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-2">
-            @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-2">
-            @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.RememberMe, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-2">
-            <div class="checkbox">
-                @Html.EditorFor(model => model.RememberMe)
+            <div class="input-prepend">
+                <span class="add-on"><i class="icon-lock"></i></span>
+                @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "" } })
+                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                <a><span class="add-on" id="login"><i class="icon-arrow-left"></i></span></a>
+            </div>
+            <div class="input-prepend" style="width:100%">
+                <span class="add-on">
+                    <i class="">
+                        @Html.EditorFor(model => model.RememberMe)
+                        مرا به خاطر بسپار
+                    </i>
+                </span>
                 @Html.ValidationMessageFor(model => model.RememberMe, "", new { @class = "text-danger" })
+                <input type="submit" value="ورود" class="btn btn-default" style="float:left" />
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-2">
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-2">
-            <input type="submit" value="ورود" class="btn btn-default" />
-        </div>
+
+
     </div>
-</div>
 }
 
 
