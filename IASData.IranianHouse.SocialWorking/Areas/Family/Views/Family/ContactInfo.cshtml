@@ -80,6 +80,30 @@
             @Html.ValidationMessageFor(model => model.FamilyCellPhone2, "", new { @class = "text-danger" })
         </div>
 
+        <div class="input-group col-md-3 mb-3">
+            <div class="input-group-append">
+                <span class="input-group-text" id="basic-addon2">استان</span>
+            </div>
+            @Html.DropDownListFor(Model => Model.ProvinceId, null, htmlAttributes: new { @class = "form-control" })
+        </div>
+        <div class="input-group col-md-3 mb-3">
+            <div class="input-group-append">
+                <span class="input-group-text" id="basic-addon2">شهر</span>
+            </div>
+            @Html.DropDownListFor(Model => Model.CityId, null, htmlAttributes: new { @class = "form-control" })
+        </div>
+        <div class="input-group col-md-3 mb-3">
+            <div class="input-group-append">
+                <span class="input-group-text" id="basic-addon2">منطقه</span>
+            </div>
+            @Html.DropDownListFor(Model => Model.RegionId, null, htmlAttributes: new { @class = "form-control" })
+        </div>
+        <div class="input-group col-md-3 mb-3">
+            <div class="input-group-append">
+                <span class="input-group-text" id="basic-addon2">محله</span>
+            </div>
+            @Html.DropDownListFor(Model => Model.SegmentId, null, htmlAttributes: new { @class = "form-control" })
+        </div>
 
         <div class="input-group  col-md-12 col-sm-12 mb-3">
             <div class="input-group-append">
@@ -152,3 +176,38 @@
 
     </div>
 }
+<script>
+    $(document).ready(function () {
+        debugger;
+        var pID = $("#ProvinceId").val();
+        var cityControl = $("#CityId");
+        selectProvince(pID, cityControl,'@Model.CityId');
+        
+        var cID = '@Model.CityId';
+        var regionControl = $("#RegionId");
+        selectCity(cID, regionControl,'@Model.RegionId');
+
+        var rID = '@Model.RegionId';
+        var segmentControl = $("#SegmentId");
+        selectRegion(rID, segmentControl,'@Model.SegmentId');
+
+    });
+    $("#ProvinceId").change(function () {
+        var nID = $("#ProvinceId").val();
+        var targetControl = $("#CityId");
+        selectProvince(nID, targetControl);
+    });
+
+    $("#CityId").change(function () {
+        var nID = $("#CityId").val();
+        var targetControl = $("#RegionId");
+        selectCity(nID, targetControl);
+    });
+
+    $("#RegionId").change(function () {
+        var nID = $("#RegionId").val();
+        var targetControl = $("#SegmentId");
+        selectRegion(nID, targetControl);
+    });
+
+</script>

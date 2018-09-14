@@ -133,6 +133,9 @@ namespace IASData.Provider.BaseControllers.Family
                 WasteCollectionSystemDesc = family.WasteCollectionSystemDesc,
                 WaterSourceId = family.WaterSourceId,
                 //Members = family.Members,
+                ProvinceId = ((family.SegmentId.HasValue) ? family.Segment.Region.City.ProvinceId : (int?)null),
+                CityId = ((family.SegmentId.HasValue) ? family.Segment.Region.CityId : (int?)null),
+                RegionId = ((family.SegmentId.HasValue) ? family.Segment.RegionId : (int?)null),
             };
 
 
@@ -286,12 +289,12 @@ namespace IASData.Provider.BaseControllers.Family
             ResidentialContextId.AddRange(db.ResidentialContextRepository.Get().OrderBy(q => q.ResidentialContextName));
             ViewBag.ResidentialContextId = new SelectList(db.ResidentialContextRepository.Get(), "ResidentialContextId", "ResidentialContextName");
 
-            List<Segment> SegmentId = new List<Segment>
-            {
-                new Segment { SegmentName = "" }
-            };
-            SegmentId.AddRange(db.SegmentRepository.Get().OrderBy(q => q.SegmentName));
-            ViewBag.SegmentId = new SelectList(db.SegmentRepository.Get(), "SegmentId", "SegmentName");
+            //List<Segment> SegmentId = new List<Segment>
+            //{
+            //    new Segment { SegmentName = "" }
+            //};
+            //SegmentId.AddRange(db.SegmentRepository.Get().OrderBy(q => q.SegmentName));
+            //ViewBag.SegmentId = new SelectList(db.SegmentRepository.Get(), "SegmentId", "SegmentName");
 
             List<Street> StreetId = new List<Street>
             {
@@ -306,6 +309,35 @@ namespace IASData.Provider.BaseControllers.Family
             };
             WaterSourceId.AddRange(db.WaterSourceRepository.Get().OrderBy(q => q.WaterSourceName));
             ViewBag.WaterSourceId = new SelectList(db.WaterSourceRepository.Get(), "WaterSourceId", "WaterSourceName");
+
+            List<SelectListItem> ProvinceId = new List<SelectListItem>
+            {
+                new SelectListItem { Text = "", Value = "0" }
+            };
+            ProvinceId.AddRange(db.ProvinceRepository.Get().Select(q => new SelectListItem { Value = q.ProvinceId.ToString(), Text = q.ProvinceName }).OrderBy(q => q.Text));
+            ViewBag.ProvinceId = new SelectList(ProvinceId, "Value", "Text");
+
+            List<SelectListItem> CityId = new List<SelectListItem>
+            {
+                new SelectListItem { Text = "", Value = "0" }
+            };
+            //CityId.AddRange(db.CityRepository.Get().Select(q => new SelectListItem { Value = q.CityId.ToString(), Text = q.CityName }).OrderBy(q => q.Text));
+            ViewBag.CityId = new SelectList(CityId, "Value", "Text");
+
+            List<SelectListItem> RegionId = new List<SelectListItem>
+            {
+                new SelectListItem { Text = "", Value = "0" }
+            };
+            //RegionId.AddRange(db.RegionRepository.Get().Select(q => new SelectListItem { Value = q.RegionId.ToString(), Text = q.RegionName }).OrderBy(q => q.Text));
+            ViewBag.RegionId = new SelectList(RegionId, "Value", "Text");
+
+            List<SelectListItem> SegmentId = new List<SelectListItem>
+            {
+                new SelectListItem { Text = "", Value = "0" }
+            };
+            //SegmentId.AddRange(db.SegmentRepository.Get().Select(q => new SelectListItem { Value = q.SegmentId.ToString(), Text = q.SegmentName }).OrderBy(q => q.Text));
+            ViewBag.SegmentId = new SelectList(SegmentId, "Value", "Text");
+
         }
 
         [HttpPost]
@@ -480,7 +512,14 @@ namespace IASData.Provider.BaseControllers.Family
                 });
             }
 
-
+            if (familyViewModel.SegmentId>0)
+            {
+                family.SegmentId = familyViewModel.SegmentId;
+            }
+            if (familyViewModel.RegionId > 0)
+            {
+                family.RegionId = familyViewModel.RegionId;
+            }
             if (!string.IsNullOrEmpty(familyViewModel.FamilyAddress))
             {
                 family.FamilyAddress = familyViewModel.FamilyAddress;
